@@ -20,10 +20,6 @@ const MainStack = () => {
       }}
     >
       <Stack.Screen name="Main" component={MainTab} />
-      <Stack.Screen name="Care" component={Care} />
-      <Stack.Screen name="Challenge" component={Challenge} />
-      <Stack.Screen name="Community" component={Community} />
-      <Stack.Screen name="Info" component={Info} />
     </Stack.Navigator>
   );
 };

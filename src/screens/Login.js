@@ -17,7 +17,6 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
-  const _handleLoginButtonPress = () => {};
 
   return (
     <Container insets={insets}>
@@ -34,7 +33,7 @@ const Login = ({ navigation }) => {
         label="Password"
         value={password}
         onChangeText={(text) => setPassword(text)}
-        onSubmitEditing={_handleLoginButtonPress}
+        onSubmitEditing={() => navigation.navigate("UserLogin")}
         placeholder={"Password"}
         returnKeyType="done"
         isPassword

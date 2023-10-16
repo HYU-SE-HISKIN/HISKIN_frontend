@@ -2,8 +2,7 @@ import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import { ProgressContext } from "../contexts";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Input } from "../components";
-import { Button } from "react-native";
+import { Input, Button } from "../components";
 
 const Container = styled.View`
   flex: 1;
@@ -20,6 +19,7 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
+  const _handleLoginButtonPress = () => {};
 
   return (
     <Container insets={insets}>
@@ -36,7 +36,7 @@ const Login = ({ navigation }) => {
         label="Password"
         value={password}
         onChangeText={(text) => setPassword(text)}
-        onSubmitEditing={() => {}}
+        onSubmitEditing={_handleLoginButtonPress}
         placeholder={"Password"}
         returnKeyType="done"
         isPassword

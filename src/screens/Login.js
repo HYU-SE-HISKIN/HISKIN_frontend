@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
+import { ProgressContext } from "../contexts";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input } from "../components";
 import { Button } from "react-native";
@@ -14,6 +15,7 @@ const Container = styled.View`
 `;
 
 const Login = ({ navigation }) => {
+  const { spinner } = useContext(ProgressContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const passwordRef = useRef();

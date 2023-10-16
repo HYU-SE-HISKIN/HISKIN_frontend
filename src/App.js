@@ -3,12 +3,15 @@ import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./theme";
 import Navigation from "./navigations";
+import { ProgressProvider } from "./contexts";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar barStyle="dark-content" />
-      <Navigation />
+      <ProgressProvider>
+        <StatusBar barStyle="dark-content" />
+        <Navigation />
+      </ProgressProvider>
     </ThemeProvider>
   );
 };

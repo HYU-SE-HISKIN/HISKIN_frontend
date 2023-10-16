@@ -18,4 +18,7 @@ export const theme = {
   label: colors.grey_1,
   inputPlaceholder: colors.grey_1,
   inputBorder: colors.grey_1,
+
+  spinnerBackground: colors.black,
+  spinnerIndicator: colors.white,
 };

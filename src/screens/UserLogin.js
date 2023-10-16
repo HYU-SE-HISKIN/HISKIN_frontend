@@ -14,6 +14,10 @@ const UserLogin = () => {
   return (
     <Container>
       <Text style={{ fontSize: 30 }}>UserLogin</Text>
+      <Image rounded />
+      <Image rounded />
+      <Image rounded />
+      <Image rounded />
     </Container>
   );
 };

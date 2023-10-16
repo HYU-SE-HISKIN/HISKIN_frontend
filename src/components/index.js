@@ -1,3 +1,4 @@
 import Input from "./Input";
+import Image from "./Image";
 
-export { Input };
+export { Input, Image };

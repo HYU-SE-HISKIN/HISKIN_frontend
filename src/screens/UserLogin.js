@@ -23,17 +23,27 @@ const UserLogin = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const _handleSignupButtonPress = (name, gender, birthdate, nickname, email, password) => {
+  const _handleSignupButtonPress = () => {
+
+    const data={
+      name: name, gender: gender, birthdate:birthdate, nickname:nickname, userId:email, password:password
+    }
+    
+
     axios({
-      url: 'http://localhost:8080/api/register',
       method: 'post',
-      data: {name: name, gender: gender, birthdate:birthdate, nickname:nickname, userId:email, password:password}
+      url: 'http://172.30.1.64:8080/api/register',
+      data: data,
+      withCredentials: true
     })
     .then(function a(response) { 
+      console.log(data)
       console.log(response) 
     })
     .catch(function (error) {
-      console.log(error);
+      console.log("Axios Error:", error);
+    console.log("Network Error:", error.response); // Log the network error
+  
     });
   }
 

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
+import axios from 'axios';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button } from "../components";
 
@@ -17,6 +18,25 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
+
+  const _handleLoginButtonPress = () => {
+    const data ={userId:email, password:password}
+
+    axios({
+      method: 'post',
+      url: 'http://172.30.1.64:8080/api/login',
+      data: data,
+      withCredentials: true
+    })
+    .then(function a(response) { 
+      console.log(response) 
+    })
+    .catch(function (error) {
+      console.log("Axios Error:", error);
+      console.log("Network Error:", error.response); // Log the network error
+  
+    });
+  }
 
   return (
     <Container insets={insets}>
@@ -38,7 +58,8 @@ const Login = ({ navigation }) => {
         returnKeyType="done"
         isPassword
       />
-      <Button title="Login" onPress={() => navigation.navigate("UserLogin")} />
+      <Button title="Login" onPress={_handleLoginButtonPress} />
+      <Button title="Sign up" onPress={() => navigation.navigate("UserLogin")} />
     </Container>
   );
 };

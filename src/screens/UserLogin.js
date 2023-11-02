@@ -32,7 +32,7 @@ const UserLogin = () => {
 
     axios({
       method: 'post',
-      url: 'http://172.30.1.64:8080/api/register',
+      url: 'http://172.16.79.91:8080/api/register',
       data: data,
       withCredentials: true
     })
@@ -42,7 +42,7 @@ const UserLogin = () => {
     })
     .catch(function (error) {
       console.log("Axios Error:", error);
-    console.log("Network Error:", error.response); // Log the network error
+      console.log("Network Error:", error.response); // Log the network error
   
     });
   }

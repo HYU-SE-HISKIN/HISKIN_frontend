@@ -11,7 +11,7 @@ const Container = styled.View`
   padding: 40px 20px;
 `;
 
-const UserLogin = () => {
+const UserLogin = ({navigation}) => {
 
   const [name, setName] = useState('');
   const [gender, setGender] =useState('');
@@ -32,7 +32,7 @@ const UserLogin = () => {
 
     axios({
       method: 'post',
-      url: 'http://172.16.79.91:8080/api/register',
+      url: 'http://172.16.165.131:8080/api/register',
       data: data,
       withCredentials: true
     })
@@ -108,6 +108,8 @@ const UserLogin = () => {
           title="Signup"
           onPress={_handleSignupButtonPress}
         />
+        <Button title="피부타입 테스트" onPress={() => navigation.navigate("SkinTypeTest")} />
+
       </Container>
   );
 };

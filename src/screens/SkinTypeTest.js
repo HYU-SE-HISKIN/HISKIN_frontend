@@ -17,7 +17,7 @@ const Container = styled.View`
 const SkinTypeTest = ({ navigation, route}) => {
     const id = route.params.id;
     const currentQuestion = SkinTypeQuestions[id-1];
-  
+    
     const _nextQuestion =(index)=>{
         if (id<SkinTypeQuestions.length){
             console.log(id,index)

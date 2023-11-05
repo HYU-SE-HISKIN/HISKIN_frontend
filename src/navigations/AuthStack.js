@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "styled-components/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Login, UserLogin, SkinTypeTest, SkinQuestion, SkinTypeResult} from "../screens";
+import { Login, UserLogin, SkinTypeTest, SkinTypeResult} from "../screens";
 
 const Stack = createStackNavigator();
 
@@ -29,14 +29,6 @@ const AuthStack = () => {
       <Stack.Screen
         name="SkinTypeTest"
         component={SkinTypeTest}
-        initialParams={{
-          id: 1,
-        }}
-        options={{ headerBackTitleVisible: false }}
-      />
-      <Stack.Screen
-        name="SkinQuestion"
-        component={SkinQuestion}
         initialParams={{
           id: 1,
         }}

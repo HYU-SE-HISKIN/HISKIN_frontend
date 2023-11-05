@@ -1,4 +1,4 @@
-export const SkinTypeQuestions = [
+export const skinTypeQuestions = [
     {
       question: 'Question 1: 클렌징 후 아무것도 바르지 않고 2~3시간 후에 밝은 빛 아래서 거울을 보세요. 이마와 볼이 어떻게 보이고 느껴집니까?',
       options: [

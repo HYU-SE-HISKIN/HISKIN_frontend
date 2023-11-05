@@ -4,8 +4,7 @@ import axios from 'axios';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "react-native";
 import { Input, Button } from "../components";
-import {SkinTypeQuestions} from "../utils/skinTypeQuestions";
-import SkinQuestion from "./SkinQuestion";
+import {skinTypeQuestions} from "../utils/skinTypeQuestions";
 
 const Container = styled.View`
   flex: 1;
@@ -16,10 +15,10 @@ const Container = styled.View`
 
 const SkinTypeTest = ({ navigation, route}) => {
     const id = route.params.id;
-    const currentQuestion = SkinTypeQuestions[id-1];
-    
+    const currentQuestion = skinTypeQuestions[id-1];
+
     const _nextQuestion =(index)=>{
-        if (id<SkinTypeQuestions.length){
+        if (id<skinTypeQuestions.length){
             console.log(id,index)
             navigation.push('SkinTypeTest', { id: id + 1 })
         } else {

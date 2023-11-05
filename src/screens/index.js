@@ -7,6 +7,5 @@ import Login from "./Login";
 import UserLogin from "./UserLogin";
 import SkinTypeTest from './SkinTypeTest'
 import SkinTypeResult from "./SkinTypeResult";
-import SkinQuestion from './SkinQuestion'
 
-export { Care, Challenge, Community, Home, Info, Login, UserLogin, SkinTypeTest,SkinQuestion, SkinTypeResult };
+export { Care, Challenge, Community, Home, Info, Login, UserLogin, SkinTypeTest, SkinTypeResult };

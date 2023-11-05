@@ -24,7 +24,7 @@ const Login = ({ navigation }) => {
 
     axios({
       method: 'post',
-      url: 'http://172.16.79.91:8080/api/login',
+      url: 'http://172.16.165.131:8080/api/login',
       data: data,
       withCredentials: true
     })

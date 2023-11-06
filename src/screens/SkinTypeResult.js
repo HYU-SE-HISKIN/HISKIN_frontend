@@ -12,13 +12,14 @@ const Container = styled.View`
   padding: 0 20px;
 `;
 
-const SkinTypeResult = ({ navigation }) => {
-   
+const SkinTypeResult = ({ navigation, route }) => {
+   const result=route.params.result
     
   return (
     <Container>
-    <Text >Result</Text>
-    <Button title="Test again" onPress={() => navigation.navigate("SkinTypeTest")} />
+    <Text>{`${result}`}</Text>
+    <Button title={`${result}`} onPress={() => navigation.navigate("SkinTypeTest")} />
+    <Button title="test agian" onPress={() => navigation.navigate("SkinTypeTest")} />
     </Container>
   );
 };

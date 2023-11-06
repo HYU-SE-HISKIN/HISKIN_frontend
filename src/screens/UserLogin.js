@@ -1,4 +1,4 @@
-import React, { useState, useRef} from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import styled from 'styled-components/native';
 import { Input, Button } from '../components';
 import axios from 'axios';
@@ -25,16 +25,16 @@ const UserLogin = ({navigation}) => {
 
   const _handleSignupButtonPress = () => {
 
+    const ip = "172.30.1.82";
     const data={
       name: name, gender: gender, birthdate:birthdate, nickname:nickname, userId:email, password:password
     }
-    
 
     axios({
       method: 'post',
-      url: 'http://172.16.165.131:8080/api/register',
+      url: `http://${ip}:8080/api/register`,
       data: data,
-      withCredentials: true
+      withCredentials: true,
     })
     .then(function a(response) { 
       console.log(data)
@@ -42,7 +42,7 @@ const UserLogin = ({navigation}) => {
     })
     .catch(function (error) {
       console.log("Axios Error:", error);
-      console.log("Network Error:", error.response); // Log the network error
+      console.log("Network Error:", error.response);
   
     });
   }

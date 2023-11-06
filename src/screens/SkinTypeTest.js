@@ -15,6 +15,7 @@ const Container = styled.View`
 `;
 
 const SkinTypeTest = ({ navigation, route}) => {
+    const ip = "172.30.1.82";
     const id = route.params.id;
     const currentQuestion = skinTypeQuestions[id-1];
     
@@ -28,12 +29,12 @@ const SkinTypeTest = ({ navigation, route}) => {
 
             axios({
                 method: 'post',
-                url: `http://172.16.165.131:8080/api/skin-test/${question_name}`,
+                url: `http://${ip}:8080/api/skin-test/${question_name}`,
                 data: data,
                 withCredentials: true
               })
               .then(function a(response) { 
-                console.log(response)
+                //console.log(response)
               })
               .catch(function (error) {
                 console.log("Axios Error:", error);
@@ -45,12 +46,12 @@ const SkinTypeTest = ({ navigation, route}) => {
 
             axios({
                 method: 'post',
-                url: `http://172.16.165.131:8080/api/skin-test/${question_name}`,
+                url: `http://${ip}:8080/api/skin-test/${question_name}`,
                 data: data,
                 withCredentials: true
               })
               .then(function a(response) { 
-                console.log(response)
+                //console.log(response)
                 navigation.navigate('SkinTypeResult',{
                     result: response.data,
                   });

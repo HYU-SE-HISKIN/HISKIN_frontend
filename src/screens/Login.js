@@ -18,13 +18,14 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
+  const ip = "172.30.1.82";
 
   const _handleLoginButtonPress = () => {
     const data ={userId:email, password:password}
 
     axios({
       method: 'post',
-      url: 'http://172.16.165.131:8080/api/login',
+      url: `http://${ip}:8080/api/login`,
       data: data,
       withCredentials: true
     })

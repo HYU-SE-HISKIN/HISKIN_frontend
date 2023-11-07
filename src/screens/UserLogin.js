@@ -25,7 +25,7 @@ const UserLogin = ({navigation}) => {
 
   const _handleSignupButtonPress = () => {
 
-    const ip = "172.30.1.82";
+    const ip = "192.168.0.101";
     const data={
       name: name, gender: gender, birthdate:birthdate, nickname:nickname, userId:email, password:password
     }

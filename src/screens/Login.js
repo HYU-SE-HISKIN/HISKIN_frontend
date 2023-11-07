@@ -18,7 +18,7 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
-  const ip = "172.30.1.82";
+  const ip = "192.168.0.101";
 
   const _handleLoginButtonPress = () => {
     const data ={userId:email, password:password}

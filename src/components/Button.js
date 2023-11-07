@@ -16,6 +16,7 @@ const Container = styled.TouchableOpacity`
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;
 const Title = styled.Text`
+  fontFamily: 'LG EI Text - Bold';
   font-size: 16px;
   color: ${({ theme, isFilled }) =>
     isFilled ? theme.buttonTitle : theme.buttonUnfilledTitle};

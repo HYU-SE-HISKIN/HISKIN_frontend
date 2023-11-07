@@ -5,10 +5,12 @@ const colors = {
   grey_1: "#a6a6a6",
   red: "#e84118",
   blue: "#3679fe",
+  ivory_0: "#F5F3EB",
+  ivory_1: "#E9E6DA"
 };
 
 export const theme = {
-  background: colors.white,
+  background: colors.ivory_0,
   text: colors.black,
 
   headerTintColor: colors.black,
@@ -19,7 +21,7 @@ export const theme = {
   inputPlaceholder: colors.grey_1,
   inputBorder: colors.grey_1,
 
-  buttonBackground: colors.blue,
+  buttonBackground: colors.black,
   buttonTitle: colors.white,
   buttonUnfilledTitle: colors.blue,
 

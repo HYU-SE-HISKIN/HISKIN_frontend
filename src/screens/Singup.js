@@ -11,16 +11,14 @@ const Container = styled.View`
   padding: 40px 20px;
 `;
 
-const UserLogin = ({navigation}) => {
+const Signup = ({navigation}) => {
 
   const [name, setName] = useState('');
   const [gender, setGender] =useState('');
-  const [birthdate, setBirthdate] =useState('');
   const [nickname, setNickname] =useState('');
-  const [email, setEmail] = useState('');
+  const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
-  const emailRef = useRef();
   const passwordRef = useRef();
 
   const _handleSignupButtonPress = () => {
@@ -70,14 +68,6 @@ const UserLogin = ({navigation}) => {
           returnKeyType="done"
         />
         <Input
-          label="Birthdate"
-          value={birthdate}
-          onChangeText={text => setBirthdate(text)}
-          onSubmitEditing={() => {}}
-          placeholder="Birthdate"
-          returnKeyType="done"
-        />
-        <Input
           label="Nickname"
           value={nickname}
           onChangeText={text => setNickname(text)}
@@ -86,12 +76,10 @@ const UserLogin = ({navigation}) => {
           returnKeyType="done"
         />
         <Input
-          ref={emailRef}
-          label="Email"
-          value={email}
-          onChangeText={text => setEmail(text)}
-          onSubmitEditing={() => passwordRef.current.focus()}
-          placeholder="Email"
+          label="Id"
+          value={id}
+          onChangeText={text => setId(text)}
+          placeholder="Id"
           returnKeyType="next"
         />
         <Input
@@ -114,4 +102,4 @@ const UserLogin = ({navigation}) => {
   );
 };
 
-export default UserLogin;
+export default Signup;

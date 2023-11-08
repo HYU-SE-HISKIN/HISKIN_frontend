@@ -14,14 +14,14 @@ const Container = styled.View`
 `;
 
 const Login = ({ navigation }) => {
-  const [email, setEmail] = useState("");
+  const [id, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
   const ip = "192.168.0.101";
 
   const _handleLoginButtonPress = () => {
-    const data ={userId:email, password:password}
+    const data ={userId:id, password:password}
 
     axios({
       method: 'post',
@@ -42,11 +42,11 @@ const Login = ({ navigation }) => {
   return (
     <Container insets={insets}>
       <Input
-        label="Email"
-        value={email}
+        label="ID"
+        value={id}
         onChangeText={(text) => setEmail(text)}
         onSubmitEditing={() => passwordRef.current.focus()}
-        placeholder={"Email"}
+        placeholder={"ID"}
         returnKeyType="next"
       />
       <Input
@@ -54,13 +54,13 @@ const Login = ({ navigation }) => {
         label="Password"
         value={password}
         onChangeText={(text) => setPassword(text)}
-        onSubmitEditing={() => navigation.navigate("UserLogin")}
+        onSubmitEditing={() => navigation.navigate("Signup")}
         placeholder={"Password"}
         returnKeyType="done"
         isPassword
       />
       <Button title="Login" onPress={_handleLoginButtonPress} />
-      <Button title="Sign up" onPress={() => navigation.navigate("UserLogin")} />
+      <Button title="Sign up" onPress={() => navigation.navigate("Signup")} />
     </Container>
   );
 };

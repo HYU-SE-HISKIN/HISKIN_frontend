@@ -1,13 +1,10 @@
-import * as Font from "expo-font";
-
-export const fetchFonts = async () =>
-  await Font.loadAsync({
-    'LG Smart Bold Italic': require('../fonts/LG Smart Bold Italic.ttf'),
-    'LG Smart Bold': require('../fonts/LG Smart Bold.ttf'),
-    'LG Smart Light': require('../fonts/LG Smart Light.ttf'),
-    'LG Smart Regular Italic': require('../fonts/LG Smart Regular Italic.ttf'),
-    'LG Smart Regular': require('../fonts/LG Smart Regular.ttf'),
-    'LG Smart SemiBold': require('../fonts/LG Smart SemiBold.ttf'),
+export const fonts ={
+    'LG Smart - Bold Italic': require('../fonts/LGSmartBoldItalic.ttf'),
+    'LG Smart - Bold': require('../fonts/LGSmartBold.ttf'),
+    'LG Smart - Light': require('../fonts/LGSmartLight.ttf'),
+    'LG Smart - Regular Italic': require('../fonts/LGSmartRegularItalic.ttf'),
+    'LG Smart - Regular': require('../fonts/LGSmartRegular.ttf'),
+    'LG Smart - SemiBold': require('../fonts/LGSmartSemiBold.ttf'),
 
     'LG EI Headline - Bold': require('../fonts/LGEIHeadlineTTF-Bold.ttf'),
     'LG EI Headline - Light': require('../fonts/LGEIHeadlineTTF-Light.ttf'),
@@ -20,4 +17,4 @@ export const fetchFonts = async () =>
     'LG EI Text - Light': require('../fonts/LGEITextTTF-Light.ttf'),
     'LG EI Text - Regular': require('../fonts/LGEITextTTF-Regular.ttf'),
     'LG EI Text - SemiBold': require('../fonts/LGEITextTTF-SemiBold.ttf'),
-  });
+  }; 

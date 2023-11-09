@@ -16,6 +16,7 @@
     "@react-navigation/stack": "^6.3.18",
     "axios": "^1.6.0",
     "expo": "~49.0.13",
+    "expo-app-loading": "^2.1.1",
     "expo-network": "^5.6.0",
     "expo-status-bar": "~1.6.0",
     "ip": "^1.1.8",

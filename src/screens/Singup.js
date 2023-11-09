@@ -25,7 +25,7 @@ const Signup = ({navigation}) => {
 
     const ip = "192.168.0.101";
     const data={
-      name: name, gender: gender, birthdate:birthdate, nickname:nickname, userId:email, password:password
+      name: name, gender: gender, birthdate:birthdate, nickname:nickname, userId:id, password:password
     }
 
     axios({

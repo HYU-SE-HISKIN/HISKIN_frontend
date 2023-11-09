@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthStack from "./AuthStack";
 import MainStack from "./MainStack";
-import { Login } from "../screens";
 
 const Navigation = () => {
+
+
   return (
     <NavigationContainer>
       <AuthStack />

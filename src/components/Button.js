@@ -10,8 +10,8 @@ const Container = styled.TouchableOpacity`
   align-items: center;
   justifyContent: center;
   border-radius: 37px;
-  width: 200;
-  height: 48;
+  width: 200px;
+  height: 48px;
   margin: 10px;
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;

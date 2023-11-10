@@ -17,4 +17,6 @@ export const fonts ={
     'LG EI Text - Light': require('../fonts/LGEITextTTF-Light.ttf'),
     'LG EI Text - Regular': require('../fonts/LGEITextTTF-Regular.ttf'),
     'LG EI Text - SemiBold': require('../fonts/LGEITextTTF-SemiBold.ttf'),
+
+    'Calistoga - Regular': require('../fonts/Calistoga-Regular.ttf'),
   }; 

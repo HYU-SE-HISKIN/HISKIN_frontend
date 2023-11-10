@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import axios from 'axios';
+import { Text } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button } from "../components";
 
@@ -41,6 +42,7 @@ const Login = ({ navigation }) => {
 
   return (
     <Container insets={insets}>
+      <Text style={{fontFamily: 'Calistoga - Regular'}}>HISKIN</Text>
       <Input
         label="ID"
         value={id}

@@ -90,7 +90,11 @@ const Welcome = ({navigation, route}) => {
         <Button
           title={">"}
           containerStyle={{...smallerButtonStyle, marginRight: 26}}
-          onPress={()=>navigation.push('Welcome', { id: id + 1 })}
+          onPress={() => {
+            if (id < 3) {
+              navigation.push('Welcome', { id: id + 1 });
+            }
+          }}
         />
       </View>
       <Image

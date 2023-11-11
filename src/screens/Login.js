@@ -1,17 +1,28 @@
 import React, { useState, useRef, useContext } from "react";
-import styled from "styled-components/native";
+import styled, {View, Text} from "styled-components/native";
 import axios from 'axios';
-import { Text } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Input, Button } from "../components";
+import { Input, Button, HyperLinkText } from "../components";
 
 const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.background};
-  padding: 0 20px;
-  padding-top: ${({ insets: { top } }) => top}px;
-  padding-bottom: ${({ insets: { bottom } }) => bottom}px;
+  padding: 0 36px;
+  padding-top: 202.74px;
+  padding-bottom: 46px;
+`;
+const AppName = styled.Text`
+  font-family: 'Calistoga - Regular';
+  font-size: 36px;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 7.74px;;
+`;
+const SubtitleText = styled.Text`
+  font-family: 'LG EI Text - Regular';
+  font-size: 14px;
+  color: ${({ theme }) => theme.text};
+  margin-bottom : 110px;
 `;
 
 const Login = ({ navigation }) => {
@@ -42,27 +53,28 @@ const Login = ({ navigation }) => {
 
   return (
     <Container insets={insets}>
-      <Text style={{fontFamily: 'Calistoga - Regular'}}>HISKIN</Text>
+      <AppName>HISKIN</AppName>
+      <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
       <Input
-        label="ID"
+        label="아이디"
         value={id}
         onChangeText={(text) => setEmail(text)}
         onSubmitEditing={() => passwordRef.current.focus()}
-        placeholder={"ID"}
+        placeholder={"아이디를 입력해주세요"}
         returnKeyType="next"
       />
       <Input
         ref={passwordRef}
-        label="Password"
+        label="비밀번호"
         value={password}
         onChangeText={(text) => setPassword(text)}
-        onSubmitEditing={() => navigation.navigate("Signup")}
-        placeholder={"Password"}
+        onSubmitEditing={_handleLoginButtonPress}
+        placeholder={"비밀번호를 입력해주세요"}
         returnKeyType="done"
         isPassword
       />
-      <Button title="Login" onPress={_handleLoginButtonPress} />
-      <Button title="Sign up" onPress={() => navigation.navigate("Signup")} />
+      <Button title="로그인" onPress={_handleLoginButtonPress} />
+      <HyperLinkText value1="아직 회원이 아니신가요? " value2="회원가입" onPress={() => navigation.navigate("Signup")} />
     </Container>
   );
 };

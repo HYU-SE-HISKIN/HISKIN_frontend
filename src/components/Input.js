@@ -8,21 +8,22 @@ const Container = styled.View`
   margin: 10px 0;
 `;
 const Label = styled.Text`
-  font-size: 14px;
+  fontFamily: 'LG EI Text - SemiBold';
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 6px;
-  color: ${({ theme, isFocused }) => (isFocused ? theme.text : theme.label)};
+  margin-bottom: 11px;
+  color: ${({ theme }) => theme.label};
 `;
 const StyledTextInput = styled.TextInput.attrs(({ theme }) => ({
   placeholderTextColor: theme.inputPlaceholder,
 }))`
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.text};
-  padding: 20px 10px;
+  background-color: ${({ theme }) => theme.inputFill};
+  padding: 14px 44px;
+  fontFamily: 'LG EI Text - Regular';
   font-size: 16px;
   border: 1px solid
-    ${({ theme, isFocused }) => (isFocused ? theme.text : theme.inputBorder)};
-  border-radius: 4px;
+    ${({ theme, isFocused }) => (isFocused ? theme.inputBorder : theme.inputFill)};
+  border-radius: 16px;
 `;
 
 const Input = forwardRef(

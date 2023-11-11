@@ -1,12 +1,12 @@
 const colors = {
   white: "#ffffff",
   black: "#000000",
-  grey_0: "#d5d5d5",
+  grey_0: "#575757",
   grey_1: "#a6a6a6",
-  red: "#e84118",
+  red: "#EA4335",
   blue: "#3679fe",
   ivory_0: "#F5F3EB",
-  ivory_1: "#E9E6DA"
+  ivory_1: "#E9E6DA"//input fill
 };
 
 export const theme = {
@@ -17,9 +17,10 @@ export const theme = {
   tabActiveColor: colors.blue,
   tabInactiveColor: colors.grey_1,
 
-  label: colors.grey_1,
-  inputPlaceholder: colors.grey_1,
-  inputBorder: colors.grey_1,
+  label: colors.grey_0,
+  inputPlaceholder: colors.grey_0,
+  inputBorder: colors.black,
+  inputFill: colors.ivory_1,
 
   buttonBackground: colors.black,
   buttonTitle: colors.white,
@@ -28,4 +29,6 @@ export const theme = {
   imageBackground: colors.grey_0,
   imageButtonBackground: colors.grey_1,
   imageButtonIcon: colors.white,
+
+  hyperlinkText: colors.red,
 };

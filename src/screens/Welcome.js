@@ -11,25 +11,22 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.background};
-  padding: 0 20px;
+  padding: 0 36px;
   padding-top: 100px;
   padding-bottom: 10px;
 `;
 const TitleText = styled.Text`
-  font-family: 'LG EI Headline - Semibold';
+  font-family: 'LG EI Headline - SemiBold';
   font-size: 28px;
   color: ${({ theme }) => theme.text};
   margin-top: 48px;
-  margin-left: 36px;
   align-self: flex-start;
 `;
-
 const SubtitleText = styled.Text`
   font-family: 'LG EI Text - Regular';
   font-size: 14px;
   color: ${({ theme }) => theme.text};
   margin-top: 4px;
-  margin-left: 36px;
   margin-bottom : 24px;
   align-self: flex-start;
 `;
@@ -89,7 +86,7 @@ const Welcome = ({navigation, route}) => {
         />
         <Button
           title={">"}
-          containerStyle={{...smallerButtonStyle, marginRight: 26}}
+          containerStyle={{...smallerButtonStyle}}
           onPress={() => {
             if (id < 3) {
               navigation.push('Welcome', { id: id + 1 });

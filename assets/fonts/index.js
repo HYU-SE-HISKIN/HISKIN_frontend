@@ -9,7 +9,7 @@ export const fonts ={
     'LG EI Headline - Bold': require('../fonts/LGEIHeadlineTTF-Bold.ttf'),
     'LG EI Headline - Light': require('../fonts/LGEIHeadlineTTF-Light.ttf'),
     'LG EI Headline - Regular': require('../fonts/LGEIHeadlineTTF-Regular.ttf'),
-    'LG EI Headline - Semibold': require('../fonts/LGEIHeadlineTTF-Semibold.ttf'),
+    'LG EI Headline - SemiBold': require('../fonts/LGEIHeadlineTTF-Semibold.ttf'),
     'LG EI Headline - Thin': require('../fonts/LGEIHeadlineTTF-Thin.ttf'),
     'LG EI Headline - VF': require('../fonts/LGEIHeadlineVF.ttf'),
 

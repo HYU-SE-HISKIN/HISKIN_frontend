@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import styled, {View, Text} from "styled-components/native";
+import { UserContext } from "../contexts/User";
 import axios from 'axios';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button, HyperLinkText } from "../components";
@@ -26,13 +27,14 @@ const SubtitleText = styled.Text`
 `;
 
 const Login = ({ navigation }) => {
+  const { dispatch } = useContext(UserContext);
   const [id, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
-  const ip = "192.168.0.101";
+  const ip = "172.30.1.58";
 
-  const _handleLoginButtonPress = () => {
+  const _handleLoginButtonPress = async () => {
     const data ={userId:id, password:password}
 
     axios({
@@ -42,6 +44,7 @@ const Login = ({ navigation }) => {
       withCredentials: true
     })
     .then(function a(response) { 
+      dispatch({id, password})
       console.log(response) 
     })
     .catch(function (error) {

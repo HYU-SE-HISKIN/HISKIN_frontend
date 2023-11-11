@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components/native";
+import { UserProvider } from "./contexts/User";
 import { SplashScreen } from 'expo';
 import AppLoading from 'expo-app-loading';
 import { theme } from "./theme";
@@ -35,8 +36,10 @@ const App = () => {
   
     return isReady ? (
   <ThemeProvider theme={theme}>
-    <StatusBar barStyle="dark-content" />
-    <Navigation />
+    <UserProvider>
+      <StatusBar barStyle="dark-content" />
+      <Navigation />
+    </UserProvider>
   </ThemeProvider>
 ) : (
   <AppLoading

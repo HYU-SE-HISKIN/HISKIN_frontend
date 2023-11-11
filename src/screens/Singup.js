@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useContext} from 'react';
 import styled from 'styled-components/native';
+import { UserContext } from "../contexts/User";
 import { Input, Button } from '../components';
 import axios from 'axios';
 
@@ -12,7 +13,7 @@ const Container = styled.View`
 `;
 
 const Signup = ({navigation}) => {
-
+  const { dispatch } = useContext(UserContext);
   const [name, setName] = useState('');
   const [gender, setGender] =useState('');
   const [nickname, setNickname] =useState('');
@@ -23,9 +24,9 @@ const Signup = ({navigation}) => {
 
   const _handleSignupButtonPress = () => {
 
-    const ip = "192.168.0.101";
+    const ip = "172.30.1.58";
     const data={
-      name: name, gender: gender, birthdate:birthdate, nickname:nickname, userId:id, password:password
+      name: name, gender: gender, birthdate:'20202020', nickname:nickname, userId:id, password:password
     }
 
     axios({
@@ -37,6 +38,7 @@ const Signup = ({navigation}) => {
     .then(function a(response) { 
       console.log(data)
       console.log(response) 
+      dispatch({id, password})
     })
     .catch(function (error) {
       console.log("Axios Error:", error);

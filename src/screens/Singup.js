@@ -96,7 +96,7 @@ const Signup = ({navigation}) => {
           title="Signup"
           onPress={_handleSignupButtonPress}
         />
-        <Button title="피부타입 테스트" onPress={() => navigation.navigate("SkinTypeTest")} />
+        <Button title="디바이스 등록" onPress={() => navigation.navigate("DeviceRegistration")} />
 
       </Container>
   );

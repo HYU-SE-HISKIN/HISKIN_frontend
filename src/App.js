@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components/native";
+import { SplashScreen } from 'expo';
 import AppLoading from 'expo-app-loading';
 import { theme } from "./theme";
 import Navigation from "./navigations";
@@ -20,8 +21,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    loadFonts();
-  }, []); 
+    async function initializeApp() {
+      await loadFonts();
+      await SplashScreen.preventAutoHideAsync();
+    }
+
+    initializeApp();
+  }, []);
+
+  if (!isReady) {
+    return null;
+  }
   
     return isReady ? (
   <ThemeProvider theme={theme}>

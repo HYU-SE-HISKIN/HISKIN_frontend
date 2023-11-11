@@ -18,6 +18,7 @@
     "expo": "~49.0.13",
     "expo-app-loading": "^2.1.1",
     "expo-network": "^5.6.0",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "ip": "^1.1.8",
     "prop-types": "^15.8.1",

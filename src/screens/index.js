@@ -8,5 +8,6 @@ import Login from "./Login";
 import Signup from "./Singup";
 import SkinTypeTest from './SkinTypeTest'
 import SkinTypeResult from "./SkinTypeResult";
+import DeviceRegistration from "./DeviceRegistration";
 
-export { Care, Challenge, Community, Home, Info, Welcome, Login, Signup, SkinTypeTest, SkinTypeResult };
+export { Care, Challenge, Community, Home, Info, Welcome, Login, Signup, SkinTypeTest, SkinTypeResult, DeviceRegistration };

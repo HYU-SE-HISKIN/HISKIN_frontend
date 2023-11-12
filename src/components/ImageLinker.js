@@ -13,10 +13,15 @@ const StyledImage = styled.Image`
   border-radius: ${({ rounded }) => (rounded ? "50px" : "0px")};
 `;
 
-const ImageLinker = ({ url, imageStyle, rounded }) => {
+const ImageLinker = ({ url, imageStyle, rounded, onPress }) => {
   return (
     <Container>
-      <StyledImage source={{ uri: url }} style={imageStyle} rounded={rounded} />
+      <StyledImage
+        source={{ uri: url }}
+        style={imageStyle}
+        rounded={rounded}
+        onPress={onPress}
+      />
     </Container>
   );
 };

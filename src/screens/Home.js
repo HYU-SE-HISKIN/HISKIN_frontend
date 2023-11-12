@@ -4,7 +4,7 @@ import { Image } from "react-native";
 import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Input, Button, HyperLinkText } from "../components";
+import { Button, PlusButton, ImageLinker } from "../components";
 import { mydevice } from "../../assets/images";
 
 const Container = styled.View`
@@ -37,14 +37,18 @@ const Home = ({ navigation }) => {
       <AppName>HISKIN</AppName>
       <TitleText>내 디바이스</TitleText>
       <Image source={mydevice} />
-      <Button
-        title="디바이스등록"
+      <PlusButton
+        title="새로운 디바이스 등록"
+        subtitle="다른 사용자별 기기 등록"
         onPress={() => navigation.navigate("DeviceRegistration")}
       />
-      <Button
-        title="피부타입 테스트"
+      <TitleText>챌린지</TitleText>
+      <PlusButton
+        title="나의 피부 MBTI는?"
+        subtitle="나만의 피부타입 진단"
         onPress={() => navigation.navigate("SkinTypeTest")}
       />
+      <TitleText>제품 추천</TitleText>
       <Button
         title="화장품 추천"
         onPress={() => navigation.navigate("Cosmetics")}

@@ -7,6 +7,7 @@ import welcome3 from "../images/welcome3.png";
 import bar1 from "../images/bar1.png";
 import bar2 from "../images/bar2.png";
 import bar3 from "../images/bar3.png";
+import mydevice from "../images/mydevice.png";
 
 export {
   welcomeLayer1,
@@ -18,4 +19,5 @@ export {
   bar1,
   bar2,
   bar3,
+  mydevice,
 };

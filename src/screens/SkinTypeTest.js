@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "react-native";
-import { ChoiceContainer } from "../components";
+import { Button, ChoiceContainer } from "../components";
 import { skinTypeQuestions } from "../utils/skinTypeQuestions";
 
 const Container = styled.View`
@@ -14,9 +14,10 @@ const Container = styled.View`
 `;
 
 const SkinTypeTest = ({ navigation, route }) => {
-  const ip = "172.30.1.58";
+  const ip = "172.30.1.35";
   const id = route.params.id;
   const currentQuestion = skinTypeQuestions[id - 1];
+  const [answer, setAnswer] = useState(null);
 
   const _nextQuestion = (index) => {
     const question_list = [
@@ -78,9 +79,13 @@ const SkinTypeTest = ({ navigation, route }) => {
         <ChoiceContainer
           key={index}
           title={option}
-          onPress={() => _nextQuestion(index + 1)}
+          onPress={() => setAnswer(index)}
         />
       ))}
+      <Button
+        title={`다음 (${id}/8)`}
+        onPress={() => _nextQuestion(answer + 1)}
+      />
     </Container>
   );
 };

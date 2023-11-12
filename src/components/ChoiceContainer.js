@@ -55,7 +55,7 @@ ChoiceContainer.defaultProps = {
 ChoiceContainer.propTypes = {
   containerStyle: PropTypes.object,
   title: PropTypes.string,
-  onPress: PropTypes.func.isRequired,
+  onPress: PropTypes.func,
   disabled: PropTypes.bool,
 };
 

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
-import styled, {View, Text} from "styled-components/native";
+import styled, { View, Text } from "styled-components/native";
 import { UserContext } from "../contexts/User";
-import axios from 'axios';
+import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button, HyperLinkText } from "../components";
 
@@ -14,19 +14,24 @@ const Container = styled.View`
   padding-bottom: 46px;
 `;
 const AppName = styled.Text`
-  font-family: 'Calistoga - Regular';
+  font-family: "Calistoga - Regular";
   font-size: 36px;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 7.74px;;
+  margin-bottom: 7.74px;
 `;
 
 const Care = ({ navigation }) => {
-
   return (
     <Container>
       <AppName>HISKIN</AppName>
-      <Button title="디바이스등록" onPress={() => navigation.navigate("DeviceRegistration")} />
-      <Button title="피부타입 테스트" onPress={() => navigation.navigate("SkinTypeTest")} />
+      <Button
+        title="디바이스등록"
+        onPress={() => navigation.navigate("DeviceRegistration")}
+      />
+      <Button
+        title="피부타입 테스트"
+        onPress={() => navigation.navigate("SkinTypeTest")}
+      />
     </Container>
   );
 };

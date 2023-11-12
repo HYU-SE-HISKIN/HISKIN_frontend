@@ -8,7 +8,7 @@ const Container = styled.View`
   margin: 10px 0;
 `;
 const Label = styled.Text`
-  fontFamily: 'LG EI Text - SemiBold';
+  font-family: "LG EI Text - SemiBold";
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 11px;
@@ -19,10 +19,11 @@ const StyledTextInput = styled.TextInput.attrs(({ theme }) => ({
 }))`
   background-color: ${({ theme }) => theme.inputFill};
   padding: 14px 44px;
-  fontFamily: 'LG EI Text - Regular';
+  font-family: "LG EI Text - Regular";
   font-size: 16px;
   border: 1px solid
-    ${({ theme, isFocused }) => (isFocused ? theme.inputBorder : theme.inputFill)};
+    ${({ theme, isFocused }) =>
+      isFocused ? theme.inputBorder : theme.inputFill};
   border-radius: 16px;
 `;
 

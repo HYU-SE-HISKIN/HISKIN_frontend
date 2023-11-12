@@ -8,12 +8,12 @@ const Container = styled.TouchableOpacity`
   margin: 10px 0;
 `;
 const Label = styled.Text`
-  fontFamily: 'LG EI Text - SemiBold';
+  font-family: "LG EI Text - SemiBold";
   font-size: 16px;
   color: ${({ theme }) => theme.label};
 `;
 const StyledText = styled.Text`
-  font-family: 'LG EI Text - SemiBold';
+  font-family: "LG EI Text - SemiBold";
   font-size: 16px;
   color: ${({ theme }) => theme.hyperlinkText};
   text-decoration-line: underline;
@@ -22,7 +22,7 @@ const StyledText = styled.Text`
 const HyperLinkText = ({ onPress, value1, value2 }) => {
   return (
     <Container onPress={onPress}>
-    <Label>{value1}</Label>
+      <Label>{value1}</Label>
       <StyledText>{value2}</StyledText>
     </Container>
   );

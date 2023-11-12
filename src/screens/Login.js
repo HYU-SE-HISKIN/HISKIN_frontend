@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
-import styled, {View, Text} from "styled-components/native";
+import styled, { View, Text } from "styled-components/native";
 import { UserContext } from "../contexts/User";
-import axios from 'axios';
+import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button, HyperLinkText } from "../components";
 
@@ -14,16 +14,16 @@ const Container = styled.View`
   padding-bottom: 46px;
 `;
 const AppName = styled.Text`
-  font-family: 'Calistoga - Regular';
+  font-family: "Calistoga - Regular";
   font-size: 36px;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 7.74px;;
+  margin-bottom: 7.74px;
 `;
 const SubtitleText = styled.Text`
-  font-family: 'LG EI Text - Regular';
+  font-family: "LG EI Text - Regular";
   font-size: 14px;
   color: ${({ theme }) => theme.text};
-  margin-bottom : 110px;
+  margin-bottom: 110px;
 `;
 
 const Login = ({ navigation }) => {
@@ -35,24 +35,23 @@ const Login = ({ navigation }) => {
   const ip = "172.30.1.67";
 
   const _handleLoginButtonPress = async () => {
-    const data ={userId:id, password:password}
+    const data = { userId: id, password: password };
 
     axios({
-      method: 'post',
+      method: "post",
       url: `http://${ip}:8080/api/login`,
       data: data,
-      withCredentials: true
+      withCredentials: true,
     })
-    .then(function a(response) { 
-      dispatch({id, password})
-      console.log(response) 
-    })
-    .catch(function (error) {
-      console.log("Axios Error:", error);
-      console.log("Network Error:", error.response); // Log the network error
-  
-    });
-  }
+      .then(function a(response) {
+        dispatch({ id, password });
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log("Axios Error:", error);
+        console.log("Network Error:", error.response); // Log the network error
+      });
+  };
 
   return (
     <Container insets={insets}>
@@ -77,7 +76,11 @@ const Login = ({ navigation }) => {
         isPassword
       />
       <Button title="로그인" onPress={_handleLoginButtonPress} />
-      <HyperLinkText value1="아직 회원이 아니신가요? " value2="회원가입" onPress={() => navigation.navigate("Signup")} />
+      <HyperLinkText
+        value1="아직 회원이 아니신가요? "
+        value2="회원가입"
+        onPress={() => navigation.navigate("Signup")}
+      />
     </Container>
   );
 };

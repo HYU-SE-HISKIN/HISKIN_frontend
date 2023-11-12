@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import styled, { View, Text } from "styled-components/native";
 import { UserContext } from "../contexts/User";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button, HyperLinkText } from "../components";
@@ -54,34 +55,39 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <Container insets={insets}>
-      <AppName>HISKIN</AppName>
-      <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
-      <Input
-        label="아이디"
-        value={id}
-        onChangeText={(text) => setEmail(text)}
-        onSubmitEditing={() => passwordRef.current.focus()}
-        placeholder={"아이디를 입력해주세요"}
-        returnKeyType="next"
-      />
-      <Input
-        ref={passwordRef}
-        label="비밀번호"
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-        onSubmitEditing={_handleLoginButtonPress}
-        placeholder={"비밀번호를 입력해주세요"}
-        returnKeyType="done"
-        isPassword
-      />
-      <Button title="로그인" onPress={_handleLoginButtonPress} />
-      <HyperLinkText
-        value1="아직 회원이 아니신가요? "
-        value2="회원가입"
-        onPress={() => navigation.navigate("Signup")}
-      />
-    </Container>
+    <KeyboardAwareScrollView
+      contentContainerStyle={{ flex: 1 }}
+      extraScrollHeight={20}
+    >
+      <Container insets={insets}>
+        <AppName>HISKIN</AppName>
+        <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
+        <Input
+          label="아이디"
+          value={id}
+          onChangeText={(text) => setEmail(text)}
+          onSubmitEditing={() => passwordRef.current.focus()}
+          placeholder={"아이디를 입력해주세요"}
+          returnKeyType="next"
+        />
+        <Input
+          ref={passwordRef}
+          label="비밀번호"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          onSubmitEditing={_handleLoginButtonPress}
+          placeholder={"비밀번호를 입력해주세요"}
+          returnKeyType="done"
+          isPassword
+        />
+        <Button title="로그인" onPress={_handleLoginButtonPress} />
+        <HyperLinkText
+          value1="아직 회원이 아니신가요? "
+          value2="회원가입"
+          onPress={() => navigation.navigate("Signup")}
+        />
+      </Container>
+    </KeyboardAwareScrollView>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import { UserContext } from "../contexts/User";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Input, Button, HyperLinkText } from "../components";
 import axios from "axios";
 
@@ -27,6 +28,9 @@ const Signup = ({ navigation }) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
+  const genderRef = useRef();
+  const nicknameRef = useRef();
+  const idRef = useRef();
   const passwordRef = useRef();
 
   const _handleSignupButtonPress = () => {
@@ -57,60 +61,66 @@ const Signup = ({ navigation }) => {
   };
 
   return (
-    <Container>
-      <TitleText>회원가입</TitleText>
-      <Input
-        label="이름"
-        value={name}
-        onChangeText={(text) => setName(text)}
-        onSubmitEditing={() => {
-          setName(name.trim());
-          emailRef.current.focus();
-        }}
-        onBlur={() => setName(name.trim())}
-        placeholder="이름을 입력해주세요"
-        returnKeyType="next"
-      />
-      <Input
-        label="성별"
-        value={gender}
-        onChangeText={(text) => setGender(text)}
-        onSubmitEditing={() => {}}
-        placeholder="성별을 입력해주세요"
-        returnKeyType="done"
-      />
-      <Input
-        label="닉네임"
-        value={nickname}
-        onChangeText={(text) => setNickname(text)}
-        onSubmitEditing={() => {}}
-        placeholder="닉네임을 입력해주세요"
-        returnKeyType="done"
-      />
-      <Input
-        label="아이디"
-        value={id}
-        onChangeText={(text) => setId(text)}
-        placeholder="아이디를 입력해주세요"
-        returnKeyType="next"
-      />
-      <Input
-        ref={passwordRef}
-        label="비밀번호"
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-        onSubmitEditing={() => {}}
-        placeholder="비밀번호를 입력해주세요"
-        returnKeyType="done"
-        isPassword
-      />
-      <Button title="가입하기" onPress={_handleSignupButtonPress} />
-      <HyperLinkText
-        value1="이미 회원이신가요? "
-        value2="로그인"
-        onPress={() => navigation.navigate("Login")}
-      />
-    </Container>
+    <KeyboardAwareScrollView
+      contentContainerStyle={{ flex: 1 }}
+      extraScrollHeight={20}
+    >
+      <Container>
+        <TitleText>회원가입</TitleText>
+        <Input
+          label="이름"
+          value={name}
+          onChangeText={(text) => setName(text)}
+          onSubmitEditing={() => genderRef.current.focus()}
+          onBlur={() => setName(name.trim())}
+          placeholder="이름을 입력해주세요"
+          returnKeyType="next"
+        />
+        <Input
+          ref={genderRef}
+          label="성별"
+          value={gender}
+          onChangeText={(text) => setGender(text)}
+          onSubmitEditing={() => nicknameRef.current.focus()}
+          placeholder="성별을 입력해주세요"
+          returnKeyType="done"
+        />
+        <Input
+          ref={nicknameRef}
+          label="닉네임"
+          value={nickname}
+          onChangeText={(text) => setNickname(text)}
+          onSubmitEditing={() => idRef.current.focus()}
+          placeholder="닉네임을 입력해주세요"
+          returnKeyType="done"
+        />
+        <Input
+          ref={idRef}
+          label="아이디"
+          value={id}
+          onChangeText={(text) => setId(text)}
+          onSubmitEditing={() => passwordRef.current.focus()}
+          placeholder="아이디를 입력해주세요"
+          returnKeyType="next"
+        />
+        <Input
+          ref={passwordRef}
+          label="비밀번호"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          onSubmitEditing={() => {}}
+          placeholder="비밀번호를 입력해주세요"
+          returnKeyType="done"
+          isPassword
+        />
+        <Button title="가입하기" onPress={_handleSignupButtonPress} />
+        <HyperLinkText
+          value1="이미 회원이신가요? "
+          value2="로그인"
+          onPress={() => navigation.navigate("Login")}
+        />
+      </Container>
+    </KeyboardAwareScrollView>
   );
 };
 

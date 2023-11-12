@@ -32,7 +32,7 @@ const AuthStack = () => {
       <Stack.Screen
         name="Signup"
         component={Signup}
-        options={{ headerBackTitleVisible: false }}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

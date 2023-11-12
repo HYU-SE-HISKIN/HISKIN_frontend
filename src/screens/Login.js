@@ -32,7 +32,7 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
-  const ip = "172.30.1.58";
+  const ip = "172.30.1.67";
 
   const _handleLoginButtonPress = async () => {
     const data ={userId:id, password:password}

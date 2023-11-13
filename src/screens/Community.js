@@ -3,34 +3,31 @@ import styled, { View, Text } from "styled-components/native";
 import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Input, Button, HyperLinkText } from "../components";
+import { PlusButton } from "../components";
 
 const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.background};
-  padding: 0 36px;
-  padding-top: 202.74px;
+  padding: 0 18px;
+  padding-top: 64px;
   padding-bottom: 46px;
 `;
 const AppName = styled.Text`
   font-family: "Calistoga - Regular";
-  font-size: 36px;
+  font-size: 24px;
   color: ${({ theme }) => theme.text};
   margin-bottom: 7.74px;
+  align-self: flex-start;
 `;
 
 const Community = ({ navigation }) => {
   return (
     <Container>
       <AppName>HISKIN</AppName>
-      <Button
-        title="디바이스등록"
+      <PlusButton
+        subtitle="어떤 생각을 하고 있나요?"
         onPress={() => navigation.navigate("DeviceRegistration")}
-      />
-      <Button
-        title="피부타입 테스트"
-        onPress={() => navigation.navigate("SkinTypeTest")}
       />
     </Container>
   );

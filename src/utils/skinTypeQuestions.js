@@ -1,7 +1,7 @@
 export const skinTypeQuestions = [
   {
     question:
-      "Question 1: 클렌징 후 아무것도 바르지 않고 2~3시간 후에 밝은 빛 아래서 거울을 보세요. 이마와 볼이 어떻게 보이고 느껴집니까?",
+      "클렌징 후 아무것도 바르지 않고 2~3시간 후에 밝은 빛 아래서 거울을 보세요. 이마와 볼이 어떻게 보이고 느껴집니까?",
     options: [
       "매우 거칠거나, 각질이 들떠 보인다.",
       "타이트하고 당긴다.",
@@ -10,8 +10,7 @@ export const skinTypeQuestions = [
     ],
   },
   {
-    question:
-      "Question 2: 확대경으로 보았을 때, 모공이 많고 사이즈가 커 보입니까?",
+    question: "확대경으로 보았을 때, 모공이 많고 사이즈가 커 보입니까?",
     options: [
       "아니오",
       "T존(이마와 코)가 두드러져 보인다",
@@ -21,7 +20,7 @@ export const skinTypeQuestions = [
     ],
   },
   {
-    question: "Question 3: 얼굴에 붉은 여드름이 있습니까?",
+    question: "얼굴에 붉은 여드름이 있습니까?",
     options: [
       "전혀 없다.",
       "거의 없다.",
@@ -32,7 +31,7 @@ export const skinTypeQuestions = [
   },
   {
     question:
-      "Question 4: 클렌저, 토너, 모이스처라이저를 비롯한 화장품을 발랐을 때 발진이나 가려움 증상이 있습니까?",
+      "클렌저, 토너, 모이스처라이저를 비롯한 화장품을 발랐을 때 발진이나 가려움 증상이 있습니까?",
     options: [
       "전혀 없다",
       "때때로 그렇다",
@@ -42,8 +41,7 @@ export const skinTypeQuestions = [
     ],
   },
   {
-    question:
-      "Question 5: 여드름이 난 후 어둡거나 붉은 기가 얼마나 오래 남아있습니까?",
+    question: "여드름이 난 후 어둡거나 붉은 기가 얼마나 오래 남아있습니까?",
     options: [
       "전혀 없다.",
       "1주 정도 남아 있다.",
@@ -54,7 +52,7 @@ export const skinTypeQuestions = [
   },
   {
     question:
-      "Question 6: 얼굴에 기미, 옅은 갈색 또는 회색 스팟이 있다는 진단 받은 적이 있습니까?",
+      "얼굴에 기미, 옅은 갈색 또는 회색 스팟이 있다는 진단 받은 적이 있습니까?",
     options: [
       "없다",
       "그런 적이 있지만 지금은 없다.",
@@ -64,7 +62,7 @@ export const skinTypeQuestions = [
     ],
   },
   {
-    question: "Question 7: 얼굴에 주름은?",
+    question: "얼굴에 주름은?",
     options: [
       "전혀 없다",
       "표정을 지을 때만 주름이 생긴다.",
@@ -75,7 +73,7 @@ export const skinTypeQuestions = [
   },
   {
     question:
-      "Question 8: 최근 5년간 실외 활동 등으로 피부를 햇빛에 오래 노출한 적이 있습니까?",
+      "최근 5년간 실외 활동 등으로 피부를 햇빛에 오래 노출한 적이 있습니까?",
     options: [
       "있다.",
       "한달에 한번 있다.",

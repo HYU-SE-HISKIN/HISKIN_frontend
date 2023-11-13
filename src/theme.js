@@ -4,10 +4,13 @@ const colors = {
   grey_0: "#575757",
   grey_1: "#282828",
   grey_2: "#4d4d4d",
+  grey_3: "#424242",
+  grey_4: "#5a5a5a",
   red: "#EA4335",
   blue: "#3679fe",
   ivory_0: "#F5F3EB",
-  ivory_1: "#E9E6DA", //input fill
+  ivory_1: "#E9E6DA",
+  ivory_2: "#C7C3B5",
 };
 
 export const theme = {
@@ -39,4 +42,9 @@ export const theme = {
   imageButtonIcon: colors.white,
 
   hyperlinkText: colors.red,
+
+  whiteContainerQuestion: colors.grey_3,
+  whitheContainerContent: colors.grey_4,
+
+  line: colors.ivory_2,
 };

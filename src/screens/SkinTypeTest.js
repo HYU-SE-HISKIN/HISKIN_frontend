@@ -12,6 +12,30 @@ const Container = styled.View`
   background-color: ${({ theme }) => theme.background};
   padding: 0 20px;
 `;
+const WhiteContainer = styled.View`
+  background-color: white;
+  border-radius: 16px;
+  padding: 18px;
+  margin: 0 18px;
+  width: 354px;
+`;
+const QuestionNumber = styled.Text`
+  font-family: "LG EI Text - Bold";
+  font-size: 24px;
+  color: ${({ theme }) => theme.whiteContainerQuestion};
+  margin-bottom: 20px;
+`;
+const QuestionContent = styled.Text`
+  font-family: "LG EI Text - Regular";
+  font-size: 14px;
+  color: ${({ theme }) => theme.whiteContainerContent};
+  margin-bottom: 10px;
+`;
+const Line = styled.View`
+  width: 354px;
+  height: 1px;
+  background-color: ${({ theme }) => theme.line};
+`;
 
 const SkinTypeTest = ({ navigation, route }) => {
   const ip = "172.30.1.35";
@@ -74,7 +98,11 @@ const SkinTypeTest = ({ navigation, route }) => {
 
   return (
     <Container>
-      <Text>{currentQuestion.question}</Text>
+      <WhiteContainer>
+        <QuestionNumber>Q{id}</QuestionNumber>
+        <QuestionContent>{currentQuestion.question}</QuestionContent>
+      </WhiteContainer>
+      <Line />
       {currentQuestion.options.map((option, index) => (
         <ChoiceContainer
           key={index}

@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, PlusButton, ImageLinker } from "../components";
-import { mydevice } from "../../assets/images";
+import { MyDevice } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
@@ -36,7 +36,7 @@ const Home = ({ navigation }) => {
     <Container>
       <AppName>HISKIN</AppName>
       <TitleText>내 디바이스</TitleText>
-      <Image source={mydevice} />
+      <MyDevice />
       <PlusButton
         title="새로운 디바이스 등록"
         subtitle="다른 사용자별 기기 등록"

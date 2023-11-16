@@ -7,7 +7,7 @@ import welcome3 from "../images/welcome3.png";
 import bar1 from "../images/bar1.png";
 import bar2 from "../images/bar2.png";
 import bar3 from "../images/bar3.png";
-import mydevice from "../images/mydevice.png";
+import MyDevice from "../images/mydevice.svg";
 import IconHome from "../images/iconhome.svg";
 import IconChallenge from "../images/iconchallenge.svg";
 import IconCare from "../images/iconcare.svg";
@@ -27,7 +27,7 @@ export {
   bar1,
   bar2,
   bar3,
-  mydevice,
+  MyDevice,
   IconHome,
   IconChallenge,
   IconCare,

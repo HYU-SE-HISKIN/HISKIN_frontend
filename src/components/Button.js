@@ -19,7 +19,7 @@ const Title = styled.Text`
   font-family: "LG EI Text - Bold";
   font-size: 16px;
   color: ${({ theme, isFilled }) =>
-    isFilled ? theme.whithe : theme.buttonUnfilledTitle};
+    isFilled ? theme.white : theme.buttonUnfilledTitle};
 `;
 
 const Button = ({ containerStyle, title, onPress, isFilled, disabled }) => {

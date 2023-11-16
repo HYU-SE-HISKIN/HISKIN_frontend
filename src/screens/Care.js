@@ -8,7 +8,7 @@ import { Input, Button, HyperLinkText } from "../components";
 const Container = styled.View`
   flex: 1;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 36px;
   padding-top: 202.74px;
   padding-bottom: 46px;
@@ -16,7 +16,7 @@ const Container = styled.View`
 const AppName = styled.Text`
   font-family: "Calistoga - Regular";
   font-size: 36px;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.black};
   margin-bottom: 7.74px;
 `;
 

@@ -17,7 +17,7 @@ import { welcomeMessages } from "../utils/welcomeMessages";
 const Container = styled.View`
   flex: 1;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 36px;
   padding-top: 100px;
   padding-bottom: 10px;
@@ -25,14 +25,14 @@ const Container = styled.View`
 const TitleText = styled.Text`
   font-family: "LG EI Headline - SemiBold";
   font-size: 28px;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.black};
   margin-top: 48px;
   align-self: flex-start;
 `;
 const SubtitleText = styled.Text`
   font-family: "LG EI Text - Regular";
   font-size: 14px;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.black};
   margin-top: 4px;
   margin-bottom: 24px;
   align-self: flex-start;

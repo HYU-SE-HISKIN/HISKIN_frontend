@@ -9,11 +9,11 @@ import { skinTypeQuestions } from "../utils/skinTypeQuestions";
 const Container = styled.View`
   flex: 1;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 20px;
 `;
 const WhiteContainer = styled.View`
-  background-color: white;
+  background-color: ${({ theme }) => theme.white};
   border-radius: 16px;
   padding: 18px;
   margin: 0 18px;
@@ -22,19 +22,19 @@ const WhiteContainer = styled.View`
 const QuestionNumber = styled.Text`
   font-family: "LG EI Text - Bold";
   font-size: 24px;
-  color: ${({ theme }) => theme.whiteContainerQuestion};
+  color: ${({ theme }) => theme.grey_3};
   margin-bottom: 20px;
 `;
 const QuestionContent = styled.Text`
   font-family: "LG EI Text - Regular";
   font-size: 14px;
-  color: ${({ theme }) => theme.whiteContainerContent};
+  color: ${({ theme }) => theme.grey_4};
   margin-bottom: 10px;
 `;
 const Line = styled.View`
   width: 354px;
   height: 1px;
-  background-color: ${({ theme }) => theme.line};
+  background-color: ${({ theme }) => theme.ivory_2};
 `;
 
 const SkinTypeTest = ({ navigation, route }) => {

@@ -9,7 +9,7 @@ import { Image } from "../components";
 const Container = styled.View`
   flex: 1;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 20px;
 `;
 

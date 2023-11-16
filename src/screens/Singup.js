@@ -9,13 +9,13 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.ivory_0};
   padding: 40px 36px;
 `;
 const TitleText = styled.Text`
   font-family: "LG Smart - Bold Italic";
   font-size: 24px;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.black};
   margin-top: 53px;
   margin-bottom: 20px;
 `;

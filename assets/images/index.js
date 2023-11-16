@@ -4,6 +4,9 @@ import welcomeLayer3 from "../images/welcome_layer3.png";
 import welcome1 from "../images/welcome1.png";
 import welcome2 from "../images/welcome2.png";
 import welcome3 from "../images/welcome3.png";
+import WelcomeLayer1 from "../images/welcomeLayer1";
+import WelcomeLayer2 from "../images/welcomeLayer2";
+import WelcomeLayer3 from "../images/welcomeLayer3";
 import bar1 from "../images/bar1.png";
 import bar2 from "../images/bar2.png";
 import bar3 from "../images/bar3.png";
@@ -18,9 +21,9 @@ import IconCareFilled from "../images/iconcare_filled.svg";
 import IconCommunityFilled from "../images/iconcommunity_filled.svg";
 
 export {
-  welcomeLayer1,
-  welcomeLayer2,
-  welcomeLayer3,
+  WelcomeLayer1,
+  WelcomeLayer2,
+  WelcomeLayer3,
   welcome1,
   welcome2,
   welcome3,

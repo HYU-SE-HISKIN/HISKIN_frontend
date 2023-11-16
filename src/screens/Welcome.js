@@ -5,9 +5,9 @@ import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button } from "../components";
 import {
-  welcomeLayer1,
-  welcomeLayer2,
-  welcomeLayer3,
+  WelcomeLayer1,
+  WelcomeLayer2,
+  WelcomeLayer3,
   bar1,
   bar2,
   bar3,
@@ -45,13 +45,13 @@ const Welcome = ({ navigation, route }) => {
   const getImageSource = (id) => {
     switch (id) {
       case 1:
-        return welcomeLayer1;
+        return <WelcomeLayer1 />;
       case 2:
-        return welcomeLayer2;
+        return <WelcomeLayer2 />;
       case 3:
-        return welcomeLayer3;
+        return <WelcomeLayer3 />;
       default:
-        return welcomeLayer1;
+        return <WelcomeLayer1 />;
     }
   };
   const getBarSource = (id) => {
@@ -74,7 +74,7 @@ const Welcome = ({ navigation, route }) => {
 
   return (
     <Container>
-      <Image source={getImageSource(id)} />
+      {getImageSource(id)}
       <TitleText>{currentPage.title}</TitleText>
       <SubtitleText>{currentPage.subtitle}</SubtitleText>
       <View

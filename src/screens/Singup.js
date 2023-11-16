@@ -34,7 +34,7 @@ const Signup = ({ navigation }) => {
   const passwordRef = useRef();
 
   const _handleSignupButtonPress = () => {
-    const ip = "172.30.1.35";
+    const ip = "192.168.0.32";
     const data = {
       name: name,
       gender: gender,

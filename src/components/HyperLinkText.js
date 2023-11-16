@@ -10,12 +10,12 @@ const Container = styled.TouchableOpacity`
 const Label = styled.Text`
   font-family: "LG EI Text - SemiBold";
   font-size: 16px;
-  color: ${({ theme }) => theme.label};
+  color: ${({ theme }) => theme.grey_0};
 `;
 const StyledText = styled.Text`
   font-family: "LG EI Text - SemiBold";
   font-size: 16px;
-  color: ${({ theme }) => theme.hyperlinkText};
+  color: ${({ theme }) => theme.red};
   text-decoration-line: underline;
 `;
 

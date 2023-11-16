@@ -8,6 +8,14 @@ import bar1 from "../images/bar1.png";
 import bar2 from "../images/bar2.png";
 import bar3 from "../images/bar3.png";
 import mydevice from "../images/mydevice.png";
+import IconHome from "../images/iconhome.svg";
+import IconChallenge from "../images/iconchallenge.svg";
+import IconCare from "../images/iconcare.svg";
+import IconCommunity from "../images/iconcommunity.svg";
+import IconMyinfo from "../images/iconmyinfo.svg";
+import IconHomeFilled from "../images/iconhome_filled.svg";
+import IconCareFilled from "../images/iconcare_filled.svg";
+import IconCommunityFilled from "../images/iconcommunity_filled.svg";
 
 export {
   welcomeLayer1,
@@ -20,4 +28,12 @@ export {
   bar2,
   bar3,
   mydevice,
+  IconHome,
+  IconChallenge,
+  IconCare,
+  IconCommunity,
+  IconMyinfo,
+  IconHomeFilled,
+  IconCareFilled,
+  IconCommunityFilled,
 };

@@ -38,7 +38,7 @@ const Line = styled.View`
 `;
 
 const SkinTypeTest = ({ navigation, route }) => {
-  const ip = "172.30.1.35";
+  const ip = "192.168.0.32";
   const id = route.params.id;
   const currentQuestion = skinTypeQuestions[id - 1];
   const [answer, setAnswer] = useState(null);

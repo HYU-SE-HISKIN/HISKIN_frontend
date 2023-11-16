@@ -22,7 +22,7 @@ const SkinTypeResult = ({ navigation, route }) => {
         title={`${result}`}
         onPress={() => navigation.navigate("SkinTypeTest")}
       />
-      <Button title="home" onPress={() => navigation.navigate("Home")} />
+      <Button title="home" onPress={() => navigation.navigate("Main")} />
     </Container>
   );
 };

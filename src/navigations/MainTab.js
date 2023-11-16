@@ -1,36 +1,69 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home, Challenge, Care, Community, Info } from "../screens";
+import {
+  IconHome,
+  IconChallenge,
+  IconCare,
+  IconCommunity,
+  IconMyinfo,
+} from "../../assets/images";
 
 const Tab = createBottomTabNavigator();
 
 const MainTab = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={() => ({
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontFamily: "LG EI Text - Regular",
+        },
+      })}
+    >
       <Tab.Screen
-        name="Home"
+        name="홈"
         component={Home}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ size }) => <IconHome width={size} height={size} />,
+        }}
       />
       <Tab.Screen
-        name="Challenge"
+        name="챌린지"
         component={Challenge}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ size }) => (
+            <IconChallenge width={size} height={size} />
+          ),
+        }}
       />
       <Tab.Screen
-        name="Care"
+        name="케어"
         component={Care}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ size }) => <IconCare width={size} height={size} />,
+        }}
       />
       <Tab.Screen
-        name="Community"
+        name="커뮤니티"
         component={Community}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ size }) => (
+            <IconCommunity width={size} height={size} />
+          ),
+        }}
       />
       <Tab.Screen
-        name="Info"
+        name="내 정보"
         component={Info}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ size }) => <IconMyinfo width={size} height={size} />,
+        }}
       />
     </Tab.Navigator>
   );

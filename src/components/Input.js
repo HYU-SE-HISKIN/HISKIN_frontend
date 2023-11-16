@@ -12,18 +12,17 @@ const Label = styled.Text`
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 11px;
-  color: ${({ theme }) => theme.label};
+  color: ${({ theme }) => theme.grey_0};
 `;
 const StyledTextInput = styled.TextInput.attrs(({ theme }) => ({
-  placeholderTextColor: theme.inputPlaceholder,
+  placeholderTextColor: theme.grey_0,
 }))`
-  background-color: ${({ theme }) => theme.inputFill};
+  background-color: ${({ theme }) => theme.ivory_1};
   padding: 14px 44px;
   font-family: "LG EI Text - Regular";
   font-size: 16px;
   border: 1px solid
-    ${({ theme, isFocused }) =>
-      isFocused ? theme.inputBorder : theme.inputFill};
+    ${({ theme, isFocused }) => (isFocused ? theme.black : theme.ivory_1)};
   border-radius: 16px;
 `;
 

@@ -6,7 +6,7 @@ const TRANSPARENT = "transparent";
 
 const Container = styled.TouchableOpacity`
   background-color: ${({ theme, isFilled }) =>
-    isFilled ? theme.buttonBackground : TRANSPARENT};
+    isFilled ? theme.black : TRANSPARENT};
   align-items: center;
   justify-content: center;
   border-radius: 37px;
@@ -19,7 +19,7 @@ const Title = styled.Text`
   font-family: "LG EI Text - Bold";
   font-size: 16px;
   color: ${({ theme, isFilled }) =>
-    isFilled ? theme.buttonTitle : theme.buttonUnfilledTitle};
+    isFilled ? theme.whithe : theme.buttonUnfilledTitle};
 `;
 
 const Button = ({ containerStyle, title, onPress, isFilled, disabled }) => {

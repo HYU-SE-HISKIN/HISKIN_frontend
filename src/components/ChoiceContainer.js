@@ -6,11 +6,9 @@ const TRANSPARENT = "transparent";
 
 const Container = styled.TouchableOpacity`
   background-color: ${({ theme, isSelected }) =>
-    isSelected
-      ? `${theme.optionSelectedBackground}33`
-      : theme.optionBackground};
+    isSelected ? `${theme.red}33` : theme.ivory_1};
   border-color: ${({ theme, isSelected }) =>
-    isSelected ? theme.optionSelectedBackground : TRANSPARENT};
+    isSelected ? theme.red : TRANSPARENT};
   border-width: 1px;
   align-items: center;
   justify-content: center;
@@ -24,8 +22,7 @@ const Container = styled.TouchableOpacity`
 const Title = styled.Text`
   font-family: "LG EI Text - Regular";
   font-size: 16px;
-  color: ${({ theme, isSelected }) =>
-    isSelected ? theme.optionSelectedLabel : theme.optionLabel};
+  color: ${({ theme, isSelected }) => (isSelected ? theme.red : theme.grey_1)};
 `;
 
 const ChoiceContainer = ({ containerStyle, title, onPress, disabled }) => {

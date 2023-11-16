@@ -7,7 +7,7 @@ const Container = styled.TouchableOpacity`
   margin-bottom: 30px;
 `;
 const StyledImage = styled.Image`
-  background-color: ${({ theme }) => theme.imageBackground};
+  background-color: ${({ theme }) => theme.grey_0};
   width: 100px;
   height: 100px;
   border-radius: ${({ rounded }) => (rounded ? "50px" : "0px")};

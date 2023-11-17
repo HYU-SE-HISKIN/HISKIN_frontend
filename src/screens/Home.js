@@ -5,7 +5,14 @@ import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, PlusButton, ImageLinker, EmptyBox } from "../components";
-import { MyDevice, PlusButtonImage, NextButton } from "../../assets/images";
+import {
+  MyDevice,
+  PlusButtonImage,
+  NextButton,
+  Cosmetic1,
+  Cosmetic2,
+  Cosmetic3,
+} from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
@@ -14,6 +21,9 @@ const Container = styled.View`
   padding: 0 18px;
   margin-top: 64px;
   margin-bottom: 46px;
+`;
+const HorizonContainer = styled.View`
+  flex-direction: row;
 `;
 const IvoryContainer = styled.View`
   flex-direction: row;
@@ -77,10 +87,21 @@ const Home = ({ navigation }) => {
       </WhiteContainer>
       <EmptyBox height={28} />
       <TitleText>제품 추천</TitleText>
-      <Button
-        title="화장품 추천"
-        onPress={() => navigation.navigate("Cosmetics")}
-      />
+      <EmptyBox height={7} />
+      <HorizonContainer>
+        <ImageLinker
+          svgComponent={<Cosmetic1 />}
+          onPress={() => navigation.navigate("Cosmetics")}
+        />
+        <ImageLinker
+          svgComponent={<Cosmetic2 />}
+          onPress={() => navigation.navigate("Cosmetics")}
+        />
+        <ImageLinker
+          svgComponent={<Cosmetic3 />}
+          onPress={() => navigation.navigate("Cosmetics")}
+        />
+      </HorizonContainer>
     </Container>
   );
 };

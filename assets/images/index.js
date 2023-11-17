@@ -28,6 +28,13 @@ import NextButton from "../images/nextbutton.svg";
 import MoreButton from "../images/morebutton.svg";
 import Heart from "../images/heart.svg";
 import CommunityImage from "../images/communityimage.svg";
+import Cosmetic1 from "../images/cosmetic1.svg";
+import Cosmetic2 from "../images/cosmetic2.svg";
+import Cosmetic3 from "../images/cosmetic3.svg";
+import CareMain from "../images/CareMain.svg";
+import CareRoutine1 from "../images/CareRoutine1";
+import CareRoutine2 from "../images/CareRoutine2";
+import CareRoutine3 from "../images/CareRoutine3";
 
 export {
   WelcomeLayer1,
@@ -57,4 +64,11 @@ export {
   MoreButton,
   Heart,
   CommunityImage,
+  Cosmetic1,
+  Cosmetic2,
+  Cosmetic3,
+  CareMain,
+  CareRoutine1,
+  CareRoutine2,
+  CareRoutine3,
 };

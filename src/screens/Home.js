@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, PlusButton, ImageLinker, EmptyBox } from "../components";
-import { MyDevice } from "../../assets/images";
+import { MyDevice, PlusButtonImage, NextButton } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
@@ -14,6 +14,24 @@ const Container = styled.View`
   padding: 0 18px;
   margin-top: 64px;
   margin-bottom: 46px;
+`;
+const IvoryContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  background-color: ${({ theme }) => theme.ivory_1};
+  border-radius: 16px;
+  padding: 24px;
+  width: 354px;
+  height: 80px;
+`;
+const WhiteContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  background-color: ${({ theme }) => theme.white};
+  border-radius: 16px;
+  padding: 24px;
+  width: 354px;
+  height: 80px;
 `;
 const AppName = styled.Text`
   font-family: "Calistoga - Regular";
@@ -37,20 +55,26 @@ const Home = ({ navigation }) => {
       <EmptyBox height={10} />
       <MyDevice />
       <EmptyBox height={9} />
-      <PlusButton
-        title="새로운 디바이스 등록"
-        subtitle="다른 사용자별 기기 등록"
-        onPress={() => navigation.navigate("DeviceRegistration")}
-      />
+      <IvoryContainer>
+        <PlusButton
+          title="새로운 디바이스 등록"
+          subtitle="다른 사용자별 기기 등록"
+          onPress={() => navigation.navigate("DeviceRegistration")}
+        />
+        <PlusButtonImage />
+      </IvoryContainer>
       <EmptyBox height={28} />
       <TitleText>챌린지</TitleText>
       <EmptyBox height={7} />
-      <PlusButton
-        title="나의 피부 MBTI는?"
-        subtitle="나만의 피부타입 진단"
-        onPress={() => navigation.navigate("SkinTypeTest")}
-        isWhite={true}
-      />
+      <WhiteContainer>
+        <PlusButton
+          title="나의 피부 MBTI는?"
+          subtitle="나만의 피부타입 진단"
+          onPress={() => navigation.navigate("SkinTypeTest")}
+          isWhite={true}
+        />
+        <NextButton />
+      </WhiteContainer>
       <EmptyBox height={28} />
       <TitleText>제품 추천</TitleText>
       <Button

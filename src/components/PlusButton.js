@@ -3,15 +3,11 @@ import styled from "styled-components/native";
 import PropTypes from "prop-types";
 
 const Container = styled.TouchableOpacity`
-  background-color: ${({ theme, isWhite }) =>
-    isWhite ? theme.white : theme.ivory_1};
   align-items: flex-start;
   justify-content: center;
   border-radius: 24px;
-  width: 354px;
+  width: 282px;
   height: 80px;
-  padding: 24px;
-  margin-bottom: 8px;
 `;
 const Title = styled.Text`
   font-family: "LG EI Text - SemiBold";
@@ -23,12 +19,24 @@ const SubTitle = styled.Text`
   font-size: 14px;
   color: ${({ theme }) => theme.grey_2};
 `;
+const ThirdTitle = styled.Text`
+  font-family: "LG EI Text - Regular";
+  font-size: 16px;
+  color: ${({ theme }) => theme.grey_2};
+`;
 
-const PlusButton = ({ containerStyle, title, subtitle, onPress, isWhite }) => {
+const PlusButton = ({
+  containerStyle,
+  title,
+  subtitle,
+  thirdtitle,
+  onPress,
+}) => {
   return (
-    <Container style={containerStyle} onPress={onPress} isWhite={isWhite}>
-      <Title>{title}</Title>
-      <SubTitle>{subtitle}</SubTitle>
+    <Container style={containerStyle} onPress={onPress}>
+      {title && <Title>{title}</Title>}
+      {subtitle && <SubTitle>{subtitle}</SubTitle>}
+      {thirdtitle && <ThirdTitle>{thirdtitle}</ThirdTitle>}
     </Container>
   );
 };

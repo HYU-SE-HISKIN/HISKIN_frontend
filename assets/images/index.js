@@ -22,6 +22,12 @@ import IconCommunityFilled from "../images/iconcommunity_filled.svg";
 import IconID from "../images/iconid.svg";
 import IconPW from "../images/iconpw.svg";
 import SkinTypeResultImage from "../images/skintyperesult.svg";
+import EditButton from "../images/editbutton.svg";
+import PlusButtonImage from "../images/plusbutton.svg";
+import NextButton from "../images/nextbutton.svg";
+import MoreButton from "../images/morebutton.svg";
+import Heart from "../images/heart.svg";
+import CommunityImage from "../images/communityimage.svg";
 
 export {
   WelcomeLayer1,
@@ -45,4 +51,10 @@ export {
   IconID,
   IconPW,
   SkinTypeResultImage,
+  EditButton,
+  PlusButtonImage,
+  NextButton,
+  MoreButton,
+  Heart,
+  CommunityImage,
 };

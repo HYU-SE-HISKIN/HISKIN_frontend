@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { UserContext } from "../contexts/User";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Input, Button, HyperLinkText, EmptyBox } from "../components";
+import { IconID, IconPW, IconHuman } from "../../assets/images";
 import axios from "axios";
 
 const Container = styled.View`
@@ -69,6 +70,7 @@ const Signup = ({ navigation }) => {
         <EmptyBox height={16} />
         <Input
           label="이름"
+          svgComponent={<IconHuman />}
           value={name}
           onChangeText={(text) => setName(text)}
           onSubmitEditing={() => genderRef.current.focus()}
@@ -79,6 +81,7 @@ const Signup = ({ navigation }) => {
         <EmptyBox height={16} />
         <Input
           ref={genderRef}
+          svgComponent={<IconPW />}
           label="성별"
           value={gender}
           onChangeText={(text) => setGender(text)}
@@ -90,6 +93,7 @@ const Signup = ({ navigation }) => {
         <Input
           ref={nicknameRef}
           label="닉네임"
+          svgComponent={<IconHuman />}
           value={nickname}
           onChangeText={(text) => setNickname(text)}
           onSubmitEditing={() => idRef.current.focus()}
@@ -100,6 +104,7 @@ const Signup = ({ navigation }) => {
         <Input
           ref={idRef}
           label="아이디"
+          svgComponent={<IconID />}
           value={id}
           onChangeText={(text) => setId(text)}
           onSubmitEditing={() => passwordRef.current.focus()}
@@ -110,6 +115,7 @@ const Signup = ({ navigation }) => {
         <Input
           ref={passwordRef}
           label="비밀번호"
+          svgComponent={<IconPW />}
           value={password}
           onChangeText={(text) => setPassword(text)}
           onSubmitEditing={() => {}}

@@ -1,34 +1,14 @@
+// ImageLinker.js
 import React from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
 
-const Container = styled.View`
+const Container = styled.TouchableOpacity`
   align-self: center;
-  margin-bottom: 30px;
-`;
-const StyledImage = styled.Image`
-  background-color: ${({ theme }) => theme.grey_0};
-  width: 100px;
-  height: 100px;
-  border-radius: ${({ rounded }) => (rounded ? "50px" : "0px")};
 `;
 
-const Image = ({ url, imageStyle, rounded }) => {
-  return (
-    <Container>
-      <StyledImage source={{ uri: url }} style={imageStyle} rounded={rounded} />
-    </Container>
-  );
-};
-
-Image.defaultProps = {
-  rounded: false,
-};
-
-Image.propTypes = {
-  uri: PropTypes.string,
-  imageStyle: PropTypes.object,
-  rounded: PropTypes.bool,
+const Image = ({ svgComponent }) => {
+  return <Container>{svgComponent}</Container>;
 };
 
 export default Image;

@@ -62,8 +62,8 @@ const Login = ({ navigation }) => {
         <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
         <EmptyBox height={100} />
         <Input
+          svgComponent={<IconID />}
           label="아이디"
-          source={IconID}
           value={id}
           onChangeText={(text) => setEmail(text)}
           onSubmitEditing={() => passwordRef.current.focus()}
@@ -72,6 +72,7 @@ const Login = ({ navigation }) => {
         />
         <EmptyBox height={23} />
         <Input
+          svgComponent={<IconPW />}
           ref={passwordRef}
           label="비밀번호"
           value={password}

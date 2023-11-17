@@ -14,15 +14,23 @@ const Label = styled.Text`
   margin-bottom: 11px;
   color: ${({ theme }) => theme.grey_0};
 `;
-const StyledTextInput = styled.TextInput.attrs(({ theme }) => ({
-  placeholderTextColor: theme.grey_0,
-}))`
+const IvoryContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
   background-color: ${({ theme }) => theme.ivory_1};
-  padding: 14px 44px;
-  font-family: "LG EI Text - Regular";
-  font-size: 16px;
+  border-radius: 16px;
   border: 1px solid
     ${({ theme, isFocused }) => (isFocused ? theme.black : theme.ivory_1)};
+  padding: 24px;
+  width: 319px;
+  height: 40px;
+`;
+const StyledTextInput = styled.TextInput.attrs(({ theme, isFocused }) => ({
+  placeholderTextColor: theme.grey_0,
+}))`
+  padding: 14px 11px;
+  font-family: "LG EI Text - Regular";
+  font-size: 16px;
   border-radius: 16px;
 `;
 
@@ -38,7 +46,7 @@ const Input = forwardRef(
       isPassword,
       returnKeyType,
       maxLength,
-      source,
+      svgComponent,
     },
     ref
   ) => {
@@ -47,26 +55,28 @@ const Input = forwardRef(
     return (
       <Container>
         <Label isFocused={isFocused}>{label}</Label>
-        <Image source={source} />
-        <StyledTextInput
-          ref={ref}
-          isFocused={isFocused}
-          value={value}
-          onChangeText={onChangeText}
-          onSubmitEditing={onSubmitEditing}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => {
-            setIsFocused(false);
-            onBlur();
-          }}
-          placeholder={placeholder}
-          secureTextEntry={isPassword}
-          returnKeyType={returnKeyType}
-          maxLength={maxLength}
-          autoCapitalize="none"
-          autoCorrect={false}
-          textContentType="none"
-        />
+        <IvoryContainer isFocused={isFocused}>
+          {svgComponent}
+          <StyledTextInput
+            ref={ref}
+            isFocused={isFocused}
+            value={value}
+            onChangeText={onChangeText}
+            onSubmitEditing={onSubmitEditing}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => {
+              setIsFocused(false);
+              onBlur();
+            }}
+            placeholder={placeholder}
+            secureTextEntry={isPassword}
+            returnKeyType={returnKeyType}
+            maxLength={maxLength}
+            autoCapitalize="none"
+            autoCorrect={false}
+            textContentType="none"
+          />
+        </IvoryContainer>
       </Container>
     );
   }

@@ -21,6 +21,7 @@ import IconCareFilled from "../images/iconcare_filled.svg";
 import IconCommunityFilled from "../images/iconcommunity_filled.svg";
 import IconID from "../images/iconid.svg";
 import IconPW from "../images/iconpw.svg";
+import SkinTypeResultImage from "../images/skintyperesult.svg";
 
 export {
   WelcomeLayer1,
@@ -43,4 +44,5 @@ export {
   IconCommunityFilled,
   IconID,
   IconPW,
+  SkinTypeResultImage,
 };

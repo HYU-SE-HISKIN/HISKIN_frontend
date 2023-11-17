@@ -4,27 +4,26 @@ import { UserContext } from "../contexts/User";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Input, Button, HyperLinkText } from "../components";
+import { Input, Button, HyperLinkText, EmptyBox } from "../components";
+import { IconID, IconPW } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 36px;
-  padding-top: 202.74px;
-  padding-bottom: 46px;
+  margin-top: 202.74px;
+  margin-bottom: 46px;
 `;
 const AppName = styled.Text`
   font-family: "Calistoga - Regular";
   font-size: 36px;
   color: ${({ theme }) => theme.black};
-  margin-bottom: 7.74px;
 `;
 const SubtitleText = styled.Text`
   font-family: "LG EI Text - Regular";
   font-size: 14px;
   color: ${({ theme }) => theme.black};
-  margin-bottom: 110px;
 `;
 
 const Login = ({ navigation }) => {
@@ -33,14 +32,13 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const passwordRef = useRef();
   const insets = useSafeAreaInsets();
-  const ip = "192.168.0.32";
 
   const _handleLoginButtonPress = async () => {
     const data = { userId: id, password: password };
 
     axios({
       method: "post",
-      url: `http://${ip}:8080/api/login`,
+      url: `http://54.180.88.154:8080/api/login`,
       data: data,
       withCredentials: true,
     })
@@ -62,14 +60,17 @@ const Login = ({ navigation }) => {
       <Container insets={insets}>
         <AppName>HISKIN</AppName>
         <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
+        <EmptyBox height={100} />
         <Input
           label="아이디"
+          source={IconID}
           value={id}
           onChangeText={(text) => setEmail(text)}
           onSubmitEditing={() => passwordRef.current.focus()}
           placeholder={"아이디를 입력해주세요"}
           returnKeyType="next"
         />
+        <EmptyBox height={23} />
         <Input
           ref={passwordRef}
           label="비밀번호"
@@ -80,7 +81,9 @@ const Login = ({ navigation }) => {
           returnKeyType="done"
           isPassword
         />
+        <EmptyBox height={30} />
         <Button title="로그인" onPress={_handleLoginButtonPress} />
+        <EmptyBox height={100} />
         <HyperLinkText
           value1="아직 회원이 아니신가요? "
           value2="회원가입"

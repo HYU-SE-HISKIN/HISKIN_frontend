@@ -2,7 +2,7 @@ import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import { UserContext } from "../contexts/User";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { Input, Button, HyperLinkText } from "../components";
+import { Input, Button, HyperLinkText, EmptyBox } from "../components";
 import axios from "axios";
 
 const Container = styled.View`
@@ -34,7 +34,6 @@ const Signup = ({ navigation }) => {
   const passwordRef = useRef();
 
   const _handleSignupButtonPress = () => {
-    const ip = "192.168.0.101";
     const data = {
       name: name,
       gender: gender,
@@ -45,7 +44,7 @@ const Signup = ({ navigation }) => {
 
     axios({
       method: "post",
-      url: `http://${ip}:8080/api/register`,
+      url: `http://54.180.88.154:8080/api/register`,
       data: data,
       withCredentials: true,
     })
@@ -67,6 +66,7 @@ const Signup = ({ navigation }) => {
     >
       <Container>
         <TitleText>회원가입</TitleText>
+        <EmptyBox height={16} />
         <Input
           label="이름"
           value={name}
@@ -76,6 +76,7 @@ const Signup = ({ navigation }) => {
           placeholder="이름을 입력해주세요"
           returnKeyType="next"
         />
+        <EmptyBox height={16} />
         <Input
           ref={genderRef}
           label="성별"
@@ -85,6 +86,7 @@ const Signup = ({ navigation }) => {
           placeholder="성별을 입력해주세요"
           returnKeyType="done"
         />
+        <EmptyBox height={16} />
         <Input
           ref={nicknameRef}
           label="닉네임"
@@ -94,6 +96,7 @@ const Signup = ({ navigation }) => {
           placeholder="닉네임을 입력해주세요"
           returnKeyType="done"
         />
+        <EmptyBox height={16} />
         <Input
           ref={idRef}
           label="아이디"
@@ -103,6 +106,7 @@ const Signup = ({ navigation }) => {
           placeholder="아이디를 입력해주세요"
           returnKeyType="next"
         />
+        <EmptyBox height={16} />
         <Input
           ref={passwordRef}
           label="비밀번호"
@@ -113,7 +117,9 @@ const Signup = ({ navigation }) => {
           returnKeyType="done"
           isPassword
         />
+        <EmptyBox height={16} />
         <Button title="가입하기" onPress={_handleSignupButtonPress} />
+        <EmptyBox height={35} />
         <HyperLinkText
           value1="이미 회원이신가요? "
           value2="로그인"

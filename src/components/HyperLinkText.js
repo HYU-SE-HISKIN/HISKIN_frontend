@@ -6,6 +6,9 @@ const Container = styled.TouchableOpacity`
   flex-direction: row;
   width: 100%;
   margin: 10px 0;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 46px;
 `;
 const Label = styled.Text`
   font-family: "LG EI Text - SemiBold";

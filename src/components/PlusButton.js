@@ -3,7 +3,8 @@ import styled from "styled-components/native";
 import PropTypes from "prop-types";
 
 const Container = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.ivory_1};
+  background-color: ${({ theme, isWhite }) =>
+    isWhite ? theme.white : theme.ivory_1};
   align-items: flex-start;
   justify-content: center;
   border-radius: 24px;
@@ -23,9 +24,9 @@ const SubTitle = styled.Text`
   color: ${({ theme }) => theme.grey_2};
 `;
 
-const PlusButton = ({ containerStyle, title, subtitle, onPress }) => {
+const PlusButton = ({ containerStyle, title, subtitle, onPress, isWhite }) => {
   return (
-    <Container style={containerStyle} onPress={onPress}>
+    <Container style={containerStyle} onPress={onPress} isWhite={isWhite}>
       <Title>{title}</Title>
       <SubTitle>{subtitle}</SubTitle>
     </Container>
@@ -37,6 +38,7 @@ PlusButton.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   onPress: PropTypes.func,
+  isWhite: PropTypes.bool,
 };
 
 export default PlusButton;

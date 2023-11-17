@@ -1,11 +1,11 @@
 import React, { useState, forwardRef } from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
+import { Image } from "react-native";
 
 const Container = styled.View`
   flex-direction: column;
   width: 100%;
-  margin: 10px 0;
 `;
 const Label = styled.Text`
   font-family: "LG EI Text - SemiBold";
@@ -38,6 +38,7 @@ const Input = forwardRef(
       isPassword,
       returnKeyType,
       maxLength,
+      source,
     },
     ref
   ) => {
@@ -46,6 +47,7 @@ const Input = forwardRef(
     return (
       <Container>
         <Label isFocused={isFocused}>{label}</Label>
+        <Image source={source} />
         <StyledTextInput
           ref={ref}
           isFocused={isFocused}

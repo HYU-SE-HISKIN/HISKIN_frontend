@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "react-native";
-import { Button, ChoiceContainer } from "../components";
+import { Button, ChoiceContainer, EmptyBox } from "../components";
 import { skinTypeQuestions } from "../utils/skinTypeQuestions";
 
 const Container = styled.View`
@@ -11,12 +11,12 @@ const Container = styled.View`
   align-items: center;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 20px;
+  margin-top: 14px;
 `;
 const WhiteContainer = styled.View`
   background-color: ${({ theme }) => theme.white};
   border-radius: 16px;
   padding: 18px;
-  margin: 0 18px;
   width: 354px;
 `;
 const QuestionNumber = styled.Text`
@@ -34,11 +34,11 @@ const QuestionContent = styled.Text`
 const Line = styled.View`
   width: 354px;
   height: 1px;
+  margin-top: 40px;
   background-color: ${({ theme }) => theme.ivory_2};
 `;
 
 const SkinTypeTest = ({ navigation, route }) => {
-  const ip = "192.168.0.32";
   const id = route.params.id;
   const currentQuestion = skinTypeQuestions[id - 1];
   const [answer, setAnswer] = useState(null);
@@ -62,7 +62,7 @@ const SkinTypeTest = ({ navigation, route }) => {
 
       axios({
         method: "post",
-        url: `http://${ip}:8080/api/skin-test/${question_name}`,
+        url: `http://54.180.88.154:8080/api/skin-test/${question_name}`,
         data: data,
         withCredentials: true,
       })
@@ -79,7 +79,7 @@ const SkinTypeTest = ({ navigation, route }) => {
 
       axios({
         method: "post",
-        url: `http://${ip}:8080/api/skin-test/${question_name}`,
+        url: `http://54.180.88.154:8080/api/skin-test/${question_name}`,
         data: data,
         withCredentials: true,
       })
@@ -103,6 +103,7 @@ const SkinTypeTest = ({ navigation, route }) => {
         <QuestionContent>{currentQuestion.question}</QuestionContent>
       </WhiteContainer>
       <Line />
+      <EmptyBox height={30} />
       {currentQuestion.options.map((option, index) => (
         <ChoiceContainer
           key={index}

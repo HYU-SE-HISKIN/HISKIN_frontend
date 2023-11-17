@@ -1,11 +1,12 @@
 import React from "react";
+import { View } from "react-native";
 
 const HorizontalContainer = ({ component1, component2 }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <div style={{ flex: 1 }}>{component1}</div>
-      <div style={{ flex: 1 }}>{component2}</div>
-    </div>
+    <View style={{ display: "flex", flexDirection: "row" }}>
+      <View style={{ flex: 1 }}>{component1}</View>
+      <View style={{ flex: 1 }}>{component2}</View>
+    </View>
   );
 };
 

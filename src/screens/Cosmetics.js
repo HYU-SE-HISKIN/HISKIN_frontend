@@ -6,18 +6,18 @@ import { Button } from "../components";
 
 const Container = styled.View`
   flex: 1;
-  const Container = styled.View
 `;
 
 const Cosmetics = ({ navigation }) => {
   const [productInfo, setProductInfo] = useState({});
   const [loading, setLoading] = useState(true);
-  const ip = "192.168.0.32";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://${ip}:8080/api/cosmetics`);
+        const response = await axios.get(
+          `http://54.180.88.154:8080/api/cosmetics`
+        );
         setProductInfo(response.data);
         setLoading(false);
       } catch (error) {
@@ -42,7 +42,7 @@ const Cosmetics = ({ navigation }) => {
         }}
         style={{ width: 200, height: 200 }}
       />
-      <Button title={productInfo.productName} />
+      <Button title={productInfo.productName} onPress={() => {}} />
     </Container>
   );
 };

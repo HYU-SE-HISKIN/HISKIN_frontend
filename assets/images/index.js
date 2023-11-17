@@ -19,6 +19,8 @@ import IconMyinfo from "../images/iconmyinfo.svg";
 import IconHomeFilled from "../images/iconhome_filled.svg";
 import IconCareFilled from "../images/iconcare_filled.svg";
 import IconCommunityFilled from "../images/iconcommunity_filled.svg";
+import IconID from "../images/iconid.svg";
+import IconPW from "../images/iconpw.svg";
 
 export {
   WelcomeLayer1,
@@ -39,4 +41,6 @@ export {
   IconHomeFilled,
   IconCareFilled,
   IconCommunityFilled,
+  IconID,
+  IconPW,
 };

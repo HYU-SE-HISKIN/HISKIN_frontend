@@ -15,6 +15,7 @@ const Container = styled.TouchableOpacity`
   border-radius: 16px;
   width: 354px;
   height: 60px;
+  padding: 0px 25px;
   margin-bottom: 8px;
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;

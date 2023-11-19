@@ -45,7 +45,7 @@ const Signup = ({ navigation }) => {
 
     axios({
       method: "post",
-      url: `http://54.180.88.154:8080/api/register`,
+      url: `http://13.125.247.87:8080/api/register`,
       data: data,
       withCredentials: true,
     })

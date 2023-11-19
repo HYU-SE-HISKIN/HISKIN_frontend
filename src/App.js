@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     async function initializeApp() {
       await loadFonts();
-      await SplashScreen.preventAutoHideAsync();
+      SplashScreen.hideAsync();
     }
 
     initializeApp();

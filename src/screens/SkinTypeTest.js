@@ -62,7 +62,7 @@ const SkinTypeTest = ({ navigation, route }) => {
 
       axios({
         method: "post",
-        url: `http://54.180.88.154:8080/api/skin-test/${question_name}`,
+        url: `http://13.125.247.87:8080/api/skin-test/${question_name}`,
         data: data,
         withCredentials: true,
       })
@@ -79,7 +79,7 @@ const SkinTypeTest = ({ navigation, route }) => {
 
       axios({
         method: "post",
-        url: `http://54.180.88.154:8080/api/skin-test/${question_name}`,
+        url: `http://13.125.247.87:8080/api/skin-test/${question_name}`,
         data: data,
         withCredentials: true,
       })

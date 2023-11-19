@@ -38,7 +38,7 @@ const Login = ({ navigation }) => {
 
     axios({
       method: "post",
-      url: `http://54.180.88.154:8080/api/login`,
+      url: `http://13.125.247.87:8080/api/login`,
       data: data,
       withCredentials: true,
     })

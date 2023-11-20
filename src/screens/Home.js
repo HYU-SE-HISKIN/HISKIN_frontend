@@ -4,7 +4,7 @@ import { ScrollView } from "react-native";
 import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Button, PlusButton, ImageLinker, EmptyBox } from "../components";
+import { PlusButton, ImageLinker, EmptyBox, CommunityBox } from "../components";
 import {
   MyDevice,
   PlusButtonImage,
@@ -103,6 +103,16 @@ const Home = ({ navigation }) => {
             onPress={() => navigation.navigate("Cosmetics")}
           />
         </HorizonContainer>
+        <EmptyBox height={28} />
+        <TitleText>오늘의 인기글</TitleText>
+        <EmptyBox height={7} />
+        <CommunityBox
+          color="pink"
+          title={"hi_skin0032"}
+          subtitle={"12 minutes ago"}
+          content="아름다운 걸 아름답다고, 사랑을 사랑이라고 있는 그대로 말할 수 있는 사람들이 좋다. 가만 보면 참 쉬운 일 같은데 또 이만큼 어려운 일이 없는가 보다."
+          heartvalue=" 27"
+        />
       </Container>
     </ScrollView>
   );

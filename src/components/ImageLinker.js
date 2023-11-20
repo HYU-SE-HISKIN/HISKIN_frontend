@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 const Container = styled.TouchableOpacity`
   align-self: center;
-  margin-bottom: 30px;
 `;
 
 const ImageLinker = ({ svgComponent, onPress }) => {

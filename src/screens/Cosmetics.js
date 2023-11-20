@@ -38,7 +38,7 @@ const Cosmetics = ({ navigation }) => {
     <Container>
       <Image
         source={{
-          uri: productInfo.imageUrl,
+          uri: "https://image.oliveyoung.co.kr/uploads/images/goods/10/0000/0018/A00000018374717ko.jpg?l=ko",
         }}
         style={{ width: 200, height: 200 }}
       />

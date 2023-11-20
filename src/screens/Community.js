@@ -37,7 +37,7 @@ const Community = ({ navigation }) => {
         <IvoryContainer>
           <PlusButton
             thirdtitle="어떤 생각을 하고 있나요?"
-            onPress={() => navigation.navigate("DeviceRegistration")}
+            onPress={() => {}}
           />
           <EditButton />
         </IvoryContainer>

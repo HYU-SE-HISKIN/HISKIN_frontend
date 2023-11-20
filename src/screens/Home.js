@@ -86,6 +86,16 @@ const Home = ({ navigation }) => {
           />
           <NextButton />
         </WhiteContainer>
+        <EmptyBox height={9} />
+        <WhiteContainer>
+          <PlusButton
+            title="오늘의 피부 점수를 테스트 해보세요"
+            subtitle="피부 점수 테스트"
+            onPress={() => navigation.navigate("SkinTypeTest")}
+            isWhite={true}
+          />
+          <NextButton />
+        </WhiteContainer>
         <EmptyBox height={28} />
         <TitleText>제품 추천</TitleText>
         <EmptyBox height={7} />
@@ -111,7 +121,7 @@ const Home = ({ navigation }) => {
           title={"hi_skin0032"}
           subtitle={"12 minutes ago"}
           content="아름다운 걸 아름답다고, 사랑을 사랑이라고 있는 그대로 말할 수 있는 사람들이 좋다. 가만 보면 참 쉬운 일 같은데 또 이만큼 어려운 일이 없는가 보다."
-          heartvalue=" 27"
+          heartvalue=" 99"
         />
       </Container>
     </ScrollView>

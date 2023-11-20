@@ -1,6 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import styled, { View, Text } from "styled-components/native";
-import { Image } from "react-native";
+import { ScrollView } from "react-native";
 import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -58,51 +58,53 @@ const TitleText = styled.Text`
 
 const Home = ({ navigation }) => {
   return (
-    <Container>
-      <AppName>HISKIN</AppName>
-      <EmptyBox height={8} />
-      <TitleText>내 디바이스</TitleText>
-      <EmptyBox height={10} />
-      <MyDevice />
-      <EmptyBox height={9} />
-      <IvoryContainer>
-        <PlusButton
-          title="새로운 디바이스 등록"
-          subtitle="다른 사용자별 기기 등록"
-          onPress={() => navigation.navigate("DeviceRegistration")}
-        />
-        <PlusButtonImage />
-      </IvoryContainer>
-      <EmptyBox height={28} />
-      <TitleText>챌린지</TitleText>
-      <EmptyBox height={7} />
-      <WhiteContainer>
-        <PlusButton
-          title="나의 피부 MBTI는?"
-          subtitle="나만의 피부타입 진단"
-          onPress={() => navigation.navigate("SkinTypeTest")}
-          isWhite={true}
-        />
-        <NextButton />
-      </WhiteContainer>
-      <EmptyBox height={28} />
-      <TitleText>제품 추천</TitleText>
-      <EmptyBox height={7} />
-      <HorizonContainer>
-        <ImageLinker
-          svgComponent={<Cosmetic1 />}
-          onPress={() => navigation.navigate("Cosmetics")}
-        />
-        <ImageLinker
-          svgComponent={<Cosmetic2 />}
-          onPress={() => navigation.navigate("Cosmetics")}
-        />
-        <ImageLinker
-          svgComponent={<Cosmetic3 />}
-          onPress={() => navigation.navigate("Cosmetics")}
-        />
-      </HorizonContainer>
-    </Container>
+    <ScrollView>
+      <Container>
+        <AppName>HISKIN</AppName>
+        <EmptyBox height={8} />
+        <TitleText>내 디바이스</TitleText>
+        <EmptyBox height={10} />
+        <MyDevice />
+        <EmptyBox height={9} />
+        <IvoryContainer>
+          <PlusButton
+            title="새로운 디바이스 등록"
+            subtitle="다른 사용자별 기기 등록"
+            onPress={() => navigation.navigate("DeviceRegistration")}
+          />
+          <PlusButtonImage />
+        </IvoryContainer>
+        <EmptyBox height={28} />
+        <TitleText>챌린지</TitleText>
+        <EmptyBox height={7} />
+        <WhiteContainer>
+          <PlusButton
+            title="나의 피부 MBTI는?"
+            subtitle="나만의 피부타입 진단"
+            onPress={() => navigation.navigate("SkinTypeTest")}
+            isWhite={true}
+          />
+          <NextButton />
+        </WhiteContainer>
+        <EmptyBox height={28} />
+        <TitleText>제품 추천</TitleText>
+        <EmptyBox height={7} />
+        <HorizonContainer>
+          <ImageLinker
+            svgComponent={<Cosmetic1 />}
+            onPress={() => navigation.navigate("Cosmetics")}
+          />
+          <ImageLinker
+            svgComponent={<Cosmetic2 />}
+            onPress={() => navigation.navigate("Cosmetics")}
+          />
+          <ImageLinker
+            svgComponent={<Cosmetic3 />}
+            onPress={() => navigation.navigate("Cosmetics")}
+          />
+        </HorizonContainer>
+      </Container>
+    </ScrollView>
   );
 };
 

@@ -8,6 +8,7 @@ import PlusButton from "./PlusButton";
 import HorizontalContainer from "./HorizontalContainer";
 import EmptyBox from "./EmptyBox";
 import CommunityBox from "./CommunityBox";
+import CheckBox from "./CheckBox";
 
 export {
   Input,
@@ -20,4 +21,5 @@ export {
   HorizontalContainer,
   EmptyBox,
   CommunityBox,
+  CheckBox,
 };

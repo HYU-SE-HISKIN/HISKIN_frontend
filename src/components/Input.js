@@ -28,10 +28,12 @@ const IvoryContainer = styled.View`
 const StyledTextInput = styled.TextInput.attrs(({ theme, isFocused }) => ({
   placeholderTextColor: theme.grey_0,
 }))`
-  padding: 14px 11px;
+  padding: 10px 11px;
   font-family: "LG EI Text - Regular";
   font-size: 16px;
   border-radius: 16px;
+  width: 100%;
+  height: 40px;
 `;
 
 const Input = forwardRef(

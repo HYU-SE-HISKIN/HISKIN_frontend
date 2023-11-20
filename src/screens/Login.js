@@ -58,7 +58,7 @@ const Login = ({ navigation }) => {
       extraScrollHeight={20}
     >
       <Container insets={insets}>
-        <AppName>HISKIN</AppName>
+        <AppName>HI SKIN</AppName>
         <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
         <EmptyBox height={100} />
         <Input

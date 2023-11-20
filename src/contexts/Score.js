@@ -7,9 +7,11 @@ const ScoreContext = createContext({
 
 const ScoreProvider = ({ children }) => {
   const [score, setScore] = useState(0);
+
   const dispatch = ({ inputScore }) => {
-    setUser({ inputScore });
+    setScore(inputScore);
   };
+
   const value = { score, dispatch };
   return (
     <ScoreContext.Provider value={value}>{children}</ScoreContext.Provider>

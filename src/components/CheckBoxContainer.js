@@ -31,7 +31,18 @@ const QuestionContent = styled.Text`
   color: ${({ theme }) => theme.grey_4};
   margin-bottom: 10px;
 `;
-const CheckBoxContainer = ({ questionnumber, questioncontent }) => {
+const CheckBoxContainer = ({
+  questionnumber,
+  questioncontent,
+  onOptionChange,
+}) => {
+  const [option, setOption] = useState(0);
+
+  const handleOptionChange = (newOption) => {
+    setOption(newOption);
+    onOptionChange(newOption);
+  };
+
   return (
     <WhiteContainer>
       <HorizonContainer>
@@ -39,11 +50,11 @@ const CheckBoxContainer = ({ questionnumber, questioncontent }) => {
         <QuestionContent>{questioncontent}</QuestionContent>
       </HorizonContainer>
       <HorizonContainer_check>
-        <CheckBox title="매우 못함" />
-        <CheckBox title="못함" />
-        <CheckBox title="보통" />
-        <CheckBox title="잘함" />
-        <CheckBox title="매우 잘함" />
+        <CheckBox title="매우 못함" onPress={() => handleOptionChange(1)} />
+        <CheckBox title="못함" onPress={() => handleOptionChange(2)} />
+        <CheckBox title="보통" onPress={() => handleOptionChange(3)} />
+        <CheckBox title="잘함" onPress={() => handleOptionChange(4)} />
+        <CheckBox title="매우 잘함" onPress={() => handleOptionChange(5)} />
       </HorizonContainer_check>
     </WhiteContainer>
   );

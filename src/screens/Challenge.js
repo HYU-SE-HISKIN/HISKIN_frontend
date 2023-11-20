@@ -36,6 +36,10 @@ const StyledCircularProgress = styled(AnimatedCircularProgress)``;
 const Challenge = () => {
   const [score, setScore] = useState(16);
 
+  const handleOptionChange = (newOption) => {
+    setScore(score + newOption);
+  };
+
   return (
     <Container>
       <AppName>HISKIN</AppName>
@@ -50,6 +54,7 @@ const Challenge = () => {
       <CheckBoxContainer
         questionnumber="Q1. "
         questioncontent="나는 오늘 피부 관리를 했다."
+        onOptionChange={handleOptionChange}
       />
     </Container>
   );

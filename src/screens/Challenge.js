@@ -1,8 +1,8 @@
 import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import { CheckBoxContainer } from "../components";
+import { CheckBoxContainer, EmptyBox } from "../components";
 import { ScoreContext } from "../contexts";
 
 const Container = styled.View`
@@ -38,29 +38,48 @@ const Challenge = () => {
   const [score, setScore] = useState(0);
 
   return (
-    <Container>
-      <AppName>HISKIN</AppName>
-      <StyledCircularProgress width={10} size={227} rotation={0} fill={score}>
-        {(fill) => (
-          <View>
-            <ScoreText>오늘의 피부 점수</ScoreText>
-            <Score>{score}</Score>
-          </View>
-        )}
-      </StyledCircularProgress>
-      <CheckBoxContainer
-        questionnumber="Q1. "
-        questioncontent="나는 오늘 피부 관리를 했다."
-        setScore={setScore}
-        score={score}
-      />
-      <CheckBoxContainer
-        questionnumber="Q2. "
-        questioncontent="나는 오늘 피부 관리를 했다."
-        setScore={setScore}
-        score={score}
-      />
-    </Container>
+    <ScrollView>
+      <Container>
+        <AppName>HISKIN</AppName>
+        <EmptyBox height={32} />
+        <StyledCircularProgress width={10} size={227} rotation={0} fill={score}>
+          {(fill) => (
+            <View>
+              <ScoreText>오늘의 피부 점수</ScoreText>
+              <Score>{score}</Score>
+            </View>
+          )}
+        </StyledCircularProgress>
+        <EmptyBox height={26} />
+        <CheckBoxContainer
+          questionnumber="Q1. "
+          questioncontent="나는 오늘 피부 관리를 했다."
+          setScore={setScore}
+          score={score}
+        />
+        <EmptyBox height={10} />
+        <CheckBoxContainer
+          questionnumber="Q2. "
+          questioncontent="나는 오늘 피부 관리를 했다."
+          setScore={setScore}
+          score={score}
+        />
+        <EmptyBox height={10} />
+        <CheckBoxContainer
+          questionnumber="Q3. "
+          questioncontent="나는 오늘 피부 관리를 했다."
+          setScore={setScore}
+          score={score}
+        />
+        <EmptyBox height={10} />
+        <CheckBoxContainer
+          questionnumber="Q4. "
+          questioncontent="나는 오늘 피부 관리를 했다."
+          setScore={setScore}
+          score={score}
+        />
+      </Container>
+    </ScrollView>
   );
 };
 

@@ -4,6 +4,7 @@ import { UserContext } from "../contexts/User";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Input, Button, HyperLinkText, EmptyBox } from "../components";
 import { IconID, IconPW, IconHuman } from "../../assets/images";
+import Icon from "react-native-vector-icons/Feather";
 import axios from "axios";
 
 const Container = styled.View`
@@ -70,7 +71,7 @@ const Signup = ({ navigation }) => {
         <EmptyBox height={16} />
         <Input
           label="이름"
-          svgComponent={<IconHuman />}
+          svgComponent={<Icon name="user" size={24} />}
           value={name}
           onChangeText={(text) => setName(text)}
           onSubmitEditing={() => genderRef.current.focus()}

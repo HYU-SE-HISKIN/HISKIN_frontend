@@ -14,7 +14,7 @@ const Title = styled.Text`
   color: ${({ theme }) => theme.black};
 `;
 
-const CheckBox = ({ containerStyle, title, disabled }) => {
+const CheckBox = ({ title }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handlePress = () => {
@@ -22,12 +22,7 @@ const CheckBox = ({ containerStyle, title, disabled }) => {
   };
 
   return (
-    <Container
-      style={containerStyle}
-      onPress={handlePress}
-      isChecked={isChecked}
-      disabled={disabled}
-    >
+    <Container onPress={handlePress} isChecked={isChecked}>
       {isChecked ? <CheckBox_checked /> : <CheckBox_unchecked />}
       <Title isChecked={isChecked}>{title}</Title>
     </Container>

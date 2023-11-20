@@ -27,7 +27,7 @@ const QuestionNumber = styled.Text`
 `;
 const QuestionContent = styled.Text`
   font-family: "LG EI Text - Regular";
-  font-size: 14px;
+  font-size: 16px;
   color: ${({ theme }) => theme.grey_4};
   margin-bottom: 10px;
 `;

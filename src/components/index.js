@@ -9,6 +9,7 @@ import HorizontalContainer from "./HorizontalContainer";
 import EmptyBox from "./EmptyBox";
 import CommunityBox from "./CommunityBox";
 import CheckBox from "./CheckBox";
+import CheckBoxContainer from "./CheckBoxContainer";
 
 export {
   Input,
@@ -22,4 +23,5 @@ export {
   EmptyBox,
   CommunityBox,
   CheckBox,
+  CheckBoxContainer,
 };

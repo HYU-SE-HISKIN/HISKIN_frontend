@@ -2,7 +2,7 @@ import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import { View } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import CheckBoxContainer from "../components";
+import { CheckBoxContainer } from "../components";
 
 const Container = styled.View`
   flex: 1;
@@ -39,12 +39,7 @@ const Challenge = () => {
   return (
     <Container>
       <AppName>HISKIN</AppName>
-      <StyledCircularProgress
-        width={10} // Make sure to set a numerical value for width
-        size={227}
-        rotation={0}
-        fill={score}
-      >
+      <StyledCircularProgress width={10} size={227} rotation={0} fill={score}>
         {(fill) => (
           <View>
             <ScoreText>오늘의 피부 점수</ScoreText>
@@ -52,7 +47,10 @@ const Challenge = () => {
           </View>
         )}
       </StyledCircularProgress>
-      <CheckBoxContainer />
+      <CheckBoxContainer
+        questionnumber="Q1. "
+        questioncontent="나는 오늘 피부 관리를 했다."
+      />
     </Container>
   );
 };

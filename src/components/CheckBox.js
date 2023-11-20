@@ -14,15 +14,20 @@ const Title = styled.Text`
   color: ${({ theme }) => theme.black};
 `;
 
-const CheckBox = ({ title }) => {
+const CheckBox = ({ title, value, setScore, score }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handlePress = () => {
     setIsChecked(!isChecked);
+    if (isChecked) {
+      setScore(score - value * 5);
+    } else {
+      setScore(score + value * 5);
+    }
   };
 
   return (
-    <Container onPress={handlePress} isChecked={isChecked}>
+    <Container onPress={handlePress} isChecked={isChecked} value>
       {isChecked ? <CheckBox_checked /> : <CheckBox_unchecked />}
       <Title isChecked={isChecked}>{title}</Title>
     </Container>

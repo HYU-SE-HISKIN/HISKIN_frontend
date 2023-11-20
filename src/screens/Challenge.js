@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { View } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import { CheckBoxContainer } from "../components";
+import { ScoreContext } from "../contexts";
 
 const Container = styled.View`
   flex: 1;
@@ -34,11 +35,7 @@ const Score = styled.Text`
 const StyledCircularProgress = styled(AnimatedCircularProgress)``;
 
 const Challenge = () => {
-  const [score, setScore] = useState(16);
-
-  const handleOptionChange = (newOption) => {
-    setScore(score + newOption);
-  };
+  const [score, setScore] = useState(0);
 
   return (
     <Container>
@@ -54,7 +51,14 @@ const Challenge = () => {
       <CheckBoxContainer
         questionnumber="Q1. "
         questioncontent="나는 오늘 피부 관리를 했다."
-        onOptionChange={handleOptionChange}
+        setScore={setScore}
+        score={score}
+      />
+      <CheckBoxContainer
+        questionnumber="Q2. "
+        questioncontent="나는 오늘 피부 관리를 했다."
+        setScore={setScore}
+        score={score}
       />
     </Container>
   );

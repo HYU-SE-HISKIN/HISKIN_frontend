@@ -99,7 +99,7 @@ const Home = ({ navigation }) => {
           <PlusButton
             title="오늘의 피부 점수를 테스트 해보세요"
             subtitle="피부 점수 테스트"
-            onPress={() => navigation.navigate("SkinTypeTest")}
+            onPress={() => navigation.navigate("Challenge")}
             isWhite={true}
           />
           <NextButton />

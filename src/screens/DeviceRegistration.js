@@ -10,7 +10,7 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.ivory_0};
-  padding: 0 20px;
+  padding: 0 18px;
 `;
 
 const DeviceRegistration = ({ navigation }) => {

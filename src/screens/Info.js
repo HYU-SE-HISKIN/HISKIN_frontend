@@ -77,7 +77,11 @@ const Info = ({ navigation }) => {
       <EmptyBox height={10} />
       <WhiteContainer>
         <IconReport />
-        <PlusButton title="피부 리포트" isFrontImage={true} />
+        <PlusButton
+          title="피부 리포트"
+          isFrontImage={true}
+          onPress={() => navigation.navigate("SkinReport")}
+        />
         <NextButton />
       </WhiteContainer>
     </Container>

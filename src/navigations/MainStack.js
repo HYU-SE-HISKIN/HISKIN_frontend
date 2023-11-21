@@ -3,6 +3,7 @@ import { ThemeContext } from "styled-components/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import {
   DeviceRegistration,
+  Challenge,
   SkinTypeTest,
   SkinTypeResult,
   Cosmetics,
@@ -36,6 +37,13 @@ const MainStack = () => {
         name="Main"
         component={MainTab}
         options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Challenge"
+        component={Challenge}
+        options={{
+          headerBackTitleVisible: false,
+        }}
       />
       <Stack.Screen
         name="DeviceRegistration"

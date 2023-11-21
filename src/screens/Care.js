@@ -75,6 +75,7 @@ const Care = ({ navigation }) => {
         svgComponent={<CareMain />}
         onPress={() => navigation.navigate("Cosmetics")}
       />
+      <EmptyBox height={18} />
       <HorizonContainer>
         <ImageLinker
           svgComponent={<CareRoutine1 />}

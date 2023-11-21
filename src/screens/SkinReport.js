@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "react-native";
-import { Input, Button } from "../components";
+import { Input, Button, EmptyBox } from "../components";
 import { Image } from "../components";
 
 const Container = styled.View`
@@ -12,20 +12,18 @@ const Container = styled.View`
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 20px;
 `;
+const TitleText = styled.Text`
+  font-family: "LG EI Text - Regular";
+  font-size: 16px;
+  color: ${({ theme }) => theme.black};
+  align-self: flex-start;
+`;
 
 const SkinReport = ({ navigation }) => {
   return (
     <Container>
-      <Button
-        title="피부타입 테스트"
-        onPress={() => navigation.navigate("SkinTypeTest")}
-      />
-      <Image
-        source={{
-          uri: "https://image.oliveyoung.co.kr/uploads/images/goods/10/0000/0018/A00000018374717ko.jpg?l=ko",
-        }}
-        style={{ width: 200, height: 200 }}
-      />
+      <EmptyBox height={24} />
+      <TitleText>기간</TitleText>
     </Container>
   );
 };

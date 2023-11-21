@@ -16,7 +16,7 @@ const Cosmetics = ({ navigation }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://54.180.88.154:8080/api/cosmetics`
+          `http://13.125.247.87:8080/api/cosmetics`
         );
         setProductInfo(response.data);
         setLoading(false);

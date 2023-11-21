@@ -14,14 +14,7 @@ const Title = styled.Text`
   color: ${({ theme }) => theme.black};
 `;
 
-const CheckBox = ({
-  title,
-  value,
-  setScore,
-  score,
-  selectedValue,
-  setSelectedValue,
-}) => {
+const CheckBox = ({ title, value, setScore, score, setSelectedValue }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handlePress = () => {
@@ -31,6 +24,7 @@ const CheckBox = ({
     //옆에 4 클릭 : selectedValue==4 value=4 isChecked==fasle->true <checked>
     ////그때 3은 : selectedValue==4 value=3 isChecked==true->false <unchecked>
     //다시 4 클릭 : selectedValue==4 value=4 isChecked==true->false <unchecked>
+    //다시 4 클릭 : selectedValue==4 value=4 isChecked==false->true <checked>
     if (isChecked) {
       setScore(score - value * 5);
     } else {

@@ -8,11 +8,11 @@ import { theme } from "./theme";
 import Navigation from "./navigations";
 import * as Font from "expo-font";
 import { fonts } from "../assets/fonts";
-//import { LogBox } from "react-native";
+import { LogBox } from "react-native";
 
 const App = () => {
-  //LogBox.ignoreLogs(["Warning: ..."]);
-  //LogBox.ignoreAllLogs();
+  LogBox.ignoreLogs(["Warning: ..."]);
+  LogBox.ignoreAllLogs();
 
   const [isReady, setIsReady] = useState(false);
 

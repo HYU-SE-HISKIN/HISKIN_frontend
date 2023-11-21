@@ -10,6 +10,7 @@ import SkinTypeTest from "./SkinTypeTest";
 import SkinTypeResult from "./SkinTypeResult";
 import DeviceRegistration from "./DeviceRegistration";
 import Cosmetics from "./Cosmetics";
+import SkinReport from "./SkinReport";
 
 export {
   Care,
@@ -24,4 +25,5 @@ export {
   SkinTypeResult,
   DeviceRegistration,
   Cosmetics,
+  SkinReport,
 };

@@ -6,6 +6,7 @@ import {
   SkinTypeTest,
   SkinTypeResult,
   Cosmetics,
+  SkinReport,
 } from "../screens";
 import MainTab from "./MainTab";
 
@@ -61,6 +62,11 @@ const MainStack = () => {
         name="Cosmetics"
         component={Cosmetics}
         options={{ headerBackTitleVisible: false, title: "화장품 추천" }}
+      />
+      <Stack.Screen
+        name="SkinReport"
+        component={SkinReport}
+        options={{ headerBackTitleVisible: false, title: "피부 리포트" }}
       />
     </Stack.Navigator>
   );

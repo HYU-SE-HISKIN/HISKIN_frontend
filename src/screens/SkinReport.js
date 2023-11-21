@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -20,6 +20,30 @@ const TitleText = styled.Text`
 `;
 
 const SkinReport = ({ navigation }) => {
+  const [weekData, setWeekData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://13.125.247.87:8080/api/challenge-scores/week`
+        );
+        setWeekData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <Text>Loading...</Text>;
+  }
+  console.log(weekData);
   return (
     <Container>
       <EmptyBox height={24} />

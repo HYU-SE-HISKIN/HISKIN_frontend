@@ -38,6 +38,8 @@ const CheckBoxContainer = ({
   setScore,
   score,
 }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+
   return (
     <WhiteContainer>
       <HorizonContainer>
@@ -50,15 +52,40 @@ const CheckBoxContainer = ({
           value={1}
           setScore={setScore}
           score={score}
+          setSelectedValue={setSelectedValue}
+          selectedValue={selectedValue}
         />
-        <CheckBox title="못함" value={2} setScore={setScore} score={score} />
-        <CheckBox title="보통" value={3} setScore={setScore} score={score} />
-        <CheckBox title="잘함" value={4} setScore={setScore} score={score} />
+        <CheckBox
+          title="못함"
+          value={2}
+          setScore={setScore}
+          score={score}
+          setSelectedValue={setSelectedValue}
+          selectedValue={selectedValue}
+        />
+        <CheckBox
+          title="보통"
+          value={3}
+          setScore={setScore}
+          score={score}
+          setSelectedValue={setSelectedValue}
+          selectedValue={selectedValue}
+        />
+        <CheckBox
+          title="잘함"
+          value={4}
+          setScore={setScore}
+          score={score}
+          setSelectedValue={setSelectedValue}
+          selectedValue={selectedValue}
+        />
         <CheckBox
           title="매우 잘함"
           value={5}
           setScore={setScore}
           score={score}
+          setSelectedValue={setSelectedValue}
+          selectedValue={selectedValue}
         />
       </HorizonContainer_check>
     </WhiteContainer>

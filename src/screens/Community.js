@@ -1,23 +1,25 @@
 import React from "react";
 import styled from "styled-components/native";
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 import { EmptyBox, PlusButton, CommunityBox } from "../components";
-import { EditButton } from "../../assets/images";
+import { EditButton, AppName_small } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 18px;
   padding-top: 64px;
   padding-bottom: 46px;
 `;
-const AppName = styled.Text`
-  font-family: "Calistoga - Regular";
-  font-size: 24px;
+const HorizonContainer = styled.View`
+  flex-direction: row;
+`;
+const TabName = styled.Text`
+  font-family: "LG Smart - Regular";
+  font-size: 14px;
   color: ${({ theme }) => theme.black};
-  margin-bottom: 7.74px;
-  align-self: flex-start;
+  align-self: flex-end;
 `;
 const IvoryContainer = styled.View`
   flex-direction: row;
@@ -29,11 +31,18 @@ const IvoryContainer = styled.View`
   height: 80px;
 `;
 
-const Community = ({ navigation }) => {
+const Community = () => {
   return (
     <ScrollView>
       <Container>
-        <AppName>HISKIN</AppName>
+        <HorizonContainer>
+          <AppName_small />
+          <View>
+            <EmptyBox height={15} />
+            <TabName> community</TabName>
+          </View>
+        </HorizonContainer>
+        <EmptyBox height={14} />
         <IvoryContainer>
           <PlusButton
             thirdtitle="어떤 생각을 하고 있나요?"

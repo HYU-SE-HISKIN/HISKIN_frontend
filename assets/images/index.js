@@ -8,6 +8,7 @@ import bar1 from "../images/bar1.png";
 import bar2 from "../images/bar2.png";
 import bar3 from "../images/bar3.png";
 import AppName_small from "../images/AppName_small.svg";
+import AppName_large from "../images/AppName_large.svg";
 import MyDevice from "../images/mydevice.svg";
 import IconHome from "../images/iconhome.svg";
 import IconChallenge from "../images/iconchallenge.svg";
@@ -48,6 +49,7 @@ export {
   bar2,
   bar3,
   AppName_small,
+  AppName_large,
   MyDevice,
   IconHome,
   IconChallenge,

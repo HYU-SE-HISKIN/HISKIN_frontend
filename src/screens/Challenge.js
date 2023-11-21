@@ -8,7 +8,7 @@ import { AppName_small } from "../../assets/images";
 const Container = styled.View`
   align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
-  padding: 0 36px;
+  padding: 0 18px;
   padding-top: 64px;
   padding-bottom: 46px;
 `;

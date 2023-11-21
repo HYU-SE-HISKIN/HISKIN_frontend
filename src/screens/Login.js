@@ -5,20 +5,13 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button, HyperLinkText, EmptyBox } from "../components";
-import { IconID, IconPW } from "../../assets/images";
+import { AppName_small, IconID, IconPW } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 36px;
-  margin-top: 202.74px;
-  margin-bottom: 46px;
-`;
-const AppName = styled.Text`
-  font-family: "Calistoga - Regular";
-  font-size: 36px;
-  color: ${({ theme }) => theme.black};
 `;
 const SubtitleText = styled.Text`
   font-family: "LG EI Text - Regular";
@@ -57,8 +50,9 @@ const Login = ({ navigation }) => {
       contentContainerStyle={{ flex: 1 }}
       extraScrollHeight={20}
     >
-      <Container insets={insets}>
-        <AppName>HI SKIN</AppName>
+      <Container>
+        <EmptyBox height={193} />
+        <AppName_small style={{ width: 140, height: 50 }} />
         <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
         <EmptyBox height={100} />
         <Input

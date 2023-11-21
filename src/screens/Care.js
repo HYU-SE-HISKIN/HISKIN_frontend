@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
-import styled, { View, Text } from "styled-components/native";
+import styled from "styled-components/native";
+import { View, Text } from "react-native";
 import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -11,6 +12,7 @@ import {
   ImageLinker,
 } from "../components";
 import {
+  AppName_small,
   CareMain,
   CareRoutine1,
   CareRoutine2,
@@ -19,7 +21,7 @@ import {
 
 const Container = styled.View`
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 18px;
   padding-top: 64px;
@@ -36,11 +38,11 @@ const WhiteContainer = styled.View`
   width: 354px;
   height: 86px;
 `;
-const AppName = styled.Text`
-  font-family: "Calistoga - Regular";
-  font-size: 24px;
+const TabName = styled.Text`
+  font-family: "LG Smart - Regular";
+  font-size: 14px;
   color: ${({ theme }) => theme.black};
-  align-self: flex-start;
+  align-self: flex-end;
 `;
 const Title = styled.Text`
   font-family: "LG EI Text - SemiBold";
@@ -56,7 +58,13 @@ const SubTitle = styled.Text`
 const Care = ({ navigation }) => {
   return (
     <Container>
-      <AppName>HISKIN</AppName>
+      <HorizonContainer>
+        <AppName_small />
+        <View>
+          <EmptyBox height={15} />
+          <TabName> care</TabName>
+        </View>
+      </HorizonContainer>
       <EmptyBox height={8} />
       <WhiteContainer>
         <Title>Pra.L 프라엘 케어</Title>

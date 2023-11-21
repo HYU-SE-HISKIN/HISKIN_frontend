@@ -5,7 +5,14 @@ import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { EmptyBox, PlusButton } from "../components";
-import { AppName_small, NextButton, IconAccount } from "../../assets/images";
+import {
+  AppName_small,
+  NextButton,
+  IconAccount,
+  IconChallenge,
+  IconReport,
+  IconSetting,
+} from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
@@ -54,8 +61,23 @@ const Info = ({ navigation }) => {
       <EmptyBox height={20} />
       <WhiteContainer>
         <IconAccount />
-        <EmptyBox height={14} />
-        <PlusButton title="레포트" isFrontImage={true} />
+        <PlusButton title="계정 설정" isFrontImage={true} />
+        <NextButton />
+      </WhiteContainer>
+      <EmptyBox height={10} />
+      <WhiteContainer>
+        <IconSetting />
+        <PlusButton
+          title="피부 타입 설정"
+          isFrontImage={true}
+          onPress={() => navigation.navigate("SkinTypeTest")}
+        />
+        <NextButton />
+      </WhiteContainer>
+      <EmptyBox height={10} />
+      <WhiteContainer>
+        <IconReport />
+        <PlusButton title="피부 리포트" isFrontImage={true} />
         <NextButton />
       </WhiteContainer>
     </Container>

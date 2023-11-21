@@ -54,6 +54,7 @@ const Info = ({ navigation }) => {
       <EmptyBox height={20} />
       <WhiteContainer>
         <IconAccount />
+        <EmptyBox height={14} />
         <PlusButton title="레포트" isFrontImage={true} />
         <NextButton />
       </WhiteContainer>

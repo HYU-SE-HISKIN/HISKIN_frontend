@@ -5,7 +5,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Input, Button, HyperLinkText, EmptyBox } from "../components";
-import { AppName_small, IconID, IconPW } from "../../assets/images";
+import { AppName_large, IconID, IconPW } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
@@ -52,7 +52,7 @@ const Login = ({ navigation }) => {
     >
       <Container>
         <EmptyBox height={193} />
-        <AppName_small style={{ width: 140, height: 50 }} />
+        <AppName_large />
         <SubtitleText>당신을 위한 피부 힐링</SubtitleText>
         <EmptyBox height={100} />
         <Input

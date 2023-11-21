@@ -20,6 +20,9 @@ import IconCareFilled from "../images/iconcare_filled.svg";
 import IconCommunityFilled from "../images/iconcommunity_filled.svg";
 import IconID from "../images/iconid.svg";
 import IconPW from "../images/iconpw.svg";
+import IconAccount from "../images/IconAccount.svg";
+import IconReport from "../images/IconReport.svg";
+import IconSetting from "../images/IconSetting.svg";
 import IconHuman from "../images/IconHuman.svg";
 import SkinTypeResultImage from "../images/skintyperesult.svg";
 import EditButton from "../images/editbutton.svg";
@@ -61,6 +64,9 @@ export {
   IconCommunityFilled,
   IconID,
   IconPW,
+  IconAccount,
+  IconSetting,
+  IconReport,
   IconHuman,
   SkinTypeResultImage,
   EditButton,

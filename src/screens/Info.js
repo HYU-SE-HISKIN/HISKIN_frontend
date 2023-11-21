@@ -1,37 +1,62 @@
 import React, { useState, useRef, useContext } from "react";
-import styled, { View, Text } from "styled-components/native";
+import styled from "styled-components/native";
+import { View } from "react-native";
 import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Input, Button, HyperLinkText } from "../components";
+import { EmptyBox, PlusButton } from "../components";
+import { AppName_small, NextButton, IconAccount } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
-  padding: 0 36px;
-  padding-top: 202.74px;
-  padding-bottom: 46px;
+  padding: 0 18px;
 `;
-const AppName = styled.Text`
-  font-family: "Calistoga - Regular";
-  font-size: 36px;
+const HorizonContainer = styled.View`
+  flex-direction: row;
+`;
+const TabName = styled.Text`
+  font-family: "LG Smart - Regular";
+  font-size: 14px;
   color: ${({ theme }) => theme.black};
-  margin-bottom: 7.74px;
+  align-self: flex-end;
+`;
+const TitleText = styled.Text`
+  font-family: "LG EI Text - SemiBold";
+  font-size: 18px;
+  color: ${({ theme }) => theme.black};
+  align-self: flex-start;
+`;
+const WhiteContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  background-color: ${({ theme }) => theme.white};
+  border-radius: 24px;
+  padding: 24px;
+  width: 354px;
+  height: 80px;
 `;
 
 const Info = ({ navigation }) => {
   return (
     <Container>
-      <AppName>HISKIN</AppName>
-      <Button
-        title="디바이스등록"
-        onPress={() => navigation.navigate("DeviceRegistration")}
-      />
-      <Button
-        title="피부타입 테스트"
-        onPress={() => navigation.navigate("SkinTypeTest")}
-      />
+      <EmptyBox height={64} />
+      <HorizonContainer>
+        <AppName_small />
+        <View>
+          <EmptyBox height={15} />
+          <TabName> myinfo</TabName>
+        </View>
+      </HorizonContainer>
+      <EmptyBox height={20} />
+      <TitleText>내 정보</TitleText>
+      <EmptyBox height={20} />
+      <WhiteContainer>
+        <IconAccount />
+        <PlusButton title="레포트" isFrontImage={true} />
+        <NextButton />
+      </WhiteContainer>
     </Container>
   );
 };

@@ -6,7 +6,7 @@ const Container = styled.TouchableOpacity`
   align-items: flex-start;
   justify-content: center;
   border-radius: 24px;
-  width: 282px;
+  width: ${(isFrontImage) => (isFrontImage ? 244 : 282)}px;
   height: 80px;
 `;
 const Title = styled.Text`
@@ -31,9 +31,14 @@ const PlusButton = ({
   subtitle,
   thirdtitle,
   onPress,
+  isFrontImage,
 }) => {
   return (
-    <Container style={containerStyle} onPress={onPress}>
+    <Container
+      style={containerStyle}
+      onPress={onPress}
+      isFrontImage={isFrontImage}
+    >
       {title && <Title>{title}</Title>}
       {subtitle && <SubTitle>{subtitle}</SubTitle>}
       {thirdtitle && <ThirdTitle>{thirdtitle}</ThirdTitle>}

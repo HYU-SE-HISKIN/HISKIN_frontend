@@ -6,6 +6,7 @@ import CheckBox from "./CheckBox";
 const WhiteContainer = styled.View`
   flex-direction: column;
   align-items: flex-start;
+  align-self: center;
   background-color: ${({ theme }) => theme.white};
   border-radius: 24px;
   padding: 19px;

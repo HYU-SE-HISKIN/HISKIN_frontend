@@ -1,11 +1,13 @@
 import React, { useState, useRef, useContext } from "react";
-import styled, { View, Text } from "styled-components/native";
+import styled from "styled-components/native";
+import { View } from "react-native";
 import { ScrollView } from "react-native";
 import { UserContext } from "../contexts/User";
 import axios from "axios";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PlusButton, ImageLinker, EmptyBox, CommunityBox } from "../components";
 import {
+  AppName_small,
   MyDevice,
   PlusButtonImage,
   NextButton,
@@ -16,7 +18,7 @@ import {
 
 const Container = styled.View`
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 18px;
   margin-top: 64px;
@@ -43,11 +45,11 @@ const WhiteContainer = styled.View`
   width: 354px;
   height: 80px;
 `;
-const AppName = styled.Text`
-  font-family: "Calistoga - Regular";
-  font-size: 24px;
+const TabName = styled.Text`
+  font-family: "LG Smart - Regular";
+  font-size: 14px;
   color: ${({ theme }) => theme.black};
-  align-self: flex-start;
+  align-self: flex-end;
 `;
 const TitleText = styled.Text`
   font-family: "LG EI Text - SemiBold";
@@ -60,7 +62,13 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView>
       <Container>
-        <AppName>HISKIN</AppName>
+        <HorizonContainer>
+          <AppName_small />
+          <View>
+            <EmptyBox height={15} />
+            <TabName> home</TabName>
+          </View>
+        </HorizonContainer>
         <EmptyBox height={8} />
         <TitleText>내 디바이스</TitleText>
         <EmptyBox height={10} />

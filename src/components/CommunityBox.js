@@ -69,6 +69,7 @@ const CommunityBox = ({
         </HorizonContainer>
         <EmptyBox height={6} />
         <Content>{content}</Content>
+        {image && <EmptyBox height={9} />}
         {image && <CommunityImage />}
         <EmptyBox height={6} />
         <HorizonContainer>

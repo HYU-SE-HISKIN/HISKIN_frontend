@@ -10,6 +10,7 @@ import EmptyBox from "./EmptyBox";
 import CommunityBox from "./CommunityBox";
 import CheckBox from "./CheckBox";
 import CheckBoxContainer from "./CheckBoxContainer";
+import Graph from "./Graph";
 
 export {
   Input,
@@ -24,4 +25,5 @@ export {
   CommunityBox,
   CheckBox,
   CheckBoxContainer,
+  Graph,
 };

@@ -69,21 +69,21 @@ const Challenge = () => {
         <EmptyBox height={10} />
         <CheckBoxContainer
           questionnumber="Q2. "
-          questioncontent="나는 오늘 피부 관리를 했다."
+          questioncontent="나는 오늘 수분 관리를 했다."
           setScore={setScore}
           score={score}
         />
         <EmptyBox height={10} />
         <CheckBoxContainer
           questionnumber="Q3. "
-          questioncontent="나는 오늘 피부 관리를 했다."
+          questioncontent="나는 오늘 스트레스 관리를 했다."
           setScore={setScore}
           score={score}
         />
         <EmptyBox height={10} />
         <CheckBoxContainer
           questionnumber="Q4. "
-          questioncontent="나는 오늘 피부 관리를 했다."
+          questioncontent="나는 오늘 음식 관리를 했다."
           setScore={setScore}
           score={score}
         />

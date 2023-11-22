@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
+    "@nivo/core": "^0.84.0",
+    "@nivo/line": "^0.84.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/netinfo": "9.3.10",
     "@react-navigation/bottom-tabs": "^6.5.9",

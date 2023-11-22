@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import axios from "axios";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { ResponsiveLine } from "@nivo/line";
 import { Text } from "react-native";
-import { Input, Button, EmptyBox } from "../components";
-import { Image } from "../components";
+import { EmptyBox, Graph } from "../components";
 
 const Container = styled.View`
   flex: 1;
@@ -17,6 +16,14 @@ const TitleText = styled.Text`
   font-size: 16px;
   color: ${({ theme }) => theme.black};
   align-self: flex-start;
+`;
+const WhiteContainer = styled.View`
+  align-items: center;
+  background-color: ${({ theme }) => theme.white};
+  border-radius: 24px;
+  padding: 24px;
+  width: 354px;
+  height: 283px;
 `;
 
 const SkinReport = ({ navigation }) => {
@@ -44,10 +51,14 @@ const SkinReport = ({ navigation }) => {
     return <Text>Loading...</Text>;
   }
   console.log(weekData);
+  //parameter :  data, unit, color, getTargetTime
   return (
     <Container>
       <EmptyBox height={24} />
       <TitleText>기간</TitleText>
+      <WhiteContainer>
+        <Graph data={[]} />
+      </WhiteContainer>
     </Container>
   );
 };

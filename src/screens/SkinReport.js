@@ -21,12 +21,13 @@ const WhiteContainer = styled.View`
   border-radius: 24px;
   padding: 24px;
   width: 354px;
-  height: 283px;
 `;
 
 const SkinReport = () => {
-  const [weekData, setWeekData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [weekData, setWeekData] = useState({});
+  const [threemonthData, setThreeMonthData] = useState({});
+  const [sixmonthData, setSixMonthData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +35,32 @@ const SkinReport = () => {
         const response = await axios.get(
           `http://13.125.247.87:8080/api/challenge-scores/week`
         );
-        setWeekData(response.data);
+        setWeekData({
+          labels: ["월", "화", "수", "목", "금", "토", "일"],
+          datasets: [{ data: response.data }],
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+      try {
+        const response = await axios.get(
+          `http://13.125.247.87:8080/api/my-page/three-months`
+        );
+        setThreeMonthData({
+          labels: ["8/15", "9/1", "9/15", "10/1", "10/15", "11/1", "11/15"],
+          datasets: [{ data: response.data }],
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+      try {
+        const response = await axios.get(
+          `http://13.125.247.87:8080/api/my-page/six-months`
+        );
+        setSixMonthData({
+          labels: ["5월", "6월", "7월", "8월", "9월", "10월", "11월"],
+          datasets: [{ data: response.data }],
+        });
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -44,17 +70,12 @@ const SkinReport = () => {
 
     fetchData();
   }, []);
-  const graphWeekData = {
-    labels: ["월", "화", "수", "목", "금", "토", "일"],
-    datasets: [{ data: weekData }],
-  };
 
   if (loading) {
     return <Loading />;
   }
   console.log(weekData);
 
-  //parameter :  data, unit, color, getTargetTime
   return (
     <Container>
       <EmptyBox height={24} />
@@ -63,7 +84,17 @@ const SkinReport = () => {
         <Graph
           text="지난 일주일 간
 김한주님의 피부 점수"
-          data={graphWeekData}
+          data={weekData}
+        />
+        <Graph
+          text="지난 일주일 간
+김한주님의 피부 점수"
+          data={threemonthData}
+        />
+        <Graph
+          text="지난 일주일 간
+김한주님의 피부 점수"
+          data={sixmonthData}
         />
       </WhiteContainer>
     </Container>

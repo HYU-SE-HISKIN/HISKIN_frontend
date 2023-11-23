@@ -40,6 +40,7 @@ import CareRoutine2 from "../images/CareRoutine2";
 import CareRoutine3 from "../images/CareRoutine3";
 import CheckBox_unchecked from "../images/checkbox_unchecked.svg";
 import CheckBox_checked from "../images/checkbox_checked.svg";
+import Device_Registration from "../images/DeviceRegistration.svg";
 
 export {
   WelcomeLayer1,
@@ -84,4 +85,5 @@ export {
   CareRoutine3,
   CheckBox_unchecked,
   CheckBox_checked,
+  Device_Registration,
 };

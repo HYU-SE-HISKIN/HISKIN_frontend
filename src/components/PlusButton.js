@@ -6,7 +6,7 @@ const Container = styled.TouchableOpacity`
   align-items: flex-start;
   justify-content: center;
   border-radius: 24px;
-  width: ${(isFrontImage) => (isFrontImage ? 244 : 282)}px;
+  width: ${(isFrontImage) => (isFrontImage ? 253 : 278)}px;
   height: 80px;
 `;
 const Title = styled.Text`

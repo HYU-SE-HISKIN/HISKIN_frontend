@@ -11,6 +11,7 @@ import CommunityBox from "./CommunityBox";
 import CheckBox from "./CheckBox";
 import CheckBoxContainer from "./CheckBoxContainer";
 import Graph from "./Graph";
+import Loading from "./Loading";
 
 export {
   Input,
@@ -26,4 +27,5 @@ export {
   CheckBox,
   CheckBoxContainer,
   Graph,
+  Loading,
 };

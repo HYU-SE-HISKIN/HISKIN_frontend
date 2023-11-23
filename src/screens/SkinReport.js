@@ -16,6 +16,20 @@ const TitleText = styled.Text`
   color: ${({ theme }) => theme.black};
   align-self: flex-start;
 `;
+const DateText = styled.Text`
+  font-family: "LG EI Text - Regular";
+  font-size: 14px;
+  color: ${({ theme }) => theme.black};
+  align-self: flex-start;
+  margin-bottom: 16px;
+`;
+const ScoreText = styled.Text`
+  font-family: "LG EI Text - SemiBold";
+  font-size: 14px;
+  color: ${({ theme }) => theme.black};
+  align-self: flex-end;
+  margin-bottom: 16px;
+`;
 const WhiteContainer = styled.View`
   align-items: center;
   background-color: ${({ theme }) => theme.white};
@@ -26,7 +40,6 @@ const WhiteContainer = styled.View`
 `;
 const HorizonContainer = styled.View`
   flex-direction: row;
-  :flex-start ;
 `;
 
 const SkinReport = () => {
@@ -55,7 +68,7 @@ const SkinReport = () => {
           `http://13.125.247.87:8080/api/my-page/three-months`
         );
         setThreeMonthData({
-          labels: ["8/15", "9/1", "9/15", "10/1", "10/15", "11/1", "11/15"],
+          labels: ["09/01", "09/15", "10/01", "10/15", "11/01", "11/15"],
           datasets: [{ data: response.data }],
         });
       } catch (error) {
@@ -67,7 +80,7 @@ const SkinReport = () => {
           `http://13.125.247.87:8080/api/my-page/six-months`
         );
         setSixMonthData({
-          labels: ["5월", "6월", "7월", "8월", "9월", "10월", "11월"],
+          labels: ["06월", "07월", "08월", "09월", "10월", "11월"],
           datasets: [{ data: response.data }],
         });
         setLoading(false);
@@ -95,30 +108,65 @@ const SkinReport = () => {
                 data={weekData}
               />
             </WhiteContainer>
+            <EmptyBox height={22} />
+            <TitleText>기록</TitleText>
+            <EmptyBox height={16} />
             {weekData.labels.map((label, index) => (
-              <TitleText key={index}>
-                {label}: {weekData.datasets[0].data[index]}
-              </TitleText>
+              <HorizonContainer>
+                <DateText key={index}>
+                  {label}요일 . . . . . . . . . . . . . . . . . . . . . . . . .
+                  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                </DateText>
+                <ScoreText>{weekData.datasets[0].data[index]}</ScoreText>
+              </HorizonContainer>
             ))}
           </View>
         );
       case "threemonth":
         return (
-          <WhiteContainer>
-            <Graph
-              text="지난 3개월 간 김한주님의 피부 점수"
-              data={threemonthData}
-            />
-          </WhiteContainer>
+          <View>
+            <WhiteContainer>
+              <Graph
+                text="지난 3개월 간 김한주님의 피부 점수"
+                data={threemonthData}
+              />
+            </WhiteContainer>
+            <EmptyBox height={22} />
+            <TitleText>기록</TitleText>
+            <EmptyBox height={16} />
+            {threemonthData.labels.map((label, index) => (
+              <HorizonContainer>
+                <DateText key={index}>
+                  {label} . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                  . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                </DateText>
+                <ScoreText>{threemonthData.datasets[0].data[index]}</ScoreText>
+              </HorizonContainer>
+            ))}
+          </View>
         );
       case "sixmonth":
         return (
-          <WhiteContainer>
-            <Graph
-              text="지난 6개월 간 김한주님의 피부 점수"
-              data={sixmonthData}
-            />
-          </WhiteContainer>
+          <View>
+            <WhiteContainer>
+              <Graph
+                text="지난 6개월 간 김한주님의 피부 점수"
+                data={sixmonthData}
+              />
+            </WhiteContainer>
+            <EmptyBox height={22} />
+            <TitleText>기록</TitleText>
+            <EmptyBox height={16} />
+            {sixmonthData.labels.map((label, index) => (
+              <HorizonContainer>
+                <DateText key={index}>
+                  {label} . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                  . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                </DateText>
+                <ScoreText>{sixmonthData.datasets[0].data[index]}</ScoreText>
+              </HorizonContainer>
+            ))}
+          </View>
         );
       default:
         return null;

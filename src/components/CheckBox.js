@@ -27,17 +27,22 @@ const CheckBox = ({
   const isChecked = checkedValue === value;
 
   const handlePress = () => {
-    // 체크박스가 아직 터치되지 않았거나 이미 체크된 경우 상태를 업데이트합니다.
-    if (!touchedValue || !isChecked) {
+    // 체크박스가 아직 터치되지 않았거나 아직 체크가 안된 경우 상태를 업데이트합니다.
+    if (!touchedValue || touchedValue !== value) {
+      const newIsChecked = touchedValue === value;
+      if (touchedValue !== null && !newIsChecked) {
+        // 이전에 터치된 체크박스가 있다면 그에 해당하는 점수를 빼줍니다.
+        setScore((prevScore) => prevScore - touchedValue * 5);
+      }
       setTouchedValue(value);
       setCheckedValue(value);
-      setScore(score + value * 5);
+      setScore((prevScore) => prevScore + value * 5);
     }
   };
 
   return (
     <Container onPress={handlePress} isChecked={isChecked} value>
-      {value == checkedValue ? <CheckBox_checked /> : <CheckBox_unchecked />}
+      {isChecked ? <CheckBox_checked /> : <CheckBox_unchecked />}
       <Title isChecked={isChecked}>{title}</Title>
     </Container>
   );

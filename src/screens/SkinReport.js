@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import axios from "axios";
-import { ResponsiveLine } from "@nivo/line";
-import { Text } from "react-native";
-import { EmptyBox, Graph } from "../components";
+import { EmptyBox, Graph, Loading } from "../components";
 
 const Container = styled.View`
   flex: 1;
@@ -26,7 +24,7 @@ const WhiteContainer = styled.View`
   height: 283px;
 `;
 
-const SkinReport = ({ navigation }) => {
+const SkinReport = () => {
   const [weekData, setWeekData] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -46,17 +44,28 @@ const SkinReport = ({ navigation }) => {
 
     fetchData();
   }, []);
+  const graphWeekData = {
+    labels: ["월", "화", "수", "목", "금", "토", "일"],
+    datasets: [{ data: weekData }],
+  };
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <Loading />;
   }
   console.log(weekData);
+
   //parameter :  data, unit, color, getTargetTime
   return (
     <Container>
       <EmptyBox height={24} />
       <TitleText>기간</TitleText>
-      <WhiteContainer></WhiteContainer>
+      <WhiteContainer>
+        <Graph
+          text="지난 일주일 간
+김한주님의 피부 점수"
+          data={graphWeekData}
+        />
+      </WhiteContainer>
     </Container>
   );
 };

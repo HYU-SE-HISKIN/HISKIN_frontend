@@ -34,9 +34,6 @@ const Score = styled.Text`
   align-self: center;
   color: ${({ theme }) => theme.red};
 `;
-const StyledCircularProgress = styled(AnimatedCircularProgress)`
-  align-self: center;
-`;
 
 const Challenge = () => {
   const [score, setScore] = useState(0);
@@ -75,14 +72,24 @@ const Challenge = () => {
           </View>
         </HorizonContainer>
         <EmptyBox height={32} />
-        <StyledCircularProgress width={10} size={227} rotation={0} fill={score}>
+        <AnimatedCircularProgress
+          width={7}
+          size={227}
+          rotation={0}
+          fill={score}
+          lineCap="round"
+          tintColor="#EA4335"
+          backgroundColor="#E9E6DA"
+          prefill={60}
+          style={{ alignSelf: "center" }}
+        >
           {(fill) => (
             <View>
               <ScoreText>오늘의 피부 점수</ScoreText>
               <Score>{score}</Score>
             </View>
           )}
-        </StyledCircularProgress>
+        </AnimatedCircularProgress>
         <EmptyBox height={26} />
         <CheckBoxContainer
           questionnumber="Q1. "

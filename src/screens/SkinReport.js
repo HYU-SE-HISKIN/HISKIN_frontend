@@ -56,9 +56,7 @@ const SkinReport = ({ navigation }) => {
     <Container>
       <EmptyBox height={24} />
       <TitleText>기간</TitleText>
-      <WhiteContainer>
-        <Graph data={[]} />
-      </WhiteContainer>
+      <WhiteContainer></WhiteContainer>
     </Container>
   );
 };

@@ -1,8 +1,9 @@
 import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import { View, ScrollView } from "react-native";
+import axios from "axios";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import { CheckBoxContainer, EmptyBox } from "../components";
+import { Button, CheckBoxContainer, EmptyBox } from "../components";
 import { AppName_small } from "../../assets/images";
 
 const Container = styled.View`
@@ -39,6 +40,29 @@ const StyledCircularProgress = styled(AnimatedCircularProgress)`
 
 const Challenge = () => {
   const [score, setScore] = useState(0);
+  const [q1, setQ1] = useState(1);
+  const [q2, setQ2] = useState(1);
+  const [q3, setQ3] = useState(1);
+  const [q4, setQ4] = useState(1);
+
+  const _handleSubmit = () => {
+    const data = { question1: q1, question2: q2, question3: q3, question4: q4 };
+    console.log(data);
+
+    axios({
+      method: "post",
+      url: `http://13.125.247.87:8080/api/challenge`,
+      data: data,
+      withCredentials: true,
+    })
+      .then(function a(response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log("Axios Error:", error);
+        console.log("Network Error:", error.response); // Log the network error
+      });
+  };
 
   return (
     <ScrollView>
@@ -65,6 +89,7 @@ const Challenge = () => {
           questioncontent="나는 오늘 피부 관리를 했다."
           setScore={setScore}
           score={score}
+          submit={setQ1}
         />
         <EmptyBox height={10} />
         <CheckBoxContainer
@@ -72,6 +97,7 @@ const Challenge = () => {
           questioncontent="나는 오늘 수분 관리를 했다."
           setScore={setScore}
           score={score}
+          submit={setQ2}
         />
         <EmptyBox height={10} />
         <CheckBoxContainer
@@ -79,6 +105,7 @@ const Challenge = () => {
           questioncontent="나는 오늘 스트레스 관리를 했다."
           setScore={setScore}
           score={score}
+          submit={setQ3}
         />
         <EmptyBox height={10} />
         <CheckBoxContainer
@@ -86,8 +113,12 @@ const Challenge = () => {
           questioncontent="나는 오늘 음식 관리를 했다."
           setScore={setScore}
           score={score}
+          submit={setQ4}
         />
       </Container>
+      <View style={{ alignItems: "center" }}>
+        <Button title="저장" onPress={_handleSubmit} />
+      </View>
     </ScrollView>
   );
 };

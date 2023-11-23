@@ -37,9 +37,12 @@ const CheckBoxContainer = ({
   questioncontent,
   setScore,
   score,
+  submit,
 }) => {
   const [touchedValue, setTouchedValue] = useState(null);
   const [checkedValue, setCheckedValue] = useState(null);
+
+  submit(checkedValue);
 
   return (
     <WhiteContainer>

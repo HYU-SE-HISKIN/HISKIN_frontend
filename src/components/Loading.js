@@ -26,7 +26,7 @@ const SubTitle = styled.Text`
   color: ${({ theme }) => theme.grey_0};
 `;
 
-const Loading = (title, subtitle) => {
+const Loading = ({ title, subtitle }) => {
   return (
     <Container>
       <IvoryContainer>
@@ -36,3 +36,5 @@ const Loading = (title, subtitle) => {
     </Container>
   );
 };
+
+export default Loading;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
+import { View } from "react-native";
 import axios from "axios";
 import { EmptyBox, Graph, Loading, OptionButton } from "../components";
 
@@ -87,21 +88,37 @@ const SkinReport = () => {
     switch (selectedDuration) {
       case "week":
         return (
-          <Graph text="지난 일주일 간 김한주님의 피부 점수" data={weekData} />
+          <View>
+            <WhiteContainer>
+              <Graph
+                text="지난 일주일 간 김한주님의 피부 점수"
+                data={weekData}
+              />
+            </WhiteContainer>
+            {weekData.labels.map((label, index) => (
+              <TitleText key={index}>
+                {label}: {weekData.datasets[0].data[index]}
+              </TitleText>
+            ))}
+          </View>
         );
       case "threemonth":
         return (
-          <Graph
-            text="지난 3개월 간 김한주님의 피부 점수"
-            data={threemonthData}
-          />
+          <WhiteContainer>
+            <Graph
+              text="지난 3개월 간 김한주님의 피부 점수"
+              data={threemonthData}
+            />
+          </WhiteContainer>
         );
       case "sixmonth":
         return (
-          <Graph
-            text="지난 6개월 간 김한주님의 피부 점수"
-            data={sixmonthData}
-          />
+          <WhiteContainer>
+            <Graph
+              text="지난 6개월 간 김한주님의 피부 점수"
+              data={sixmonthData}
+            />
+          </WhiteContainer>
         );
       default:
         return null;
@@ -128,7 +145,7 @@ const SkinReport = () => {
         />
       </HorizonContainer>
       <EmptyBox height={16} />
-      <WhiteContainer>{renderGraph()}</WhiteContainer>
+      {renderGraph()}
     </Container>
   );
 };

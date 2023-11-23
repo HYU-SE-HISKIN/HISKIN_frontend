@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import {
   DeviceRegistration,
   Challenge,
+  Care,
   SkinTypeTest,
   SkinTypeResult,
   Cosmetics,
@@ -51,6 +52,14 @@ const MainStack = () => {
         options={{
           headerBackTitleVisible: false,
           title: "새로운 디바이스 등록",
+        }}
+      />
+      <Stack.Screen
+        name="Care"
+        component={Care}
+        options={{
+          headerBackTitleVisible: false,
+          title: "케어",
         }}
       />
       <Stack.Screen

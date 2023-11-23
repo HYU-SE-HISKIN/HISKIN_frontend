@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components/native";
+import { View } from "react-native";
 import { Device_Registration } from "../../assets/images";
-import { EmptyBox, Loading } from "../components";
+import { Button, EmptyBox, Loading } from "../components";
 
 const Container = styled.View`
   align-items: center;
@@ -40,11 +41,15 @@ const DeviceRegistration = ({ navigation }) => {
           subtitle="디바이스에 스마트폰을 가까이 해주세요"
         />
       ) : (
-        <IvoryContainer>
-          <Device_Registration />
-          <EmptyBox height={23} />
-          <SubTitle>디바이스를 발견했습니다</SubTitle>
-        </IvoryContainer>
+        <View style={{ alignItems: "center" }}>
+          <IvoryContainer>
+            <Device_Registration />
+            <EmptyBox height={23} />
+            <SubTitle>디바이스를 발견했습니다</SubTitle>
+          </IvoryContainer>
+          <EmptyBox height={40} />
+          <Button title="등록" onPress={() => navigation.navigate("Main")} />
+        </View>
       )}
     </Container>
   );

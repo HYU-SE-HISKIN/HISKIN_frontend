@@ -59,6 +59,8 @@ const TitleText = styled.Text`
 `;
 
 const Home = ({ navigation }) => {
+  const [isDevice, setIsDevice] = useState(false);
+
   return (
     <ScrollView>
       <Container>
@@ -72,13 +74,24 @@ const Home = ({ navigation }) => {
         <EmptyBox height={8} />
         <TitleText>내 디바이스</TitleText>
         <EmptyBox height={10} />
-        <MyDevice />
+        {isDevice ? (
+          <ImageLinker
+            svgComponent={<MyDevice />}
+            onPress={() => navigation.navigate("Care")}
+          />
+        ) : (
+          <EmptyBox height={0} />
+        )}
+
         <EmptyBox height={9} />
         <IvoryContainer>
           <PlusButton
             title="새로운 디바이스 등록"
             subtitle="다른 사용자별 기기 등록"
-            onPress={() => navigation.navigate("DeviceRegistration")}
+            onPress={() => {
+              navigation.navigate("DeviceRegistration");
+              setIsDevice(true);
+            }}
           />
           <PlusButtonImage />
         </IvoryContainer>

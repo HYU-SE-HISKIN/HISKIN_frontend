@@ -12,6 +12,7 @@ import CheckBox from "./CheckBox";
 import CheckBoxContainer from "./CheckBoxContainer";
 import Graph from "./Graph";
 import Loading from "./Loading";
+import OptionButton from "./OptionButton";
 
 export {
   Input,
@@ -28,4 +29,5 @@ export {
   CheckBoxContainer,
   Graph,
   Loading,
+  OptionButton,
 };

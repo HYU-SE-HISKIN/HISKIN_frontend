@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import axios from "axios";
-import { EmptyBox, Graph, Loading } from "../components";
+import { EmptyBox, Graph, Loading, OptionButton } from "../components";
 
 const Container = styled.View`
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 20px;
 `;
@@ -21,10 +21,16 @@ const WhiteContainer = styled.View`
   border-radius: 24px;
   padding: 24px;
   width: 354px;
+  height: 283px;
+`;
+const HorizonContainer = styled.View`
+  flex-direction: row;
+  :flex-start ;
 `;
 
 const SkinReport = () => {
   const [loading, setLoading] = useState(true);
+  const [selectedDuration, setSelectedDuration] = useState("week");
   const [weekData, setWeekData] = useState({});
   const [threemonthData, setThreeMonthData] = useState({});
   const [sixmonthData, setSixMonthData] = useState({});
@@ -42,6 +48,7 @@ const SkinReport = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+
       try {
         const response = await axios.get(
           `http://13.125.247.87:8080/api/my-page/three-months`
@@ -53,6 +60,7 @@ const SkinReport = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+
       try {
         const response = await axios.get(
           `http://13.125.247.87:8080/api/my-page/six-months`
@@ -74,29 +82,53 @@ const SkinReport = () => {
   if (loading) {
     return <Loading />;
   }
-  console.log(weekData);
+
+  const renderGraph = () => {
+    switch (selectedDuration) {
+      case "week":
+        return (
+          <Graph text="지난 일주일 간 김한주님의 피부 점수" data={weekData} />
+        );
+      case "threemonth":
+        return (
+          <Graph
+            text="지난 3개월 간 김한주님의 피부 점수"
+            data={threemonthData}
+          />
+        );
+      case "sixmonth":
+        return (
+          <Graph
+            text="지난 6개월 간 김한주님의 피부 점수"
+            data={sixmonthData}
+          />
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <Container>
       <EmptyBox height={24} />
       <TitleText>기간</TitleText>
-      <WhiteContainer>
-        <Graph
-          text="지난 일주일 간
-김한주님의 피부 점수"
-          data={weekData}
+      <EmptyBox height={8} />
+      <HorizonContainer>
+        <OptionButton
+          title="일주일"
+          onPress={() => setSelectedDuration("week")}
         />
-        <Graph
-          text="지난 일주일 간
-김한주님의 피부 점수"
-          data={threemonthData}
+        <OptionButton
+          title="3개월"
+          onPress={() => setSelectedDuration("threemonth")}
         />
-        <Graph
-          text="지난 일주일 간
-김한주님의 피부 점수"
-          data={sixmonthData}
+        <OptionButton
+          title="6개월"
+          onPress={() => setSelectedDuration("sixmonth")}
         />
-      </WhiteContainer>
+      </HorizonContainer>
+      <EmptyBox height={16} />
+      <WhiteContainer>{renderGraph()}</WhiteContainer>
     </Container>
   );
 };

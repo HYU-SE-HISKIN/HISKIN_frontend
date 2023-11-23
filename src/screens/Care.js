@@ -10,13 +10,14 @@ import {
   HyperLinkText,
   EmptyBox,
   ImageLinker,
+  PlusButton,
 } from "../components";
 import {
   AppName_small,
-  CareMain,
-  CareRoutine1,
-  CareRoutine2,
-  CareRoutine3,
+  Dermathera_large,
+  Intensive_large,
+  Essential_large,
+  NextButton,
 } from "../../assets/images";
 
 const Container = styled.View`
@@ -26,33 +27,29 @@ const Container = styled.View`
   padding: 0 18px;
   padding-top: 64px;
 `;
-const HorizonContainer = styled.View`
-  flex-direction: row;
-`;
-const WhiteContainer = styled.View`
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: ${({ theme }) => theme.white};
-  border-radius: 24px;
-  padding: 24px;
-  width: 354px;
-  height: 86px;
-`;
 const TabName = styled.Text`
   font-family: "LG Smart - Regular";
   font-size: 14px;
   color: ${({ theme }) => theme.black};
   align-self: flex-end;
 `;
-const Title = styled.Text`
-  font-family: "LG EI Text - SemiBold";
-  font-size: 16px;
-  color: ${({ theme }) => theme.black};
+const HorizonContainer = styled.View`
+  flex-direction: row;
 `;
-const SubTitle = styled.Text`
-  font-family: "LG EI Text - Regular";
-  font-size: 14px;
-  color: ${({ theme }) => theme.grey_2};
+const WhiteContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  background-color: ${({ theme }) => theme.white};
+  border-radius: 24px;
+  width: 354px;
+  height: 72px;
+  padding: 12px;
+`;
+const TitleText = styled.Text`
+  font-family: "LG EI Text - SemiBold";
+  font-size: 18px;
+  color: ${({ theme }) => theme.black};
+  align-self: flex-start;
 `;
 
 const Care = ({ navigation }) => {
@@ -66,30 +63,37 @@ const Care = ({ navigation }) => {
         </View>
       </HorizonContainer>
       <EmptyBox height={8} />
+      <TitleText>연결된 디바이스</TitleText>
+      <EmptyBox height={15} />
       <WhiteContainer>
-        <Title>Pra.L 프라엘 케어</Title>
-        <SubTitle>다양한 케어를 직접 경험하세요</SubTitle>
+        <Dermathera_large />
+        <PlusButton
+          title="LG Pra.L 더마쎄라 BLQ1"
+          subtitle="5시간 전 사용"
+          isFrontImage={true}
+        />
+        <NextButton />
       </WhiteContainer>
       <EmptyBox height={12} />
-      <ImageLinker
-        svgComponent={<CareMain />}
-        onPress={() => navigation.navigate("Cosmetics")}
-      />
-      <EmptyBox height={18} />
-      <HorizonContainer>
-        <ImageLinker
-          svgComponent={<CareRoutine1 />}
-          onPress={() => navigation.navigate("Cosmetics")}
+      <WhiteContainer>
+        <Intensive_large />
+        <PlusButton
+          title="인텐시브 멀티케어 BLP1"
+          subtitle="2일 전 사용"
+          isFrontImage={true}
         />
-        <ImageLinker
-          svgComponent={<CareRoutine2 />}
-          onPress={() => navigation.navigate("Cosmetics")}
+        <NextButton />
+      </WhiteContainer>
+      <EmptyBox height={12} />
+      <WhiteContainer>
+        <Essential_large />
+        <PlusButton
+          title="에센셜 부스터 BBP1"
+          subtitle="3일 전 사용"
+          isFrontImage={true}
         />
-        <ImageLinker
-          svgComponent={<CareRoutine3 />}
-          onPress={() => navigation.navigate("Cosmetics")}
-        />
-      </HorizonContainer>
+        <NextButton />
+      </WhiteContainer>
     </Container>
   );
 };

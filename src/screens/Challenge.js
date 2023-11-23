@@ -78,8 +78,8 @@ const Challenge = () => {
           rotation={0}
           fill={score}
           lineCap="round"
-          tintColor="#EA4335"
-          backgroundColor="#E9E6DA"
+          tintColor="#EA4335" //theme.red
+          backgroundColor="#E9E6DA" //theme.ivory_1
           prefill={60}
           style={{ alignSelf: "center" }}
         >

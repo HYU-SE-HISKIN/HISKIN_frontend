@@ -9,22 +9,21 @@ const Graph = ({ text, data }) => {
       <Text>{text}</Text>
       <LineChart
         data={data}
-        width={300}
-        height={200}
-        yAxisLabel="Count"
+        width={317}
+        height={180}
         yAxisInterval={25}
         chartConfig={{
-          backgroundGradientFrom: "#fff",
-          backgroundGradientTo: "#fff",
+          backgroundGradientFrom: `rgba(255, 255, 255, 0)`,
+          backgroundGradientTo: `rgba(255, 255, 255, 0)`,
           color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-          labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
           propsForDots: {
-            r: "5",
+            r: "4",
             strokeWidth: "1.85",
-            stroke: { color: theme.red },
           },
+          decimalPlaces: 0,
         }}
-        bezier
+        withVerticalLines
+        fromZero
         style={{
           marginVertical: 8,
           borderRadius: 16,

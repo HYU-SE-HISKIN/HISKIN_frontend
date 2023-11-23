@@ -34,13 +34,12 @@ import CommunityImage from "../images/communityimage.svg";
 import Cosmetic1 from "../images/cosmetic1.svg";
 import Cosmetic2 from "../images/cosmetic2.svg";
 import Cosmetic3 from "../images/cosmetic3.svg";
-import CareMain from "../images/CareMain.svg";
-import CareRoutine1 from "../images/CareRoutine1";
-import CareRoutine2 from "../images/CareRoutine2";
-import CareRoutine3 from "../images/CareRoutine3";
 import CheckBox_unchecked from "../images/checkbox_unchecked.svg";
 import CheckBox_checked from "../images/checkbox_checked.svg";
 import Device_Registration from "../images/DeviceRegistration.svg";
+import Dermathera_large from "../images/Dermathera_large.svg";
+import Intensive_large from "../images/Intensive_large.svg";
+import Essential_large from "../images/Essential_large.svg";
 
 export {
   WelcomeLayer1,
@@ -79,11 +78,10 @@ export {
   Cosmetic1,
   Cosmetic2,
   Cosmetic3,
-  CareMain,
-  CareRoutine1,
-  CareRoutine2,
-  CareRoutine3,
   CheckBox_unchecked,
   CheckBox_checked,
   Device_Registration,
+  Dermathera_large,
+  Intensive_large,
+  Essential_large,
 };

@@ -38,7 +38,8 @@ const CheckBoxContainer = ({
   setScore,
   score,
 }) => {
-  const [selectedValue, setSelectedValue] = useState(null);
+  const [touchedValue, setTouchedValue] = useState(null);
+  const [checkedValue, setCheckedValue] = useState(null);
 
   return (
     <WhiteContainer>
@@ -52,40 +53,50 @@ const CheckBoxContainer = ({
           value={1}
           setScore={setScore}
           score={score}
-          setSelectedValue={setSelectedValue}
-          selectedValue={selectedValue}
+          setTouchedValue={setTouchedValue}
+          touchedValue={touchedValue}
+          setCheckedValue={setCheckedValue}
+          checkedValue={checkedValue}
         />
         <CheckBox
           title="못함"
           value={2}
           setScore={setScore}
           score={score}
-          setSelectedValue={setSelectedValue}
-          selectedValue={selectedValue}
+          setTouchedValue={setTouchedValue}
+          touchedValue={touchedValue}
+          setCheckedValue={setCheckedValue}
+          checkedValue={checkedValue}
         />
         <CheckBox
           title="보통"
           value={3}
           setScore={setScore}
           score={score}
-          setSelectedValue={setSelectedValue}
-          selectedValue={selectedValue}
+          setTouchedValue={setTouchedValue}
+          touchedValue={touchedValue}
+          setCheckedValue={setCheckedValue}
+          checkedValue={checkedValue}
         />
         <CheckBox
           title="잘함"
           value={4}
           setScore={setScore}
           score={score}
-          setSelectedValue={setSelectedValue}
-          selectedValue={selectedValue}
+          setTouchedValue={setTouchedValue}
+          touchedValue={touchedValue}
+          setCheckedValue={setCheckedValue}
+          checkedValue={checkedValue}
         />
         <CheckBox
           title="매우 잘함"
           value={5}
           setScore={setScore}
           score={score}
-          setSelectedValue={setSelectedValue}
-          selectedValue={selectedValue}
+          setTouchedValue={setTouchedValue}
+          touchedValue={touchedValue}
+          setCheckedValue={setCheckedValue}
+          checkedValue={checkedValue}
         />
       </HorizonContainer_check>
     </WhiteContainer>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
 import { CheckBox_checked, CheckBox_unchecked } from "../../assets/images";
@@ -14,27 +14,30 @@ const Title = styled.Text`
   color: ${({ theme }) => theme.black};
 `;
 
-const CheckBox = ({ title, value, setScore, score, setSelectedValue }) => {
-  const [isChecked, setIsChecked] = useState(false);
+const CheckBox = ({
+  title,
+  value,
+  setScore,
+  score,
+  touchedValue,
+  setTouchedValue,
+  checkedValue,
+  setCheckedValue,
+}) => {
+  const isChecked = checkedValue === value;
 
   const handlePress = () => {
-    setSelectedValue(value);
-    setIsChecked(setSelectedValue === value || !isChecked);
-    //처음 3 클릭 : selectedValue==3 value=3 isChecked==false->true <checked>
-    //옆에 4 클릭 : selectedValue==4 value=4 isChecked==fasle->true <checked>
-    ////그때 3은 : selectedValue==4 value=3 isChecked==true->false <unchecked>
-    //다시 4 클릭 : selectedValue==4 value=4 isChecked==true->false <unchecked>
-    //다시 4 클릭 : selectedValue==4 value=4 isChecked==false->true <checked>
-    if (isChecked) {
-      setScore(score - value * 5);
-    } else {
+    // 체크박스가 아직 터치되지 않았거나 이미 체크된 경우 상태를 업데이트합니다.
+    if (!touchedValue || !isChecked) {
+      setTouchedValue(value);
+      setCheckedValue(value);
       setScore(score + value * 5);
     }
   };
 
   return (
     <Container onPress={handlePress} isChecked={isChecked} value>
-      {isChecked ? <CheckBox_checked /> : <CheckBox_unchecked />}
+      {value == checkedValue ? <CheckBox_checked /> : <CheckBox_unchecked />}
       <Title isChecked={isChecked}>{title}</Title>
     </Container>
   );

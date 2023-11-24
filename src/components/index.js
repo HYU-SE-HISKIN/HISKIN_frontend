@@ -13,6 +13,7 @@ import CheckBoxContainer from "./CheckBoxContainer";
 import Graph from "./Graph";
 import Loading from "./Loading";
 import OptionButton from "./OptionButton";
+import WhiteContainer from "./WhiteContainer";
 
 export {
   Input,
@@ -30,4 +31,5 @@ export {
   Graph,
   Loading,
   OptionButton,
+  WhiteContainer,
 };

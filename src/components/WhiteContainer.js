@@ -6,13 +6,18 @@ const Box = styled.View`
   background-color: ${({ theme }) => theme.white_1};
   border-radius: ${({ borderRadius }) => borderRadius}px;
   padding: ${({ padding }) => padding || 24}px;
-  width: 354px;
+  width: ${({ width }) => width || 354}px;
   height: ${({ height }) => height}px;
 `;
 
-const WhiteContainer = ({ height, borderRadius, padding, children }) => {
+const WhiteContainer = ({ width, height, borderRadius, padding, children }) => {
   return (
-    <Box height={height} borderRadius={borderRadius} padding={padding}>
+    <Box
+      width={width}
+      height={height}
+      borderRadius={borderRadius}
+      padding={padding}
+    >
       {children}
     </Box>
   );

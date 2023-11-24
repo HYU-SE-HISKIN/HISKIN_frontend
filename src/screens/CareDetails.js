@@ -8,22 +8,31 @@ const Container = styled.View`
   flex: 1;
   align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
-  padding: 0 18px;
+  padding: 0 28px;
+  margin-top: 7px;
+`;
+const TitleText = styled.Text`
+  font-family: "LG EI Text - SemiBold";
+  font-size: 18px;
+  color: ${({ theme }) => theme.black};
+  align-self: flex-start;
 `;
 
 const CareDetails = ({ route, navigation }) => {
   const { buttonName } = route.params;
-  const name = buttonName.split(" ").slice(-2, -1)[0];
+  const name = buttonName.split(" ").slice(-2, -1)[0] + " 케어 루틴  ";
 
   return (
     <Container>
-      <WhiteContainer height={80} borderRadius={24}>
-        <PlusButton title={name + " 케어 루틴  1"} />
+      <TitleText>케어</TitleText>
+      <EmptyBox height={15} />
+      <WhiteContainer width={334} height={80} borderRadius={24}>
+        <PlusButton title={name + "1"} />
         <NextButton />
       </WhiteContainer>
       <EmptyBox height={10} />
-      <WhiteContainer height={80} borderRadius={24}>
-        <PlusButton title={name + " 케어 루틴  2"} />
+      <WhiteContainer width={334} height={80} borderRadius={24}>
+        <PlusButton title={name + "2"} />
         <NextButton />
       </WhiteContainer>
     </Container>

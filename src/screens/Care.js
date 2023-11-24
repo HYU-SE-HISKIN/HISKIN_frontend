@@ -62,6 +62,9 @@ const Care = ({ navigation }) => {
           title="LG Pra.L 더마쎄라 BLQ1"
           subtitle="5시간 전 사용"
           isFrontImage={true}
+          onPress={() =>
+            navigation.navigate("CareDetails", "LG Pra.L 더마쎄라 BLQ1")
+          }
         />
         <NextButton />
       </WhiteContainer>
@@ -72,6 +75,9 @@ const Care = ({ navigation }) => {
           title="인텐시브 멀티케어 BLP1"
           subtitle="2일 전 사용"
           isFrontImage={true}
+          onPress={() =>
+            navigation.navigate("CareDetails", "인텐시브 멀티케어 BLP1")
+          }
         />
         <NextButton />
       </WhiteContainer>
@@ -82,6 +88,9 @@ const Care = ({ navigation }) => {
           title="에센셜 부스터 BBP1"
           subtitle="3일 전 사용"
           isFrontImage={true}
+          onPress={() =>
+            navigation.navigate("CareDetails", "에센셜 부스터 BBP1")
+          }
         />
         <NextButton />
       </WhiteContainer>

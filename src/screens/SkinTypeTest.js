@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import axios from "axios";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Text } from "react-native";
 import { Button, ChoiceContainer, EmptyBox } from "../components";
 import { skinTypeQuestions } from "../utils/skinTypeQuestions";
 

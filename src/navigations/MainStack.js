@@ -10,6 +10,7 @@ import {
   Cosmetics,
   SkinReport,
   CareDetails,
+  InteractiveCare,
 } from "../screens";
 import MainTab from "./MainTab";
 
@@ -29,7 +30,7 @@ const MainStack = () => {
           shadowColor: theme.ivory_0,
         },
         headerTitleStyle: {
-          fontFamily: "LG Smart - Bold Italic",
+          fontFamily: "LG Smart - Bold",
           fontSize: 18,
         },
         cardStyle: { backgroundColor: theme.ivory_0 },
@@ -92,6 +93,14 @@ const MainStack = () => {
         options={({ route }) => ({
           headerBackTitleVisible: false,
           title: route.params?.buttonName || "피부 루틴",
+        })}
+      />
+      <Stack.Screen
+        name="InteractiveCare"
+        component={InteractiveCare}
+        options={({ route }) => ({
+          headerBackTitleVisible: false,
+          title: route.params?.title || "피부 루틴",
         })}
       />
     </Stack.Navigator>

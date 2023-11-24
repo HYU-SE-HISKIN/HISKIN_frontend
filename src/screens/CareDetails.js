@@ -27,12 +27,26 @@ const CareDetails = ({ route, navigation }) => {
       <TitleText>케어</TitleText>
       <EmptyBox height={15} />
       <WhiteContainer width={334} height={80} borderRadius={24}>
-        <PlusButton title={name + "1"} />
+        <PlusButton
+          title={name + "1"}
+          onPress={() =>
+            navigation.navigate("InteractiveCare", {
+              title: name + "1",
+            })
+          }
+        />
         <NextButton />
       </WhiteContainer>
       <EmptyBox height={10} />
       <WhiteContainer width={334} height={80} borderRadius={24}>
-        <PlusButton title={name + "2"} />
+        <PlusButton
+          title={name + "2"}
+          onPress={() =>
+            navigation.navigate("InteractiveCare", {
+              title: name + "2",
+            })
+          }
+        />
         <NextButton />
       </WhiteContainer>
     </Container>

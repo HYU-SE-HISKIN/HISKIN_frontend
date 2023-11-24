@@ -12,6 +12,7 @@ import DeviceRegistration from "./DeviceRegistration";
 import Cosmetics from "./Cosmetics";
 import SkinReport from "./SkinReport";
 import CareDetails from "./CareDetails";
+import InteractiveCare from "./InteractiveCare";
 
 export {
   Care,
@@ -28,4 +29,5 @@ export {
   Cosmetics,
   SkinReport,
   CareDetails,
+  InteractiveCare,
 };

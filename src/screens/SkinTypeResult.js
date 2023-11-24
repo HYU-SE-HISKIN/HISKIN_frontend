@@ -16,7 +16,7 @@ const WhiteContainer = styled.View`
   align-items: center;
   background-color: ${({ theme }) => theme.white};
   border-radius: 16px;
-  padding: 39px 60px;
+  padding: 39px 24px;
   width: 354px;
 `;
 const Title = styled.Text`
@@ -56,12 +56,13 @@ const SkinTypeResult = ({ navigation, route }) => {
         <EmptyBox height={20} />
         <Result>{`${result}`}</Result>
         <EmptyBox height={22} />
-        <Title>단점보다 장점이 많고 관리하기 쉬운 메추리알 피부</Title>
+        <Title>단점보다 장점이 많고{"\n"}관리하기 쉬운 메추리알 피부</Title>
         <Line />
         <EmptyBox height={36} />
         <SubTitle>
-          얼굴에 유분기가 많고 어두운 피부톤이시네요. 하지만 주름과 자극에는
-          강한 피부입니다. SPF 30 이상의 선크림과 필링 제품 사용을 추천드립니다.
+          얼굴에 유분기가 많고 어두운 피부톤이시네요.{"\n"}하지만 주름과
+          자극에는 강한 피부입니다.{"\n"}SPF 30 이상의 선크림과 필링 제품 사용을
+          추천드립니다.
         </SubTitle>
       </WhiteContainer>
       <EmptyBox height={36} />

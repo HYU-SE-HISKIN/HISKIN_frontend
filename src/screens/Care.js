@@ -9,7 +9,7 @@ import {
   Button,
   HyperLinkText,
   EmptyBox,
-  ImageLinker,
+  WhiteContainer,
   PlusButton,
 } from "../components";
 import {
@@ -36,15 +36,6 @@ const TabName = styled.Text`
 const HorizonContainer = styled.View`
   flex-direction: row;
 `;
-const WhiteContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  background-color: ${({ theme }) => theme.white};
-  border-radius: 24px;
-  width: 354px;
-  height: 72px;
-  padding: 12px;
-`;
 const TitleText = styled.Text`
   font-family: "LG EI Text - SemiBold";
   font-size: 18px;
@@ -65,7 +56,7 @@ const Care = ({ navigation }) => {
       <EmptyBox height={8} />
       <TitleText>연결된 디바이스</TitleText>
       <EmptyBox height={15} />
-      <WhiteContainer>
+      <WhiteContainer height={72} borderRadius={24} padding={12}>
         <Dermathera_large />
         <PlusButton
           title="LG Pra.L 더마쎄라 BLQ1"
@@ -75,7 +66,7 @@ const Care = ({ navigation }) => {
         <NextButton />
       </WhiteContainer>
       <EmptyBox height={12} />
-      <WhiteContainer>
+      <WhiteContainer height={72} borderRadius={24} padding={12}>
         <Intensive_large />
         <PlusButton
           title="인텐시브 멀티케어 BLP1"
@@ -85,7 +76,7 @@ const Care = ({ navigation }) => {
         <NextButton />
       </WhiteContainer>
       <EmptyBox height={12} />
-      <WhiteContainer>
+      <WhiteContainer height={72} borderRadius={24} padding={12}>
         <Essential_large />
         <PlusButton
           title="에센셜 부스터 BBP1"

@@ -40,6 +40,7 @@ import Device_Registration from "../images/DeviceRegistration.svg";
 import Dermathera_large from "../images/Dermathera_large.svg";
 import Intensive_large from "../images/Intensive_large.svg";
 import Essential_large from "../images/Essential_large.svg";
+import SKTNUGU from "../images/sktnugu.svg";
 
 export {
   WelcomeLayer1,
@@ -84,4 +85,5 @@ export {
   Dermathera_large,
   Intensive_large,
   Essential_large,
+  SKTNUGU,
 };

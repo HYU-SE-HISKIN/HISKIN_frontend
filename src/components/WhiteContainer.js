@@ -5,7 +5,7 @@ const Box = styled.View`
   align-items: center;
   background-color: ${({ theme }) => theme.white_1};
   border-radius: ${({ borderRadius }) => borderRadius}px;
-  padding: ${({ padding }) => padding || 24}px;
+  padding: 0 ${({ padding }) => padding || 24}px;
   width: ${({ width }) => width || 354}px;
   height: ${({ height }) => height}px;
 `;

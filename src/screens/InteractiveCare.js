@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import styled from "styled-components/native";
 import LottieView from "lottie-react-native";
 import { EmptyBox, WhiteContainer } from "../components";
+import { SKTNUGU } from "../../assets/images";
 
 const Container = styled.View`
   flex: 1;
@@ -35,14 +36,36 @@ const TitleText = styled.Text`
   font-size: 16px;
   color: ${({ theme }) => theme.black};
   align-self: flex-start;
+  margin-top: 12px;
+`;
+const TimeText = styled.Text`
+  font-family: "LG EI Text - Regular";
+  font-size: 16px;
+  color: ${({ theme }) => theme.grey_5};
+  margin-top: 21px;
 `;
 
 const InteractiveCare = ({ navigation }) => {
+  const [remainingTime, setRemainingTime] = useState(750); // 12 minutes and 30 seconds in seconds
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRemainingTime((prevTime) => prevTime - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatTime = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+  };
   return (
     <Container>
       <WhiteContainer width={242} height={68} borderRadius={16} padding={18}>
         <TitleText>
-          스피커의 음성 안내에 따라{"\n"}디바이스를 조작해주세요.
+          스피커의 음성 안내에 따라 {"\n"}디바이스를 조작해주세요.
         </TitleText>
       </WhiteContainer>
       <AnimatedContainer>
@@ -57,6 +80,8 @@ const InteractiveCare = ({ navigation }) => {
           loop={true}
         />
       </AnimatedContainer>
+      <SKTNUGU />
+      <TimeText>남은 시간 {formatTime(remainingTime)}</TimeText>
     </Container>
   );
 };

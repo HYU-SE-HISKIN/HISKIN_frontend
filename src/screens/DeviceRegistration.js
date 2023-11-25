@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 import { View } from "react-native";
 import { Device_Registration } from "../../assets/images";
 import { Button, EmptyBox, Loading } from "../components";
-import LottieView from "lottie-react-native";
 
 const Container = styled.View`
   align-items: center;
@@ -37,21 +36,10 @@ const DeviceRegistration = ({ navigation }) => {
   return (
     <Container>
       {loading ? (
-        <View>
-          <LottieView
-            style={{
-              width: 150,
-              height: 136,
-            }}
-            source={require("../../assets/lottie/AnimationLoading.json")}
-            autoPlay
-            loop={true}
-          />
-          <Loading
-            title="새로운 디바이스를 검색중입니다"
-            subtitle="디바이스에 스마트폰을 가까이 해주세요"
-          />
-        </View>
+        <Loading
+          title="새로운 디바이스를 검색중입니다"
+          subtitle="디바이스에 스마트폰을 가까이 해주세요"
+        ></Loading>
       ) : (
         <View style={{ alignItems: "center" }}>
           <IvoryContainer>

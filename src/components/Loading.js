@@ -1,11 +1,18 @@
 import React from "react";
 import styled from "styled-components/native";
+import LottieView from "lottie-react-native";
+import EmptyBox from "./EmptyBox";
 
 const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 18px;
+`;
+const AnimatedContainer = styled.View`
+  position: relative;
+  align-self: center;
+  align-items: center;
 `;
 const IvoryContainer = styled.View`
   align-items: center;
@@ -26,10 +33,24 @@ const SubTitle = styled.Text`
   color: ${({ theme }) => theme.grey_0};
 `;
 
-const Loading = ({ title, subtitle }) => {
+const Loading = ({ title, subtitle, children }) => {
   return (
     <Container>
       <IvoryContainer>
+        {
+          <AnimatedContainer>
+            <EmptyBox height={30} />
+            <LottieView
+              style={{
+                width: 150,
+                height: 150,
+              }}
+              source={require("../../assets/lottie/AnimationLoading.json")}
+              autoPlay
+              loop={true}
+            />
+          </AnimatedContainer>
+        }
         <Title>{title}</Title>
         <SubTitle>{subtitle}</SubTitle>
       </IvoryContainer>

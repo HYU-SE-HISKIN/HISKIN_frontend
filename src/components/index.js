@@ -14,6 +14,7 @@ import Graph from "./Graph";
 import Loading from "./Loading";
 import OptionButton from "./OptionButton";
 import WhiteContainer from "./WhiteContainer";
+import IvoryContainer from "./IvoryContainer";
 
 export {
   Input,
@@ -32,4 +33,5 @@ export {
   Loading,
   OptionButton,
   WhiteContainer,
+  IvoryContainer,
 };

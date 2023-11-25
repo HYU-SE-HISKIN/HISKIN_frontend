@@ -110,8 +110,8 @@ const Home = ({ navigation }) => {
         <EmptyBox height={9} />
         <WhiteContainer>
           <PlusButton
-            title="오늘의 피부 점수를 테스트 해보세요"
-            subtitle="피부 점수 테스트"
+            title="오늘의 피부 점수를 기록해보세요"
+            subtitle="챌린지"
             onPress={() => navigation.navigate("Challenge")}
             isWhite={true}
           />

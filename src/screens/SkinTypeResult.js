@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "react-native";
 import { Input, Button, EmptyBox } from "../components";
 import { SkinTypeResultImage } from "../../assets/images";
+import { skinTypeResults } from "../utils/skinTypeResults";
 
 const Container = styled.View`
   flex: 1;
@@ -45,6 +46,9 @@ const Line = styled.View`
 
 const SkinTypeResult = ({ navigation, route }) => {
   const result = route.params.result;
+  const resultMessage = skinTypeResults[result];
+
+  console.log(resultMessage);
 
   return (
     <Container>
@@ -56,14 +60,10 @@ const SkinTypeResult = ({ navigation, route }) => {
         <EmptyBox height={20} />
         <Result>{`${result}`}</Result>
         <EmptyBox height={22} />
-        <Title>단점보다 장점이 많고{"\n"}관리하기 쉬운 메추리알 피부</Title>
+        <Title>{resultMessage.title}</Title>
         <Line />
         <EmptyBox height={36} />
-        <SubTitle>
-          얼굴에 유분기가 많고 어두운 피부톤이시네요.{"\n"}하지만 주름과
-          자극에는 강한 피부입니다.{"\n"}SPF 30 이상의 선크림과 필링 제품 사용을
-          추천드립니다.
-        </SubTitle>
+        <SubTitle>{resultMessage.subtitle}</SubTitle>
       </WhiteContainer>
       <EmptyBox height={36} />
       <Button title="진단 마치기" onPress={() => navigation.navigate("Main")} />

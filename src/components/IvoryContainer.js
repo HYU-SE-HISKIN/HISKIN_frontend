@@ -4,7 +4,7 @@ const Box = styled.View`
   flex-direction: row;
   align-items: center;
   background-color: ${({ theme }) => theme.ivory_1};
-  border-radius: ${({ borderRadius }) => borderRadius}px;
+  border-radius: ${({ borderRadius }) => borderRadius || 16}px;
   padding: 0 ${({ padding }) => padding || 24}px;
   width: ${({ width }) => width || "auto"}px;
   height: ${({ height }) => height || "auto"}px;

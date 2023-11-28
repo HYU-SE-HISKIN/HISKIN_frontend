@@ -16,6 +16,7 @@ import IconChallengeFilled from "../images/iconchallenge_filled";
 import IconCare from "../images/iconcare.svg";
 import IconCommunity from "../images/iconcommunity.svg";
 import IconMyinfo from "../images/iconmyinfo.svg";
+import IconMyinfoFilled from "../images/iconmyinfo_filled.svg";
 import IconHomeFilled from "../images/iconhome_filled.svg";
 import IconCareFilled from "../images/iconcare_filled.svg";
 import IconCommunityFilled from "../images/iconcommunity_filled.svg";
@@ -63,6 +64,7 @@ export {
   IconCare,
   IconCommunity,
   IconMyinfo,
+  IconMyinfoFilled,
   IconHomeFilled,
   IconCareFilled,
   IconCommunityFilled,

@@ -7,8 +7,11 @@ import {
   IconChallenge,
   IconChallengeFilled,
   IconCare,
+  IconCareFilled,
   IconCommunity,
+  IconCommunityFilled,
   IconMyinfo,
+  IconMyinfoFilled,
 } from "../../assets/images";
 
 const Tab = createBottomTabNavigator();
@@ -54,7 +57,12 @@ const MainTab = () => {
         component={Care}
         options={{
           headerShown: false,
-          tabBarIcon: ({ size }) => <IconCare width={size} height={size} />,
+          tabBarIcon: ({ size, focused }) =>
+            focused ? (
+              <IconCareFilled width={size} height={size} />
+            ) : (
+              <IconCare width={size} height={size} />
+            ),
         }}
       />
       <Tab.Screen
@@ -62,9 +70,12 @@ const MainTab = () => {
         component={Community}
         options={{
           headerShown: false,
-          tabBarIcon: ({ size }) => (
-            <IconCommunity width={size} height={size} />
-          ),
+          tabBarIcon: ({ size, focused }) =>
+            focused ? (
+              <IconCommunityFilled width={size} height={size} />
+            ) : (
+              <IconCommunity width={size} height={size} />
+            ),
         }}
       />
       <Tab.Screen
@@ -72,7 +83,12 @@ const MainTab = () => {
         component={Info}
         options={{
           headerShown: false,
-          tabBarIcon: ({ size }) => <IconMyinfo width={size} height={size} />,
+          tabBarIcon: ({ size, focused }) =>
+            focused ? (
+              <IconMyinfoFilled width={size} height={size} />
+            ) : (
+              <IconMyinfo width={size} height={size} />
+            ),
         }}
       />
     </Tab.Navigator>

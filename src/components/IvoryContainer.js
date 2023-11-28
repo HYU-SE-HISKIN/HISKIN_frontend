@@ -6,8 +6,8 @@ const Box = styled.View`
   background-color: ${({ theme }) => theme.ivory_1};
   border-radius: ${({ borderRadius }) => borderRadius || 16}px;
   padding: 0 ${({ padding }) => padding || 24}px;
-  width: ${({ width }) => width || "auto"}px;
-  height: ${({ height }) => height || "auto"}px;
+  width: ${({ width }) => (width === "auto" ? "auto" : `${width}px`)};
+  height: ${({ height }) => (height === "auto" ? "auto" : `${height}px`)};
 `;
 
 const IvoryContainer = ({ width, height, borderRadius, padding, children }) => {

@@ -8,7 +8,7 @@ const Container = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  width: 72px;
+  width: ${({ width }) => width || 72}px;
   height: 32px;
   margin-right: 11px;
 `;
@@ -20,6 +20,7 @@ const Title = styled.Text`
 
 const OptionButton = ({
   containerStyle,
+  width,
   title,
   onPress,
   isSelected,
@@ -27,6 +28,7 @@ const OptionButton = ({
 }) => {
   return (
     <Container
+      width={width}
       style={containerStyle}
       onPress={onPress}
       isSelected={isSelected}

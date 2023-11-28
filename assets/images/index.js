@@ -20,6 +20,7 @@ import IconCareFilled from "../images/iconcare_filled.svg";
 import IconCommunityFilled from "../images/iconcommunity_filled.svg";
 import IconID from "../images/iconid.svg";
 import IconPW from "../images/iconpw.svg";
+import IconGender from "../images/icongender.svg";
 import IconAccount from "../images/IconAccount.svg";
 import IconReport from "../images/IconReport.svg";
 import IconSetting from "../images/IconSetting.svg";
@@ -65,6 +66,7 @@ export {
   IconCommunityFilled,
   IconID,
   IconPW,
+  IconGender,
   IconAccount,
   IconSetting,
   IconReport,

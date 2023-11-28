@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import { UserContext } from "../contexts/User";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Input, Button, HyperLinkText, EmptyBox } from "../components";
-import { IconID, IconPW, IconHuman } from "../../assets/images";
+import { IconID, IconPW, IconHuman, IconGender } from "../../assets/images";
 import Icon from "react-native-vector-icons/Feather";
 import axios from "axios";
 
@@ -71,7 +71,7 @@ const Signup = ({ navigation }) => {
         <EmptyBox height={16} />
         <Input
           label="이름"
-          svgComponent={<Icon name="user" size={24} />}
+          svgComponent={<IconHuman />}
           value={name}
           onChangeText={(text) => setName(text)}
           onSubmitEditing={() => genderRef.current.focus()}
@@ -82,7 +82,7 @@ const Signup = ({ navigation }) => {
         <EmptyBox height={16} />
         <Input
           ref={genderRef}
-          svgComponent={<IconPW />}
+          svgComponent={<IconGender />}
           label="성별"
           value={gender}
           onChangeText={(text) => setGender(text)}

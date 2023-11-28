@@ -12,6 +12,7 @@ import AppName_large from "../images/AppName_large.svg";
 import MyDevice from "../images/mydevice.svg";
 import IconHome from "../images/iconhome.svg";
 import IconChallenge from "../images/iconchallenge.svg";
+import IconChallengeFilled from "../images/iconchallenge_filled";
 import IconCare from "../images/iconcare.svg";
 import IconCommunity from "../images/iconcommunity.svg";
 import IconMyinfo from "../images/iconmyinfo.svg";
@@ -58,6 +59,7 @@ export {
   MyDevice,
   IconHome,
   IconChallenge,
+  IconChallengeFilled,
   IconCare,
   IconCommunity,
   IconMyinfo,

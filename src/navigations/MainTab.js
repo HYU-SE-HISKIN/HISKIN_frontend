@@ -3,7 +3,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home, Challenge, Care, Community, Info } from "../screens";
 import {
   IconHome,
+  IconHomeFilled,
   IconChallenge,
+  IconChallengeFilled,
   IconCare,
   IconCommunity,
   IconMyinfo,
@@ -26,7 +28,12 @@ const MainTab = () => {
         component={Home}
         options={{
           headerShown: false,
-          tabBarIcon: ({ size }) => <IconHome width={size} height={size} />,
+          tabBarIcon: ({ size, focused }) =>
+            focused ? (
+              <IconHomeFilled width={size} height={size} />
+            ) : (
+              <IconHome width={size} height={size} />
+            ),
         }}
       />
       <Tab.Screen
@@ -34,9 +41,12 @@ const MainTab = () => {
         component={Challenge}
         options={{
           headerShown: false,
-          tabBarIcon: ({ size }) => (
-            <IconChallenge width={size} height={size} />
-          ),
+          tabBarIcon: ({ size, focused }) =>
+            focused ? (
+              <IconChallengeFilled width={size} height={size} />
+            ) : (
+              <IconChallenge width={size} height={size} />
+            ),
         }}
       />
       <Tab.Screen

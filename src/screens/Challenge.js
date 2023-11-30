@@ -10,7 +10,6 @@ const Container = styled.View`
   align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 18px;
-  padding-top: 64px;
   padding-bottom: 46px;
 `;
 const HorizonContainer = styled.View`
@@ -64,6 +63,7 @@ const Challenge = ({ navigation }) => {
   return (
     <ScrollView>
       <Container>
+        <EmptyBox height={64} />
         <HorizonContainer>
           <AppName_small />
           <View>
@@ -122,15 +122,16 @@ const Challenge = ({ navigation }) => {
           score={score}
           submit={setQ4}
         />
+        <EmptyBox height={10} />
+        <View style={{ flexDirection: "row", alignSelf: "center" }}>
+          <Button width={150} title="피부점수 저장" onPress={_handleSubmit} />
+          <Button
+            width={150}
+            title="오늘 내 얼굴 상태는?"
+            onPress={() => navigation.navigate("FacialAnalysis")}
+          />
+        </View>
       </Container>
-      <View style={{ flexDirection: "row", alignSelf: "center" }}>
-        <Button width={150} title="피부점수 저장" onPress={_handleSubmit} />
-        <Button
-          width={150}
-          title="오늘 내 얼굴 상태는?"
-          onPress={() => navigation.navigate("FacialAnalysis")}
-        />
-      </View>
     </ScrollView>
   );
 };

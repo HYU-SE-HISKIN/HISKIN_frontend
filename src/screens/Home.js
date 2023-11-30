@@ -20,12 +20,16 @@ import {
   Cosmetic3,
 } from "../../assets/images";
 
+const TopBar = styled.View`
+  background-color: ${({ theme }) => theme.ivory_0};
+  height: 64px;
+  width: 100%;
+`;
 const Container = styled.View`
   flex: 1;
   align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 18px;
-  margin-top: 64px;
   margin-bottom: 46px;
 `;
 const HorizonContainer = styled.View`
@@ -50,6 +54,7 @@ const Home = ({ navigation }) => {
 
   return (
     <ScrollView>
+      <TopBar />
       <Container>
         <HorizonContainer>
           <AppName_small />
@@ -136,6 +141,7 @@ const Home = ({ navigation }) => {
           }
           heartvalue=" 99"
         />
+        <EmptyBox height={50} />
       </Container>
     </ScrollView>
   );

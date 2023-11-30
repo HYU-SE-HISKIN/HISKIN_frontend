@@ -14,12 +14,16 @@ import {
 } from "../../assets/images";
 import { welcomeMessages } from "../utils/welcomeMessages";
 
+const TopBar = styled.View`
+  background-color: ${({ theme }) => theme.customColor};
+  height: 72px;
+  width: 100%;
+`;
 const Container = styled.View`
   flex: 1;
   align-items: center;
   background-color: ${({ theme }) => theme.ivory_0};
   padding: 0 36px;
-  margin-top: 72px;
 `;
 const TitleText = styled.Text`
   font-family: "LG EI Headline - SemiBold";
@@ -72,6 +76,7 @@ const Welcome = ({ navigation, route }) => {
 
   return (
     <Container>
+      <TopBar />
       {getImageSource(id)}
       <EmptyBox height={48} />
       <TitleText>{currentPage.title}</TitleText>

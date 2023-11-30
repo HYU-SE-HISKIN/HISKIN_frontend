@@ -45,6 +45,7 @@ const Community = () => {
         <EmptyBox height={14} />
         <IvoryContainer>
           <PlusButton
+            width={282}
             thirdtitle="어떤 생각을 하고 있나요?"
             onPress={() => {}}
           />

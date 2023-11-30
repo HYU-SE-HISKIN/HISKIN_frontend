@@ -86,11 +86,16 @@ const Cosmetics = () => {
           </TitleText>
         </IvoryContainer>
         <EmptyBox height={8} />
+
         <IvoryContainer width={283.5}>
           <TitleText>
             {skinTypeResults[skinType]?.subtitle.split("\n\n")[0] ||
               "로딩 중..."}
           </TitleText>
+        </IvoryContainer>
+        <EmptyBox height={8} />
+        <IvoryContainer width={283.5}>
+          <TitleText>{"한율 달빛유자 수면팩을 추천드려요"}</TitleText>
         </IvoryContainer>
         <EmptyBox height={8} />
         <Image
@@ -117,15 +122,11 @@ const Cosmetics = () => {
         </HorizonContainer>
         <EmptyBox height={25} />
         {showMessage && (
-          <WhiteContainer
-            width={193.5}
-            height={53}
-            borderRadius={16}
-            style={{ alignSelf: "flex-end" }}
-          >
-            <TitleText>{message}</TitleText>
+          <WhiteContainer width={193.5} height={53} borderRadius={16}>
+            <TitleText style={{ alignSelf: "flex-end" }}>{message}</TitleText>
           </WhiteContainer>
         )}
+        <EmptyBox height={50} />
       </Container>
     </ScrollView>
   );

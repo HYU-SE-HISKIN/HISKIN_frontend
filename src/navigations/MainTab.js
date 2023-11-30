@@ -23,7 +23,16 @@ const MainTab = () => {
         tabBarLabelStyle: {
           fontSize: 12,
           fontFamily: "LG EI Text - Regular",
+          marginBottom: 5,
         },
+        tabBarStyle: {
+          borderTopLeftRadius: 24,
+          borderTopRightRadius: 24,
+          height: 90,
+          borderTopColor: "rgba(0, 0, 0, 0.2)",
+          borderTopWidth: 1.5,
+        },
+        tabBarActiveTintColor: "black",
       })}
     >
       <Tab.Screen

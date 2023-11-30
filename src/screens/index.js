@@ -13,6 +13,7 @@ import Cosmetics from "./Cosmetics";
 import SkinReport from "./SkinReport";
 import CareDetails from "./CareDetails";
 import InteractiveCare from "./InteractiveCare";
+import FacialAnalysis from "./FacialAnalysis";
 
 export {
   Care,
@@ -30,4 +31,5 @@ export {
   SkinReport,
   CareDetails,
   InteractiveCare,
+  FacialAnalysis,
 };

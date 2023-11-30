@@ -35,7 +35,7 @@ const Score = styled.Text`
   color: ${({ theme }) => theme.red};
 `;
 
-const Challenge = () => {
+const Challenge = ({ navigation }) => {
   const [score, setScore] = useState(0);
   const [q1, setQ1] = useState(1);
   const [q2, setQ2] = useState(1);
@@ -123,8 +123,13 @@ const Challenge = () => {
           submit={setQ4}
         />
       </Container>
-      <View style={{ alignItems: "center" }}>
-        <Button title="저장" onPress={_handleSubmit} />
+      <View style={{ flexDirection: "row", alignSelf: "center" }}>
+        <Button width={150} title="피부점수 저장" onPress={_handleSubmit} />
+        <Button
+          width={150}
+          title="오늘 내 얼굴 상태는?"
+          onPress={() => navigation.navigate("FacialAnalysis")}
+        />
       </View>
     </ScrollView>
   );

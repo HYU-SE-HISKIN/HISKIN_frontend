@@ -11,6 +11,7 @@ import {
   SkinReport,
   CareDetails,
   InteractiveCare,
+  FacialAnalysis,
 } from "../screens";
 import MainTab from "./MainTab";
 
@@ -102,6 +103,11 @@ const MainStack = () => {
           headerBackTitleVisible: false,
           title: route.params?.title || "피부 루틴",
         })}
+      />
+      <Stack.Screen
+        name="FacialAnalysis"
+        component={FacialAnalysis}
+        options={{ headerBackTitleVisible: false, title: "얼굴 인식" }}
       />
     </Stack.Navigator>
   );

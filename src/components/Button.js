@@ -10,7 +10,7 @@ const Container = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   border-radius: 37px;
-  width: 200px;
+  width: ${({ width }) => width || 200}px;
   height: 48px;
   margin: 10px;
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
@@ -22,9 +22,17 @@ const Title = styled.Text`
     isFilled ? theme.white : theme.buttonUnfilledTitle};
 `;
 
-const Button = ({ containerStyle, title, onPress, isFilled, disabled }) => {
+const Button = ({
+  width,
+  containerStyle,
+  title,
+  onPress,
+  isFilled,
+  disabled,
+}) => {
   return (
     <Container
+      width={width}
       style={containerStyle}
       onPress={onPress}
       isFilled={isFilled}

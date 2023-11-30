@@ -59,9 +59,9 @@ const Care = ({ navigation }) => {
       <WhiteContainer height={72} borderRadius={24} padding={12}>
         <Dermathera_large />
         <PlusButton
-          title="LG Pra.L 더마쎄라 BLQ1"
-          subtitle="5시간 전 사용"
-          isFrontImage={true}
+          width={250}
+          title="  LG Pra.L 더마쎄라 BLQ1"
+          subtitle="  5시간 전 사용"
           onPress={() =>
             navigation.navigate("CareDetails", {
               buttonName: "LG Pra.L 더마쎄라 BLQ1",
@@ -74,9 +74,9 @@ const Care = ({ navigation }) => {
       <WhiteContainer height={72} borderRadius={24} padding={12}>
         <Intensive_large />
         <PlusButton
-          title="인텐시브 멀티케어 BLP1"
-          subtitle="2일 전 사용"
-          isFrontImage={true}
+          width={250}
+          title="  인텐시브 멀티케어 BLP1"
+          subtitle="  2일 전 사용"
           onPress={() =>
             navigation.navigate("CareDetails", {
               buttonName: "인텐시브 멀티케어 BLP1",
@@ -89,9 +89,9 @@ const Care = ({ navigation }) => {
       <WhiteContainer height={72} borderRadius={24} padding={12}>
         <Essential_large />
         <PlusButton
-          title="에센셜 부스터 BBP1"
-          subtitle="3일 전 사용"
-          isFrontImage={true}
+          width={250}
+          title="  에센셜 부스터 BBP1"
+          subtitle="  3일 전 사용"
           onPress={() =>
             navigation.navigate("CareDetails", {
               buttonName: "에센셜 부스터 BBP1",

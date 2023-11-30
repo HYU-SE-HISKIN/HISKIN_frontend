@@ -2,10 +2,14 @@ import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import { View } from "react-native";
 import { ScrollView } from "react-native";
-import { UserContext } from "../contexts/User";
-import axios from "axios";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { PlusButton, ImageLinker, EmptyBox, CommunityBox } from "../components";
+import {
+  PlusButton,
+  ImageLinker,
+  EmptyBox,
+  CommunityBox,
+  WhiteContainer,
+  IvoryContainer,
+} from "../components";
 import {
   AppName_small,
   MyDevice,
@@ -26,24 +30,6 @@ const Container = styled.View`
 `;
 const HorizonContainer = styled.View`
   flex-direction: row;
-`;
-const IvoryContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  background-color: ${({ theme }) => theme.ivory_1};
-  border-radius: 16px;
-  padding: 24px;
-  width: 354px;
-  height: 80px;
-`;
-const WhiteContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  background-color: ${({ theme }) => theme.white};
-  border-radius: 16px;
-  padding: 24px;
-  width: 354px;
-  height: 80px;
 `;
 const TabName = styled.Text`
   font-family: "LG Smart - Regular";
@@ -84,8 +70,9 @@ const Home = ({ navigation }) => {
         )}
 
         <EmptyBox height={9} />
-        <IvoryContainer>
+        <IvoryContainer width={354} height={80} borderRadius={24} padding={24}>
           <PlusButton
+            width={279}
             title="새로운 디바이스 등록"
             subtitle="다른 사용자별 기기 등록"
             onPress={() => {
@@ -98,8 +85,9 @@ const Home = ({ navigation }) => {
         <EmptyBox height={28} />
         <TitleText>챌린지</TitleText>
         <EmptyBox height={7} />
-        <WhiteContainer>
+        <WhiteContainer width={354} height={80} borderRadius={24} padding={24}>
           <PlusButton
+            width={279}
             title="나의 피부 MBTI는?"
             subtitle="나만의 피부타입 진단"
             onPress={() => navigation.navigate("SkinTypeTest")}
@@ -108,8 +96,9 @@ const Home = ({ navigation }) => {
           <NextButton />
         </WhiteContainer>
         <EmptyBox height={9} />
-        <WhiteContainer>
+        <WhiteContainer width={354} height={80} borderRadius={24} padding={24}>
           <PlusButton
+            width={279}
             title="오늘의 피부 점수를 기록해보세요"
             subtitle="챌린지"
             onPress={() => navigation.navigate("Challenge")}

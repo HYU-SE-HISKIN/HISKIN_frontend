@@ -1,10 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import styled from "styled-components/native";
 import { View } from "react-native";
-import { UserContext } from "../contexts/User";
-import axios from "axios";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { EmptyBox, PlusButton } from "../components";
+import { EmptyBox, PlusButton, WhiteContainer } from "../components";
 import {
   AppName_small,
   NextButton,
@@ -35,15 +32,6 @@ const TitleText = styled.Text`
   color: ${({ theme }) => theme.black};
   align-self: flex-start;
 `;
-const WhiteContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  background-color: ${({ theme }) => theme.white};
-  border-radius: 24px;
-  padding: 24px;
-  width: 354px;
-  height: 80px;
-`;
 
 const Info = ({ navigation }) => {
   return (
@@ -59,26 +47,28 @@ const Info = ({ navigation }) => {
       <EmptyBox height={20} />
       <TitleText>내 정보</TitleText>
       <EmptyBox height={20} />
-      <WhiteContainer>
+      <WhiteContainer width={354} height={80} borderRadius={24} padding={26}>
         <IconAccount />
-        <PlusButton title=" 계정 설정" isFrontImage={true} />
+        <PlusButton width={253} title="   계정 설정" />
         <NextButton />
       </WhiteContainer>
       <EmptyBox height={10} />
-      <WhiteContainer>
+      <WhiteContainer width={354} height={80} borderRadius={24} padding={26}>
         <IconSetting />
         <PlusButton
-          title="피부 타입 설정"
+          width={253}
+          title="  피부 타입 설정"
           isFrontImage={true}
           onPress={() => navigation.navigate("SkinTypeTest")}
         />
         <NextButton />
       </WhiteContainer>
       <EmptyBox height={10} />
-      <WhiteContainer>
+      <WhiteContainer width={354} height={80} borderRadius={24} padding={26}>
         <IconReport />
         <PlusButton
-          title="피부 리포트"
+          width={253}
+          title="  피부 리포트"
           isFrontImage={true}
           onPress={() => navigation.navigate("SkinReport")}
         />

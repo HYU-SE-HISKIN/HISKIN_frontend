@@ -53,6 +53,7 @@ const Challenge = ({ navigation }) => {
     })
       .then(function a(response) {
         console.log(response);
+        navigation.navigate("FacialAnalysis");
       })
       .catch(function (error) {
         console.log("Axios Error:", error);
@@ -124,12 +125,7 @@ const Challenge = ({ navigation }) => {
         />
         <EmptyBox height={10} />
         <View style={{ flexDirection: "row", alignSelf: "center" }}>
-          <Button width={150} title="피부점수 저장" onPress={_handleSubmit} />
-          <Button
-            width={150}
-            title="오늘 내 얼굴 상태는?"
-            onPress={() => navigation.navigate("FacialAnalysis")}
-          />
+          <Button title="오늘 내 피부 촬영하기" onPress={_handleSubmit} />
         </View>
       </Container>
     </ScrollView>

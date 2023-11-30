@@ -3,6 +3,8 @@ import styled from "styled-components/native";
 import { View, Image, ScrollView } from "react-native";
 import { Woman_example } from "../../assets/images";
 import { Button, EmptyBox, Loading } from "../components";
+import { Camera } from "expo-camera";
+import * as ImagePicker from "expo-image-picker";
 
 const Container = styled.View`
   align-items: center;
@@ -40,23 +42,49 @@ const Line = styled.View`
 `;
 
 const FacialAnalysis = ({ navigation }) => {
-  const [loading, setLoading] = useState(true);
+  const [hasPermission, setHasPermission] = useState(null);
+  const [camera, setCamera] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(false);
+  const cameraRef = useRef(null);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }, []);
+  const _handleCamera = async () => {
+    const { status } = await Camera.requestCameraPermissionsAsync();
+    await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    setHasPermission(status === "granted");
+    console.log(cameraRef);
+    if (cameraRef.current) {
+      const photo = await cameraRef.current.takePictureAsync();
+      setCapturedImage(photo.uri);
+    }
+    setCamera(false);
+    // setLoading(true);
+
+    // useEffect(() => {
+    //   setTimeout(() => {
+    //     setLoading(false);
+    //   }, 5000);
+    // }, []);
+
+    // setResult(true);
+  };
 
   return (
     <Container>
       <ScrollView>
-        {loading ? (
+        {camera && (
+          <View>
+            <Button title="촬영하기" onPress={_handleCamera} />
+          </View>
+        )}
+        {loading && (
           <Loading
             title="오늘 하루 내 얼굴은?"
             subtitle="얼굴을 분석 중입니다."
           ></Loading>
-        ) : (
+        )}
+        {result && (
           <View style={{ alignItems: "center" }}>
             <WhiteContainer>
               <SubTitle>오늘 내 얼굴</SubTitle>

@@ -30,6 +30,7 @@ const Container = styled.View`
 `;
 const HorizonContainer = styled.View`
   flex-direction: row;
+  gap: 9px;
 `;
 const TabName = styled.Text`
   font-family: "LG Smart - Regular";

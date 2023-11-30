@@ -61,8 +61,7 @@ const FacialAnalysis = ({ navigation }) => {
             <WhiteContainer>
               <SubTitle>오늘 내 얼굴</SubTitle>
               <EmptyBox height={10} />
-              <Image
-                source={Woman_example}
+              <Woman_example
                 style={{ width: 200, height: 300, borderRadius: 100 }}
               />
               <EmptyBox height={20} />

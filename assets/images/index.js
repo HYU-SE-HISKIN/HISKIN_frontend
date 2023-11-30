@@ -44,7 +44,7 @@ import Dermathera_large from "../images/Dermathera_large.svg";
 import Intensive_large from "../images/Intensive_large.svg";
 import Essential_large from "../images/Essential_large.svg";
 import SKTNUGU from "../images/sktnugu.svg";
-import Woman_example from "../images/woman_example.png";
+import Woman_example from "../images/woman.svg";
 
 export {
   WelcomeLayer1,

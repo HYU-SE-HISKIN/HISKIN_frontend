@@ -4,7 +4,6 @@ import { View, Image, ScrollView } from "react-native";
 import { Woman_example } from "../../assets/images";
 import { Button, EmptyBox, Loading } from "../components";
 import { Camera } from "expo-camera";
-import * as ImagePicker from "expo-image-picker";
 
 const Container = styled.View`
   align-items: center;
@@ -46,35 +45,45 @@ const FacialAnalysis = ({ navigation }) => {
   const [camera, setCamera] = useState(true);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(false);
-  const cameraRef = useRef(null);
+  const [cameraRef, setCameraRef] = useState(null);
+  const [capturedImage, setCapturedImage] = useState(null);
+
+  useEffect(() => {
+    const requestCameraPermission = async () => {
+      const { status } = await Camera.requestCameraPermissionsAsync();
+      setHasPermission(status === "granted");
+    };
+
+    requestCameraPermission();
+  }, []);
 
   const _handleCamera = async () => {
-    const { status } = await Camera.requestCameraPermissionsAsync();
-    await ImagePicker.requestMediaLibraryPermissionsAsync();
-
-    setHasPermission(status === "granted");
-    console.log(cameraRef);
-    if (cameraRef.current) {
-      const photo = await cameraRef.current.takePictureAsync();
+    if (cameraRef) {
+      const photo = await cameraRef.takePictureAsync();
       setCapturedImage(photo.uri);
     }
-    setCamera(false);
-    // setLoading(true);
-
-    // useEffect(() => {
-    //   setTimeout(() => {
-    //     setLoading(false);
-    //   }, 5000);
-    // }, []);
-
-    // setResult(true);
   };
+
+  if (hasPermission === null) {
+    console.log("pp");
+    return <View />;
+  }
+
+  if (hasPermission === false) {
+    return <Text>No access to camera</Text>;
+  }
 
   return (
     <Container>
       <ScrollView>
         {camera && (
           <View>
+            <Camera
+              style={{ flex: 1 }}
+              type={Camera.Constants.Type.back}
+              ref={(ref) => setCameraRef(ref)}
+            ></Camera>
+            {capturedImage && <Image source={{ uri: capturedImage }} />}
             <Button title="촬영하기" onPress={_handleCamera} />
           </View>
         )}

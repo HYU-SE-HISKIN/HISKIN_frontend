@@ -12,6 +12,7 @@ import {
   CareDetails,
   InteractiveCare,
   FacialAnalysis,
+  TakePhoto,
 } from "../screens";
 import MainTab from "./MainTab";
 
@@ -108,6 +109,11 @@ const MainStack = () => {
         name="FacialAnalysis"
         component={FacialAnalysis}
         options={{ headerBackTitleVisible: false, title: "얼굴 인식" }}
+      />
+      <Stack.Screen
+        name="TakePhoto"
+        component={TakePhoto}
+        options={{ headerBackTitleVisible: false, title: "사진찍기" }}
       />
     </Stack.Navigator>
   );

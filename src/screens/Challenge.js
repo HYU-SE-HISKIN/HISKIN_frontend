@@ -52,8 +52,7 @@ const Challenge = ({ navigation }) => {
       withCredentials: true,
     })
       .then(function a(response) {
-        console.log(response);
-        navigation.navigate("FacialAnalysis");
+        navigation.navigate("TakePhoto");
       })
       .catch(function (error) {
         console.log("Axios Error:", error);

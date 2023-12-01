@@ -14,6 +14,7 @@ import SkinReport from "./SkinReport";
 import CareDetails from "./CareDetails";
 import InteractiveCare from "./InteractiveCare";
 import FacialAnalysis from "./FacialAnalysis";
+import TakePhoto from "./TakePhoto";
 
 export {
   Care,
@@ -32,4 +33,5 @@ export {
   CareDetails,
   InteractiveCare,
   FacialAnalysis,
+  TakePhoto,
 };

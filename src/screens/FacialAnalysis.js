@@ -1,9 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { View, Image, ScrollView, Text } from "react-native";
-import { Woman_example } from "../../assets/images";
 import { Button, EmptyBox, Loading } from "../components";
-import { Camera, CameraType } from "expo-camera";
+import axios from "axios";
 
 const Container = styled.View`
   align-items: center;
@@ -42,13 +41,40 @@ const Line = styled.View`
 
 const FacialAnalysis = ({ navigation, route }) => {
   const [loading, setLoading] = useState(true);
+  const [prediction, setPrediction] = useState("");
+  const [error, setError] = useState("");
   const image = route.params.image;
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }, []);
+    const uploadImage = async () => {
+      try {
+        const serverUrl = "http://127.0.0.1/";
+        const imageUri = image;
+
+        const formData = new FormData();
+        formData.append("file", {
+          uri: imageUri,
+          type: "image/jpeg",
+          name: "image.jpg",
+        });
+
+        const response = await axios.post(serverUrl, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+
+        setPrediction(response.data.prediction);
+        console.log(response.data.prediction); // Log the updated value
+        setLoading(false);
+      } catch (error) {
+        setError(error.message || "An error occurred");
+        console.log(error);
+      }
+    };
+
+    uploadImage();
+  }, [image]);
 
   return (
     <Container>

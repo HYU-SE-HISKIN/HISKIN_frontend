@@ -69,7 +69,6 @@ const TakePhoto = ({ navigation }) => {
     if (image) {
       try {
         const asset = await MediaLibrary.createAssetAsync(image);
-        alert("Picture saved! 🎉");
         setImage(null);
         console.log("saved successfully");
         navigation.navigate("FacialAnalysis", { image: image });

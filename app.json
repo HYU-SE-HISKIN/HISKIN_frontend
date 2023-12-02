@@ -13,7 +13,11 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow camera usage",
+        "NSPhotoLibraryUsageDescription": "Allow photo library usage"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -23,14 +27,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      [
-        "expo-camera",
-        {
-          "cameraPermission": "Allow HISKIN to access your camera."
-        }
-      ]
-    ]
+    }
   }
 }

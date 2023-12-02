@@ -1,65 +1,76 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Camera } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
+import * as MediaLibrary from "expo-media-library";
+import { Button } from "../components";
+import { View, Alert, Platform } from "react-native";
 
 const TakePhoto = () => {
-  const [hasPermission, setHasPermission] = useState(null);
-  const [cameraType, setCameraType] = useState(Camera.Constants.Type.back);
-  const cameraRef = useRef(null);
+  const [photos, setPhotos] = useState([]);
+  const camera = useRef();
+  const [cameraReady, setCameraReady] = useState(false);
 
+  const getPermissions = async () => {
+    const { granted } = await Camera.requestPermissionsAsync();
+    setOk(granted);
+  };
   useEffect(() => {
-    const getPermissionAsync = async () => {
-      // Camera roll Permission
-      if (Platform.OS === "ios") {
-        const { status } =
-          await ImagePicker.requestMediaLibraryPermissionsAsync();
-        if (status !== "granted") {
-          alert("Sorry, we need camera roll permissions to make this work!");
-        }
-      }
-      // Camera Permission
-      const { status } = await Camera.requestCameraPermissionsAsync();
-      setHasPermission(status === "granted");
-    };
-
-    getPermissionAsync();
+    getPermissions();
   }, []);
 
-  const handleCameraType = () => {
-    setCameraType((prevType) =>
-      prevType === Camera.Constants.Type.back
-        ? Camera.Constants.Type.front
-        : Camera.Constants.Type.back
-    );
-  };
-
+  const onCameraReady = () => setCameraReady(true);
   const takePicture = async () => {
-    if (cameraRef.current) {
-      let photo = await cameraRef.current.takePictureAsync();
-      // Handle the taken picture as needed
+    if (camera.current && cameraReady) {
+      const photo = await camera.current.takePictureAsync({
+        quality: 1,
+        exif: true,
+      });
     }
   };
 
+  const onCameraSwitch = () => {
+    if (cameraType === Camera.Constants.Type.front) {
+      setCameraType(Camera.Constants.Type.back);
+    } else {
+      setCameraType(Camera.Constants.Type.front);
+    }
+  };
+
+  const getPhotos = async () => {
+    const { assets: photos } = await MediaLibrary.getAssetsAsync();
+    setPhotos(photos);
+    setChosenPhoto(photos[0]?.uri);
+  };
   const pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-    });
-    // Handle the picked image as needed
+    const { status, canAskAgain } = await MediaLibrary.getPermissionsAsync();
+
+    if (status === "undetermined" && canAskAgain) {
+      const { status } = await MediaLibrary.requestPermissionsAsync();
+      if (status !== "undetermined") {
+        setOk(true);
+        getPhotos();
+      }
+    } else if (status !== "undetermined") {
+      setOk(true);
+      getPhotos();
+    }
   };
 
   return (
-    <div>
-      {hasPermission && (
-        <Camera
-          style={{ flex: 1, width: "100%" }}
-          type={cameraType}
-          ref={cameraRef}
-        ></Camera>
-      )}
-      <button onClick={handleCameraType}>Toggle Camera Type</button>
-      <button onClick={takePicture}>Take Picture</button>
-      <button onClick={pickImage}>Pick Image</button>
-    </div>
+    <View>
+      <Camera
+        type={cameraType}
+        style={{ flex: 1 }}
+        zoom={zoom}
+        flashMode={flashMode}
+        ref={camera}
+        onCameraReady={onCameraReady}
+      />
+
+      <Button title="Toggle Camera Type" onPress={onCameraSwitch}></Button>
+      <Button title="Take Picture" onPress={takePicture}></Button>
+      <Button title="Pick Image" onPress={pickImage}></Button>
+    </View>
   );
 };
 

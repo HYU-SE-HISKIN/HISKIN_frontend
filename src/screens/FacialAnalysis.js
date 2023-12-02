@@ -40,57 +40,31 @@ const Line = styled.View`
   background-color: ${({ theme }) => theme.ivory_2};
 `;
 
-const FacialAnalysis = ({ navigation }) => {
-  const [cameraPart, setCamera] = useState(true);
-  const [startCamera, setStartCamera] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(false);
-  const [cameraRef, setCameraRef] = useState(null);
-  const [capturedImage, setCapturedImage] = useState(null);
+const FacialAnalysis = ({ navigation, route }) => {
+  const [loading, setLoading] = useState(true);
+  const image = route.params.image;
 
-  const _handleCamera = async () => {
-    const { status } = await Camera.useCameraPermissions();
-    if (status === "granted") {
-      setStartCamera(true);
-    } else {
-      Alert.alert("access denied");
-    }
-    if (cameraRef) {
-      const photo = await cameraRef.takePictureAsync();
-      setCapturedImage(photo.uri);
-    }
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
 
   return (
     <Container>
       <ScrollView>
-        {cameraPart && (
-          <View>
-            {startCamera && (
-              <Camera
-                style={{ flex: 1, width: "100%" }}
-                type={Camera.Constants.Type.front}
-                ref={(r) => {
-                  camera = r;
-                }}
-              ></Camera>
-            )}
-            {capturedImage && <Image source={{ uri: capturedImage }} />}
-            <Button title="촬영하기" onPress={_handleCamera} />
-          </View>
-        )}
-        {loading && (
+        {loading ? (
           <Loading
             title="오늘 하루 내 얼굴은?"
             subtitle="얼굴을 분석 중입니다."
           ></Loading>
-        )}
-        {result && (
+        ) : (
           <View style={{ alignItems: "center" }}>
             <WhiteContainer>
               <SubTitle>오늘 내 얼굴</SubTitle>
               <EmptyBox height={10} />
-              <Woman_example
+              <Image
+                source={{ uri: image }}
                 style={{ width: 200, height: 300, borderRadius: 100 }}
               />
               <EmptyBox height={20} />

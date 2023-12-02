@@ -10,7 +10,7 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   padding-top: ${Constants.statusBarHeight}px;
-  background-color: #000;
+  background-color: ${({ theme }) => theme.ivory_0};
   padding: 8px;
 `;
 
@@ -33,12 +33,15 @@ const CameraContainer = styled.View`
 
 const HorizonContainer = styled.View`
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 300px;
 `;
 
-export default function App() {
+const TakePhoto = ({ navigation }) => {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [image, setImage] = useState(null);
-  const [type, setType] = useState(Camera.Constants.Type.back);
+  const [type, setType] = useState(Camera.Constants.Type.front);
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
   const cameraRef = useRef(null);
 
@@ -69,6 +72,7 @@ export default function App() {
         alert("Picture saved! 🎉");
         setImage(null);
         console.log("saved successfully");
+        navigation.navigate("FacialAnalysis", { image: image });
       } catch (error) {
         console.log(error);
       }
@@ -97,7 +101,11 @@ export default function App() {
                 );
               }}
             >
-              <MaterialIcons name="cached" size={24} color="white" />
+              <MaterialIcons
+                name="cached"
+                size={24}
+                color={({ theme }) => theme.ivory_1}
+              />
             </Button>
             <Button
               onPress={() =>
@@ -115,7 +123,7 @@ export default function App() {
                     : "flash-off"
                 }
                 size={24}
-                color="white"
+                color={({ theme }) => theme.ivory_1}
               />
             </Button>
           </HorizonContainer>
@@ -128,18 +136,32 @@ export default function App() {
         {image ? (
           <HorizonContainer>
             <Button onPress={() => setImage(null)}>
-              <MaterialIcons name="cached" size={24} color="white" />
+              <MaterialIcons
+                name="cached"
+                size={24}
+                color={({ theme }) => theme.ivory_1}
+              />
             </Button>
             <Button onPress={savePicture}>
-              <MaterialIcons name="check" size={24} color="white" />
+              <MaterialIcons
+                name="check"
+                size={24}
+                color={({ theme }) => theme.ivory_1}
+              />
             </Button>
           </HorizonContainer>
         ) : (
           <Button onPress={takePicture}>
-            <MaterialIcons name="camera" size={24} color="white" />
+            <MaterialIcons
+              name="camera"
+              size={24}
+              color={({ theme }) => theme.ivory_1}
+            />
           </Button>
         )}
       </Controls>
     </Container>
   );
-}
+};
+
+export default TakePhoto;

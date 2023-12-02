@@ -113,7 +113,7 @@ const MainStack = () => {
       <Stack.Screen
         name="TakePhoto"
         component={TakePhoto}
-        options={{ headerBackTitleVisible: false, title: "사진찍기" }}
+        options={{ headerBackTitleVisible: false, title: "사진 찍기" }}
       />
     </Stack.Navigator>
   );

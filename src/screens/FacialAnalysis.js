@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { View, Image, ScrollView, Text } from "react-native";
 import { Button, EmptyBox, Loading } from "../components";
 import axios from "axios";
+const uuid = require("uuid");
 
 const Container = styled.View`
   align-items: center;
@@ -46,31 +47,45 @@ const FacialAnalysis = ({ navigation, route }) => {
   const image = route.params.image;
 
   useEffect(() => {
+    const deviceId = uuid.v4();
+
     const uploadImage = async () => {
-      try {
-        const serverUrl = "http://127.0.0.1/";
-        const imageUri = image;
+      // axios
+      //   .post(
+      //     "http://192.168.0.100:5000/predict",
+      //     {
+      //       file: image,
+      //     },
+      //     {
+      //       withCredentials: true,
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //         "Device-Id": deviceId, // Device-Id 헤더 추가
+      //       },
+      //     }
+      //   )
+      //   .then(function (response) {
+      //     console.log(image, response);
+      //     setLoading(false);
+      //   })
+      //   .catch(function (error) {
+      //     console.error("Axios Error:", error);
+      //     if (error.response) {
+      //       console.error(
+      //         "Server responded with a status code",
+      //         error.response.status
+      //       );
+      //       console.error("Response data:", error.response.data);
+      //     } else if (error.request) {
+      //       console.error("No response received:", error.request);
+      //     } else {
+      //       console.error("Error setting up the request:", error.message);
+      //     }
+      //   });
 
-        const formData = new FormData();
-        formData.append("file", {
-          uri: imageUri,
-          type: "image/jpeg",
-          name: "image.jpg",
-        });
-
-        const response = await axios.post(serverUrl, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
-
-        setPrediction(response.data.prediction);
-        console.log(response.data.prediction); // Log the updated value
+      setTimeout(() => {
         setLoading(false);
-      } catch (error) {
-        setError(error.message || "An error occurred");
-        console.log(error);
-      }
+      }, 5000);
     };
 
     uploadImage();

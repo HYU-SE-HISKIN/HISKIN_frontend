@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, View } from "react-native";
+import { Platform, View, Text } from "react-native";
 import axios from "axios";
 import styled from "styled-components/native";
 import LottieView from "lottie-react-native";
@@ -50,16 +50,27 @@ const TimeText = styled.Text`
 
 const InteractiveCare = ({ navigation }) => {
   const [remainingTime, setRemainingTime] = useState(750);
-  const [isChatModalVisible, setChatModalVisible] = useState(false);
-  const [inputText, setInputText] = useState("");
-  const [chatHistory, setChatHistory] = useState([]);
+  const [message, setMessage] = useState("");
+  const data = { question: "아 오늘 너무 힘들다.." };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRemainingTime((prevTime) => prevTime - 1);
-    }, 1000);
+    const fetchData = async () => {
+      try {
+        const response = await axios({
+          method: "post",
+          url: "http://192.168.0.101:8080/api/ask",
+          data: data,
+        });
 
-    return () => clearInterval(interval);
+        console.log("Axios 응답:", response.data);
+        setMessage(response.data.content);
+      } catch (error) {
+        console.error("Axios 에러:", error.message); // 에러 메시지 출력
+        console.error("Axios 응답:", error.response); // 에러 응답 출력
+      }
+    };
+
+    fetchData();
   }, []);
 
   const formatTime = (timeInSeconds) => {
@@ -89,6 +100,7 @@ const InteractiveCare = ({ navigation }) => {
       </AnimatedContainer>
       <SKTNUGU />
       <TimeText>남은 시간 {formatTime(remainingTime)}</TimeText>
+      <Text>{message}</Text>
     </Container>
   );
 };

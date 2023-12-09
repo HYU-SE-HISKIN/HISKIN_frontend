@@ -11,7 +11,7 @@ const Container = styled.View`
 `;
 const WhiteContainer = styled.View`
   align-items: center;
-  background-color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => theme.white_1};
   border-radius: 16px;
   padding: 39px 24px;
   width: 354px;

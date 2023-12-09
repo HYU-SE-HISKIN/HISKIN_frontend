@@ -78,6 +78,7 @@ const Signup = ({ navigation }) => {
           onBlur={() => setName(name.trim())}
           placeholder="이름을 입력해주세요"
           returnKeyType="next"
+          maxLength={20}
         />
         <EmptyBox height={16} />
         <Input
@@ -89,6 +90,7 @@ const Signup = ({ navigation }) => {
           onSubmitEditing={() => nicknameRef.current.focus()}
           placeholder="성별을 입력해주세요"
           returnKeyType="done"
+          maxLength={6}
         />
         <EmptyBox height={16} />
         <Input
@@ -100,6 +102,7 @@ const Signup = ({ navigation }) => {
           onSubmitEditing={() => idRef.current.focus()}
           placeholder="닉네임을 입력해주세요"
           returnKeyType="done"
+          maxLength={16}
         />
         <EmptyBox height={16} />
         <Input
@@ -111,6 +114,7 @@ const Signup = ({ navigation }) => {
           onSubmitEditing={() => passwordRef.current.focus()}
           placeholder="아이디를 입력해주세요"
           returnKeyType="next"
+          maxLength={20}
         />
         <EmptyBox height={16} />
         <Input
@@ -123,6 +127,7 @@ const Signup = ({ navigation }) => {
           placeholder="비밀번호를 입력해주세요"
           returnKeyType="done"
           isPassword
+          maxLength={16}
         />
         <EmptyBox height={16} />
         <Button title="가입하기" onPress={_handleSignupButtonPress} />

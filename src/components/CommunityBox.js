@@ -4,7 +4,7 @@ import { MoreButton, Heart } from "../../assets/images";
 import EmptyBox from "./EmptyBox";
 import { CommunityImage } from "../../assets/images";
 
-const WhiteContainer = styled.View`
+const IvoryContainer = styled.View`
   flex-direction: row;
   align-items: flex-start;
   background-color: ${({ theme }) => theme.ivory_3};
@@ -59,7 +59,7 @@ const CommunityBox = ({
   image,
 }) => {
   return (
-    <WhiteContainer>
+    <IvoryContainer>
       <Circle color={color} />
       <VerticalContainer>
         <HorizonContainer>
@@ -77,7 +77,7 @@ const CommunityBox = ({
           <HeartValue>{heartvalue}</HeartValue>
         </HorizonContainer>
       </VerticalContainer>
-    </WhiteContainer>
+    </IvoryContainer>
   );
 };
 

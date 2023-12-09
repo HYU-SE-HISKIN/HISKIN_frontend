@@ -7,7 +7,7 @@ const WhiteContainer = styled.View`
   flex-direction: column;
   align-items: flex-start;
   align-self: center;
-  background-color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => theme.white_1};
   border-radius: 24px;
   padding: 19px;
   width: 354px;

@@ -1,5 +1,7 @@
 기여도
-FRONTEND(차해령, @ohhoho) DESIGN(박지원, @jiwonMe)
+
+FRONTEND(차해령, @ohhoho)
+DESIGN(박지원, @jiwonMe)
 
 #
 

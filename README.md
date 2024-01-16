@@ -1,9 +1,10 @@
-HISKIN FRONTEND
+기여도
+FRONTEND(차해령, @ohhoho) DESIGN(박지원, @jiwonMe)
+
+#
 
 * LG Digital Graphic Motif에서 발전시킨 #EA4335(포인트) 와 #F5F3EB, #E9E6DA(배경) 색상 사용
 * LG EI Text, LG Smart 폰트 사용
-
-#
 
 
   * 디바이스 등록
